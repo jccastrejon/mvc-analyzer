@@ -24,11 +24,11 @@ import org.objectweb.asm.ClassReader;
 public class DependencyAnalyzer {
 
     /**
-     * 
+     * Filter used to analyze only directories and .class files.
      */
     private final static FilenameFilter CLASS_FILTER = new FilenameFilter() {
 	@Override
-	public boolean accept(File dir, String name) {
+	public boolean accept(final File dir, final String name) {
 	    String extension;
 	    File file;
 	    boolean returnValue = false;
@@ -55,7 +55,7 @@ public class DependencyAnalyzer {
 	 *            File.
 	 * @return File's extension.
 	 */
-	public String getExtensionName(File file) {
+	public String getExtensionName(final File file) {
 	    String returnValue = null;
 	    String name = file.getName();
 	    int i = name.lastIndexOf('.');
@@ -69,12 +69,17 @@ public class DependencyAnalyzer {
     };
 
     /**
+     * Recover the dependencies from each Java class within the specified
+     * directory.
      * 
      * @param path
-     * @return
-     * @throws IOEX
+     *            Directory path.
+     * @return Dependencies for each class within the directory.
+     * @throws IOException
+     *             If an I/O error has occurred.
      */
-    public static Map<String, Set<String>> getDirectoryDependencies(String path) throws IOException {
+    public static Map<String, Set<String>> getDirectoryDependencies(final String path)
+	    throws IOException {
 	File directory;
 	List<File> classes;
 	InputStream classInputStream;
@@ -103,7 +108,7 @@ public class DependencyAnalyzer {
      * @throws IOException
      *             If an I/O error has occurred.
      */
-    public static Map<String, Set<String>> getJarDependencies(String file) throws IOException {
+    public static Map<String, Set<String>> getJarDependencies(final String file) throws IOException {
 	JarInputStream inputStream;
 	JarEntry jarEntry;
 	Map<String, Set<String>> returnValue;
@@ -135,7 +140,7 @@ public class DependencyAnalyzer {
      * @throws IOException
      *             If an I/O error has occurred.
      */
-    public static Set<String> getClassDependencies(Class<?> clazz) throws IOException {
+    public static Set<String> getClassDependencies(final Class<?> clazz) throws IOException {
 	return DependencyAnalyzer.getClassDependencies(clazz.getResourceAsStream("/"
 		+ clazz.getName().replace('.', '/') + ".class"));
     }
@@ -149,7 +154,7 @@ public class DependencyAnalyzer {
      * @throws IOException
      *             If an I/O error has occurred.
      */
-    public static Set<String> getClassDependencies(InputStream fileStream) throws IOException {
+    public static Set<String> getClassDependencies(final InputStream fileStream) throws IOException {
 	Set<String> returnValue;
 	DependencyVisitor dependencyVisitor;
 
@@ -161,36 +166,44 @@ public class DependencyAnalyzer {
     }
 
     /**
+     * Get a directory reference only if the specified path points to a valid
+     * directory, that is, it exists, it's indeed a directory, and can be read.
+     * If provided with an invalid path it will throw a
+     * IllegalArgumentException.
      * 
-     * @param directory
-     * @return
+     * @param path
+     *            Directory path.
+     * @return File reference.
      */
-    private static File getDirectory(String directory) {
+    private static File getDirectory(final String path) {
 	File returnValue;
 
-	if (directory == null) {
+	if (path == null) {
 	    throw new IllegalArgumentException("Directory must not be null");
 	} else {
-	    returnValue = new File(directory);
+	    returnValue = new File(path);
 	}
 
 	if (!returnValue.exists()) {
-	    throw new IllegalArgumentException("Directory " + directory + " doesn't exist");
+	    throw new IllegalArgumentException("Directory " + path + " doesn't exist");
 	} else if (!returnValue.isDirectory()) {
-	    throw new IllegalArgumentException("Path " + directory + " is not a directory");
+	    throw new IllegalArgumentException("Path " + path + " is not a directory");
 	} else if (!returnValue.canRead()) {
-	    throw new IllegalArgumentException("Directory " + directory + " cannot be read");
+	    throw new IllegalArgumentException("Directory " + path + " cannot be read");
 	}
 
 	return returnValue;
     }
 
     /**
+     * Get all the .class files in a directory, considering also its
+     * subdirectories.
      * 
      * @param directory
-     * @return
+     *            Directory.
+     * @return List with the .class Files references.
      */
-    private static List<File> getClassesInDirectory(File directory) {
+    private static List<File> getClassesInDirectory(final File directory) {
 	List<File> returnValue;
 	List<File> innerFiles;
 	File[] directoryFiles;

@@ -36,7 +36,7 @@ public class DependencyVisitor extends EmptyVisitor {
      * @param dependency
      *            Class name.
      */
-    private void addDependencyFromName(String dependency) {
+    private void addDependencyFromName(final String dependency) {
 	if (dependency != null) {
 	    // Convert to standard package name
 	    dependencies.add(dependency.replace('/', '.'));
@@ -49,7 +49,7 @@ public class DependencyVisitor extends EmptyVisitor {
      * @param dependencies
      *            Classes names.
      */
-    private void addDependenciesFromNames(String[] dependencies) {
+    private void addDependenciesFromNames(final String[] dependencies) {
 	if (dependencies != null) {
 	    for (int i = 0; i < dependencies.length; i++) {
 		this.addDependencyFromName(dependencies[i]);
@@ -63,7 +63,7 @@ public class DependencyVisitor extends EmptyVisitor {
      * @param description
      *            Element description.
      */
-    private void addDependencyFromDescription(String description) {
+    private void addDependencyFromDescription(final String description) {
 	String dependencyName;
 	int semicolonIndex;
 	int lowerthanIndex;
@@ -81,16 +81,24 @@ public class DependencyVisitor extends EmptyVisitor {
 			if (lowerthanIndex > 0) {
 			    this.addDependencyFromName(dependencyName.substring(0, lowerthanIndex));
 			    this.addDependencyFromDescription(dependencyName.substring(
-				    lowerthanIndex + 1, dependencyName.length()) + ";");
-			} else{
+				    lowerthanIndex + 1, dependencyName.length())
+				    + ";");
+			} else {
 			    this.addDependencyFromName(dependencyName);
 			}
-			
+
 			i = semicolonIndex;
 		    }
 		}
 	    }
 	}
+    }
+
+    /**
+     * @return the dependencies
+     */
+    public Set<String> getDependencies() {
+	return dependencies;
     }
 
     @Override
@@ -185,12 +193,5 @@ public class DependencyVisitor extends EmptyVisitor {
     public void visitTryCatchBlock(Label start, Label end, Label handler, String type) {
 	this.addDependencyFromName(type);
 	super.visitTryCatchBlock(start, end, handler, type);
-    }
-
-    /**
-     * @return the dependencies
-     */
-    public Set<String> getDependencies() {
-	return dependencies;
     }
 }
