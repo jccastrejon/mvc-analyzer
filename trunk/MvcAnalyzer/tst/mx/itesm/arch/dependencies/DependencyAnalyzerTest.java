@@ -16,6 +16,11 @@ import junit.framework.TestCase;
  */
 public class DependencyAnalyzerTest extends TestCase {
 
+    /**
+     * Class logger.
+     */
+    Logger logger = Logger.getLogger(DependencyAnalyzerTest.class.getName());
+
     @Override
     public void setUp() throws Exception {
 	LogManager.getLogManager().readConfiguration(
@@ -24,12 +29,7 @@ public class DependencyAnalyzerTest extends TestCase {
     }
 
     /**
-     * Class logger.
-     */
-    Logger logger = Logger.getLogger(DependencyAnalyzerTest.class.getName());
-
-    /**
-     * Recover the dependencies of this test class in an unsorted manner.
+     * Recover the unsorted dependencies of this test class.
      * 
      * @throws IOException
      */
