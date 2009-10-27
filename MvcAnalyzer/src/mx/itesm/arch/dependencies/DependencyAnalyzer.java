@@ -79,7 +79,6 @@ public class DependencyAnalyzer {
     public static List<ClassDependencies> getDirectoryDependencies(final String path)
 	    throws IOException {
 	File directory;
-	String className;
 	List<String> internalClasses;
 	InputStream classInputStream;
 	List<ClassDependencies> returnValue;
@@ -87,12 +86,12 @@ public class DependencyAnalyzer {
 	// Get classes in directory
 	returnValue = new ArrayList<ClassDependencies>();
 	directory = DependencyAnalyzer.getDirectory(path);
-	internalClasses = DependencyAnalyzer.getClassesInDirectory(directory);
+	internalClasses = DependencyAnalyzer.getClassesInDirectory(directory, directory);
 
 	// Get classes dependencies
-	for (String classAbsolutePath : internalClasses) {
-	    className = DependencyAnalyzer.getClassNameFromPath(classAbsolutePath, path);
-	    classInputStream = new FileInputStream(classAbsolutePath);
+	for (String className : internalClasses) {
+	    classInputStream = new FileInputStream(DependencyAnalyzer.getPathFromClassName(
+		    className, directory.getAbsolutePath()));
 	    returnValue.add(DependencyAnalyzer.getClassSortedDependencies(className,
 		    classInputStream, internalClasses, path));
 	}
@@ -128,7 +127,8 @@ public class DependencyAnalyzer {
 	jarEntry = inputStream.getNextJarEntry();
 	while (jarEntry != null) {
 	    if ((!jarEntry.isDirectory()) && jarEntry.getName().endsWith(".class")) {
-		internalClasses.add(jarFile.getParent() + "/" + jarEntry.getName());
+		internalClasses.add(DependencyAnalyzer.getClassNameFromPath(jarFile.getParent()
+			+ "/" + jarEntry.getName(), jarFile.getParent()));
 	    }
 
 	    jarEntry = inputStream.getNextJarEntry();
@@ -139,8 +139,8 @@ public class DependencyAnalyzer {
 	jarEntry = inputStream.getNextJarEntry();
 	while (jarEntry != null) {
 	    if ((!jarEntry.isDirectory()) && jarEntry.getName().endsWith(".class")) {
-		className = DependencyAnalyzer.getClassNameFromPath(jarEntry.getName(), jarFile
-			.getParent());
+		className = DependencyAnalyzer.getClassNameFromPath(jarFile.getParent() + "/"
+			+ jarEntry.getName(), jarFile.getParent());
 		dependencies = DependencyAnalyzer.getClassSortedDependencies(className,
 			inputStream, internalClasses, jarFile.getParent());
 		returnValue.add(dependencies);
@@ -239,7 +239,6 @@ public class DependencyAnalyzer {
 	    final InputStream fileStream, final List<String> internalClasses, final String rootPath)
 	    throws IOException {
 	Set<String> dependencies;
-	String internalClassName;
 	boolean isInternalDependency;
 	List<String> internalDependencies;
 	List<String> externalDependencies;
@@ -253,10 +252,7 @@ public class DependencyAnalyzer {
 	for (String dependency : dependencies) {
 	    isInternalDependency = false;
 	    for (String internalClass : internalClasses) {
-		internalClassName = DependencyAnalyzer
-			.getClassNameFromPath(internalClass, rootPath);
-
-		if (dependency.equals(internalClassName)) {
+		if (dependency.equals(internalClass)) {
 		    internalDependencies.add(dependency);
 		    isInternalDependency = true;
 		    break;
@@ -309,7 +305,7 @@ public class DependencyAnalyzer {
      *            Directory.
      * @return List with the Classes names.
      */
-    private static List<String> getClassesInDirectory(final File directory) {
+    private static List<String> getClassesInDirectory(final File directory, final File rootDirectory) {
 	File currentFile;
 	File[] directoryFiles;
 	List<String> returnValue;
@@ -322,10 +318,11 @@ public class DependencyAnalyzer {
 
 	    if (currentFile.isDirectory()) {
 		// Recover subdirectory classes
-		innerFiles = DependencyAnalyzer.getClassesInDirectory(currentFile);
+		innerFiles = DependencyAnalyzer.getClassesInDirectory(currentFile, rootDirectory);
 		returnValue.addAll(innerFiles);
 	    } else {
-		returnValue.add(currentFile.getAbsolutePath());
+		returnValue.add(DependencyAnalyzer.getClassNameFromPath(currentFile
+			.getAbsolutePath(), rootDirectory.getAbsolutePath()));
 	    }
 	}
 
@@ -333,7 +330,7 @@ public class DependencyAnalyzer {
     }
 
     /**
-     * Get a class name from a Class File Path.
+     * Get a Class Name from a Class File Path.
      * 
      * @param rootPath
      *            Rooth Path containing the Class File Path.
@@ -353,5 +350,18 @@ public class DependencyAnalyzer {
 	returnValue = returnValue.substring(0, returnValue.indexOf(".class")).replace('/', '.');
 
 	return returnValue;
+    }
+
+    /**
+     * Get a Class File Path from a Class Name.
+     * 
+     * @param className
+     *            Class Name.
+     * @param rootPath
+     *            Rooth Path containing the Class File Path.
+     * @return Class File Path.
+     */
+    private static String getPathFromClassName(final String className, final String rootPath) {
+	return rootPath + "/" + className.replace('.', '/') + ".class";
     }
 }
