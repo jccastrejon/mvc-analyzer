@@ -1,7 +1,7 @@
 package mx.itesm.arch.dependencies;
 
 import java.io.IOException;
-import java.util.Map;
+import java.util.List;
 import java.util.Set;
 
 import junit.framework.TestCase;
@@ -29,7 +29,6 @@ public class DependencyAnalyzerTest extends TestCase {
 		"java.io.IOException" };
 	dependencies = DependencyAnalyzer
 		.getClassUnsortedDependencies(DependencyAnalyzerTest.class);
-	System.out.println(dependencies);
 
 	// Check if all the required dependencies where found
 	for (String requiredDependency : requiredDependencies) {
@@ -49,21 +48,42 @@ public class DependencyAnalyzerTest extends TestCase {
     }
 
     /**
-     * Recover the dependencies for the classes in the DistributedQueryOptimizer
-     * project. The dependencies should be grouped in internal and external
-     * groups.
+     * Recover the sorted dependencies for the classes in this project.
      * 
      * @throws IOException
      */
     public void testGetDirectoryDependencies() throws IOException {
-	Map<String, ClassDependencies> dependencies;
+	List<ClassDependencies> dependencies;
 
-	dependencies = DependencyAnalyzer
-		.getDirectoryDependencies("/home/jccastrejon/java/workspace/DistributedQueryOptimizer/bin");
-	System.out.println(dependencies);
+	dependencies = DependencyAnalyzer.getDirectoryDependencies("bin");
+	this.verifyDependencies(dependencies);
+    }
 
+    /**
+     * Recover the dependencies for the ASM library.
+     * 
+     * @throws IOException
+     */
+    public void testGetJarDependencies() throws IOException {
+	List<ClassDependencies> dependencies;
+
+	dependencies = DependencyAnalyzer.getJarDependencies("lib/asm-all-3.2.jar");
+	for (ClassDependencies dependency : dependencies) {
+	    System.out.println(dependency + "\n");
+	}
+
+	this.verifyDependencies(dependencies);
+    }
+
+    /**
+     * Verifies if the dependencies are non-empty.
+     * 
+     * @param dependencies
+     *            Classes dependencies.
+     */
+    private void verifyDependencies(List<ClassDependencies> dependencies) {
 	assertNotNull(dependencies);
-	for (ClassDependencies dependency : dependencies.values()) {
+	for (ClassDependencies dependency : dependencies) {
 	    assertFalse(dependency.getInternalDependencies().isEmpty());
 	    assertFalse(dependency.getExternalDependencies().isEmpty());
 	}
