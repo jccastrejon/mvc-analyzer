@@ -15,11 +15,11 @@ import junit.framework.TestCase;
 public class DependencyAnalyzerTest extends TestCase {
 
     /**
-     * Test the getClassDependencies() method.
+     * Recover the dependencies of this test class in an unsorted manner.
      * 
      * @throws IOException
      */
-    public void testGetClassDependencies() throws IOException {
+    public void testGetClassUnsortedDependencies() throws IOException {
 	Set<String> dependencies;
 	boolean correctDependencies;
 	String[] requiredDependencies;
@@ -27,7 +27,8 @@ public class DependencyAnalyzerTest extends TestCase {
 	correctDependencies = false;
 	requiredDependencies = new String[] { "junit.framework.TestCase", "java.util.Set",
 		"java.io.IOException" };
-	dependencies = DependencyAnalyzer.getClassDependencies(DependencyAnalyzerTest.class);
+	dependencies = DependencyAnalyzer
+		.getClassUnsortedDependencies(DependencyAnalyzerTest.class);
 	System.out.println(dependencies);
 
 	// Check if all the required dependencies where found
@@ -48,16 +49,23 @@ public class DependencyAnalyzerTest extends TestCase {
     }
 
     /**
+     * Recover the dependencies for the classes in the DistributedQueryOptimizer
+     * project. The dependencies should be grouped in internal and external
+     * groups.
      * 
      * @throws IOException
      */
     public void testGetDirectoryDependencies() throws IOException {
-	Map<String, Set<String>> dependencies;
+	Map<String, ClassDependencies> dependencies;
 
 	dependencies = DependencyAnalyzer
 		.getDirectoryDependencies("/home/jccastrejon/java/workspace/DistributedQueryOptimizer/bin");
 	System.out.println(dependencies);
 
 	assertNotNull(dependencies);
+	for (ClassDependencies dependency : dependencies.values()) {
+	    assertFalse(dependency.getInternalDependencies().isEmpty());
+	    assertFalse(dependency.getExternalDependencies().isEmpty());
+	}
     }
 }
