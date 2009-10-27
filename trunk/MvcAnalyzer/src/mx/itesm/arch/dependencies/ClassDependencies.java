@@ -9,6 +9,11 @@ import java.util.List;
 public class ClassDependencies {
 
     /**
+     * Class name.
+     */
+    private String className;
+
+    /**
      * Dependencies with internal classes (same project).
      */
     private List<String> internalDependencies;
@@ -21,12 +26,16 @@ public class ClassDependencies {
     /**
      * Full constructor.
      * 
+     * @param className
+     *            Class name.
      * @param internalDependencies
      *            Dependencies with internal classes (same project).
      * @param externalDependencies
      *            Dependencies with external classes (libraries).
      */
-    public ClassDependencies(List<String> internalDependencies, List<String> externalDependencies) {
+    public ClassDependencies(String className, List<String> internalDependencies,
+	    List<String> externalDependencies) {
+	this.className = className;
 	this.internalDependencies = internalDependencies;
 	this.externalDependencies = externalDependencies;
     }
@@ -61,8 +70,24 @@ public class ClassDependencies {
 	this.externalDependencies = externalDependencies;
     }
 
+    /**
+     * @return the className
+     */
+    public String getClassName() {
+	return className;
+    }
+
+    /**
+     * @param className
+     *            the className to set
+     */
+    public void setClassName(String className) {
+	this.className = className;
+    }
+
     @Override
     public String toString() {
-	return "{Internal: " + internalDependencies + "\nExternal: " + externalDependencies + "}";
+	return "{Class: " + this.className + " - Internal: " + this.internalDependencies
+		+ " - External: " + this.externalDependencies + "}";
     }
 }

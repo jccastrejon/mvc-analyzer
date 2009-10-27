@@ -6,9 +6,7 @@ import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 import java.util.jar.JarEntry;
 import java.util.jar.JarInputStream;
@@ -78,21 +76,25 @@ public class DependencyAnalyzer {
      * @throws IOException
      *             If an I/O error has occurred.
      */
-    public static Map<String, ClassDependencies> getDirectoryDependencies(final String path)
+    public static List<ClassDependencies> getDirectoryDependencies(final String path)
 	    throws IOException {
 	File directory;
+	String className;
 	List<String> internalClasses;
 	InputStream classInputStream;
-	Map<String, ClassDependencies> returnValue;
+	List<ClassDependencies> returnValue;
 
-	returnValue = new HashMap<String, ClassDependencies>();
+	// Get classes in directory
+	returnValue = new ArrayList<ClassDependencies>();
 	directory = DependencyAnalyzer.getDirectory(path);
 	internalClasses = DependencyAnalyzer.getClassesInDirectory(directory);
 
-	for (String clazz : internalClasses) {
-	    classInputStream = new FileInputStream(clazz);
-	    returnValue.put(clazz, DependencyAnalyzer.getClassSortedDependencies(classInputStream,
-		    internalClasses, path));
+	// Get classes dependencies
+	for (String classAbsolutePath : internalClasses) {
+	    className = DependencyAnalyzer.getClassNameFromPath(classAbsolutePath, path);
+	    classInputStream = new FileInputStream(classAbsolutePath);
+	    returnValue.add(DependencyAnalyzer.getClassSortedDependencies(className,
+		    classInputStream, internalClasses, path));
 	}
 
 	return returnValue;
@@ -108,16 +110,16 @@ public class DependencyAnalyzer {
      * @throws IOException
      *             If an I/O error has occurred.
      */
-    public static Map<String, ClassDependencies> getJarDependencies(final String file)
-	    throws IOException {
-	JarInputStream inputStream;
-	JarEntry jarEntry;
-	Map<String, ClassDependencies> returnValue;
-	List<String> internalClasses;
+    public static List<ClassDependencies> getJarDependencies(final String file) throws IOException {
 	File jarFile;
+	String className;
+	JarEntry jarEntry;
+	JarInputStream inputStream;
+	List<String> internalClasses;
 	ClassDependencies dependencies;
+	List<ClassDependencies> returnValue;
 
-	returnValue = new HashMap<String, ClassDependencies>();
+	returnValue = new ArrayList<ClassDependencies>();
 	internalClasses = new ArrayList<String>();
 	jarFile = new File(file);
 
@@ -126,8 +128,10 @@ public class DependencyAnalyzer {
 	jarEntry = inputStream.getNextJarEntry();
 	while (jarEntry != null) {
 	    if ((!jarEntry.isDirectory()) && jarEntry.getName().endsWith(".class")) {
-		internalClasses.add(file + "/" + jarEntry.getName());
+		internalClasses.add(jarFile.getParent() + "/" + jarEntry.getName());
 	    }
+
+	    jarEntry = inputStream.getNextJarEntry();
 	}
 
 	// Get dependencies
@@ -135,9 +139,11 @@ public class DependencyAnalyzer {
 	jarEntry = inputStream.getNextJarEntry();
 	while (jarEntry != null) {
 	    if ((!jarEntry.isDirectory()) && jarEntry.getName().endsWith(".class")) {
-		dependencies = DependencyAnalyzer.getClassSortedDependencies(inputStream,
-			internalClasses, jarFile.getParent());
-		returnValue.put(file + "/" + jarEntry.getName(), dependencies);
+		className = DependencyAnalyzer.getClassNameFromPath(jarEntry.getName(), jarFile
+			.getParent());
+		dependencies = DependencyAnalyzer.getClassSortedDependencies(className,
+			inputStream, internalClasses, jarFile.getParent());
+		returnValue.add(dependencies);
 	    }
 
 	    jarEntry = inputStream.getNextJarEntry();
@@ -204,8 +210,9 @@ public class DependencyAnalyzer {
 	ClassDependencies returnValue;
 
 	classDirectory = clazz.getResource(clazz.getName()).getPath();
-	returnValue = DependencyAnalyzer.getClassSortedDependencies(clazz.getResourceAsStream("/"
-		+ clazz.getName().replace('.', '/') + ".class"), internalClasses, classDirectory);
+	returnValue = DependencyAnalyzer.getClassSortedDependencies(clazz.getName(), clazz
+		.getResourceAsStream("/" + clazz.getName().replace('.', '/') + ".class"),
+		internalClasses, classDirectory);
 
 	return returnValue;
     }
@@ -215,6 +222,8 @@ public class DependencyAnalyzer {
      * <em>internal</em> (Same Project) and <em>external</em> (Libraries)
      * dependencies.
      * 
+     * @param className
+     *            Class name.
      * @param fileStream
      *            IputStream to the required class file.
      * @param internalClasses
@@ -226,8 +235,9 @@ public class DependencyAnalyzer {
      * @throws IOException
      *             If an I/O error has occurred.
      */
-    public static ClassDependencies getClassSortedDependencies(final InputStream fileStream,
-	    final List<String> internalClasses, final String rootPath) throws IOException {
+    public static ClassDependencies getClassSortedDependencies(final String className,
+	    final InputStream fileStream, final List<String> internalClasses, final String rootPath)
+	    throws IOException {
 	Set<String> dependencies;
 	String internalClassName;
 	boolean isInternalDependency;
@@ -258,7 +268,7 @@ public class DependencyAnalyzer {
 	    }
 	}
 
-	return new ClassDependencies(internalDependencies, externalDependencies);
+	return new ClassDependencies(className, internalDependencies, externalDependencies);
     }
 
     /**
