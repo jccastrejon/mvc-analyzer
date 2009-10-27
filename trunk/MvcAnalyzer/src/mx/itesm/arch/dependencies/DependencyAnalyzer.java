@@ -78,21 +78,21 @@ public class DependencyAnalyzer {
      * @throws IOException
      *             If an I/O error has occurred.
      */
-    public static Map<String, Set<String>> getDirectoryDependencies(final String path)
+    public static Map<String, ClassDependencies> getDirectoryDependencies(final String path)
 	    throws IOException {
 	File directory;
-	List<File> classes;
+	List<String> internalClasses;
 	InputStream classInputStream;
-	Map<String, Set<String>> returnValue;
+	Map<String, ClassDependencies> returnValue;
 
-	returnValue = new HashMap<String, Set<String>>();
+	returnValue = new HashMap<String, ClassDependencies>();
 	directory = DependencyAnalyzer.getDirectory(path);
-	classes = DependencyAnalyzer.getClassesInDirectory(directory);
+	internalClasses = DependencyAnalyzer.getClassesInDirectory(directory);
 
-	for (File clazz : classes) {
+	for (String clazz : internalClasses) {
 	    classInputStream = new FileInputStream(clazz);
-	    returnValue.put(clazz.getAbsolutePath(), DependencyAnalyzer
-		    .getClassDependencies(classInputStream));
+	    returnValue.put(clazz, DependencyAnalyzer.getClassSortedDependencies(classInputStream,
+		    internalClasses, path));
 	}
 
 	return returnValue;
@@ -108,21 +108,36 @@ public class DependencyAnalyzer {
      * @throws IOException
      *             If an I/O error has occurred.
      */
-    public static Map<String, Set<String>> getJarDependencies(final String file) throws IOException {
+    public static Map<String, ClassDependencies> getJarDependencies(final String file)
+	    throws IOException {
 	JarInputStream inputStream;
 	JarEntry jarEntry;
-	Map<String, Set<String>> returnValue;
-	Set<String> dependencies;
+	Map<String, ClassDependencies> returnValue;
+	List<String> internalClasses;
+	File jarFile;
+	ClassDependencies dependencies;
 
+	returnValue = new HashMap<String, ClassDependencies>();
+	internalClasses = new ArrayList<String>();
+	jarFile = new File(file);
+
+	// Get internal classes
 	inputStream = new JarInputStream(new FileInputStream(file));
-	returnValue = new HashMap<String, Set<String>>();
 	jarEntry = inputStream.getNextJarEntry();
-
 	while (jarEntry != null) {
-
 	    if ((!jarEntry.isDirectory()) && jarEntry.getName().endsWith(".class")) {
-		dependencies = DependencyAnalyzer.getClassDependencies(inputStream);
-		returnValue.put(jarEntry.getName(), dependencies);
+		internalClasses.add(file + "/" + jarEntry.getName());
+	    }
+	}
+
+	// Get dependencies
+	inputStream = new JarInputStream(new FileInputStream(file));
+	jarEntry = inputStream.getNextJarEntry();
+	while (jarEntry != null) {
+	    if ((!jarEntry.isDirectory()) && jarEntry.getName().endsWith(".class")) {
+		dependencies = DependencyAnalyzer.getClassSortedDependencies(inputStream,
+			internalClasses, jarFile.getParent());
+		returnValue.put(file + "/" + jarEntry.getName(), dependencies);
 	    }
 
 	    jarEntry = inputStream.getNextJarEntry();
@@ -132,32 +147,36 @@ public class DependencyAnalyzer {
     }
 
     /**
-     * Recover the dependencies for the specified Class.
+     * Recover the dependencies for the specified Class with no special grouping
+     * criteria.
      * 
      * @param clazz
      *            Class to analyze.
-     * @return Class' dependencies.
+     * @return Unsorted Class' dependencies.
      * @throws IOException
      *             If an I/O error has occurred.
      */
-    public static Set<String> getClassDependencies(final Class<?> clazz) throws IOException {
-	return DependencyAnalyzer.getClassDependencies(clazz.getResourceAsStream("/"
+    public static Set<String> getClassUnsortedDependencies(final Class<?> clazz) throws IOException {
+	return DependencyAnalyzer.getClassUnsortedDependencies(clazz.getResourceAsStream("/"
 		+ clazz.getName().replace('.', '/') + ".class"));
     }
 
     /**
-     * Recover the dependencies for the specified Class.
+     * Recover the dependencies for the specified Class with no special grouping
+     * criteria.
      * 
      * @param fileStream
      *            IputStream to the required class file.
-     * @return Class' dependencies.
+     * @return Unsorted Class' dependencies.
      * @throws IOException
      *             If an I/O error has occurred.
      */
-    public static Set<String> getClassDependencies(final InputStream fileStream) throws IOException {
+    public static Set<String> getClassUnsortedDependencies(final InputStream fileStream)
+	    throws IOException {
 	Set<String> returnValue;
 	DependencyVisitor dependencyVisitor;
 
+	// Recover all dependencies
 	dependencyVisitor = new DependencyVisitor();
 	new ClassReader(fileStream).accept(dependencyVisitor, ClassReader.SKIP_DEBUG);
 	returnValue = dependencyVisitor.getDependencies();
@@ -166,9 +185,86 @@ public class DependencyAnalyzer {
     }
 
     /**
-     * Get a directory reference only if the specified path points to a valid
-     * directory, that is, it exists, it's indeed a directory, and can be read.
-     * If provided with an invalid path it will throw a
+     * Recover the dependencies for the specified Class, grouped by
+     * <em>internal</em> (Same Project) and <em>external</em> (Libraries)
+     * dependencies.
+     * 
+     * @param clazz
+     *            Class to analyze.
+     * @param internalClasses
+     *            List of classes that belong to the same project as the class
+     *            being analyzed.
+     * @return Class' dependencies.
+     * @throws IOException
+     *             If an I/O error has occurred.
+     */
+    public static ClassDependencies getClassSortedDependencies(final Class<?> clazz,
+	    final List<String> internalClasses) throws IOException {
+	String classDirectory;
+	ClassDependencies returnValue;
+
+	classDirectory = clazz.getResource(clazz.getName()).getPath();
+	returnValue = DependencyAnalyzer.getClassSortedDependencies(clazz.getResourceAsStream("/"
+		+ clazz.getName().replace('.', '/') + ".class"), internalClasses, classDirectory);
+
+	return returnValue;
+    }
+
+    /**
+     * Recover the dependencies for the specified Class, grouped by
+     * <em>internal</em> (Same Project) and <em>external</em> (Libraries)
+     * dependencies.
+     * 
+     * @param fileStream
+     *            IputStream to the required class file.
+     * @param internalClasses
+     *            List of classes that belong to the same project as the class
+     *            being analyzed.
+     * @param rootPath
+     *            Root Path that contains the project classes.
+     * @return Class' dependencies.
+     * @throws IOException
+     *             If an I/O error has occurred.
+     */
+    public static ClassDependencies getClassSortedDependencies(final InputStream fileStream,
+	    final List<String> internalClasses, final String rootPath) throws IOException {
+	Set<String> dependencies;
+	String internalClassName;
+	boolean isInternalDependency;
+	List<String> internalDependencies;
+	List<String> externalDependencies;
+
+	// Recover all dependencies
+	dependencies = DependencyAnalyzer.getClassUnsortedDependencies(fileStream);
+
+	// Separate internal - external dependencies
+	internalDependencies = new ArrayList<String>();
+	externalDependencies = new ArrayList<String>();
+	for (String dependency : dependencies) {
+	    isInternalDependency = false;
+	    for (String internalClass : internalClasses) {
+		internalClassName = DependencyAnalyzer
+			.getClassNameFromPath(internalClass, rootPath);
+
+		if (dependency.equals(internalClassName)) {
+		    internalDependencies.add(dependency);
+		    isInternalDependency = true;
+		    break;
+		}
+	    }
+
+	    if (!isInternalDependency) {
+		externalDependencies.add(dependency);
+	    }
+	}
+
+	return new ClassDependencies(internalDependencies, externalDependencies);
+    }
+
+    /**
+     * Get a referemce to a directory only if the specified path points to a
+     * valid directory, that is, it exists, it's indeed a directory, and can be
+     * read. If provided with an invalid path it will throw a
      * IllegalArgumentException.
      * 
      * @param path
@@ -196,31 +292,55 @@ public class DependencyAnalyzer {
     }
 
     /**
-     * Get all the .class files in a directory, considering also its
+     * Get all the Classes names in a directory, considering also its
      * subdirectories.
      * 
      * @param directory
      *            Directory.
-     * @return List with the .class Files references.
+     * @return List with the Classes names.
      */
-    private static List<File> getClassesInDirectory(final File directory) {
-	List<File> returnValue;
-	List<File> innerFiles;
-	File[] directoryFiles;
+    private static List<String> getClassesInDirectory(final File directory) {
 	File currentFile;
+	File[] directoryFiles;
+	List<String> returnValue;
+	List<String> innerFiles;
 
-	returnValue = new ArrayList<File>();
+	returnValue = new ArrayList<String>();
 	directoryFiles = directory.listFiles(DependencyAnalyzer.CLASS_FILTER);
 	for (int i = 0; i < directoryFiles.length; i++) {
 	    currentFile = directoryFiles[i];
 
 	    if (currentFile.isDirectory()) {
+		// Recover subdirectory classes
 		innerFiles = DependencyAnalyzer.getClassesInDirectory(currentFile);
 		returnValue.addAll(innerFiles);
 	    } else {
-		returnValue.add(currentFile);
+		returnValue.add(currentFile.getAbsolutePath());
 	    }
 	}
+
+	return returnValue;
+    }
+
+    /**
+     * Get a class name from a Class File Path.
+     * 
+     * @param rootPath
+     *            Rooth Path containing the Class File Path.
+     * @param path
+     *            Class File Path.
+     * @return Class Name.
+     */
+    private static String getClassNameFromPath(final String path, final String rootPath) {
+	String returnValue;
+
+	if (path == null) {
+	    throw new IllegalArgumentException("Invalid path");
+	}
+
+	// {rootAbsolutePath}/{classPath}
+	returnValue = path.substring(path.indexOf(rootPath) + rootPath.length() + 1);
+	returnValue = returnValue.substring(0, returnValue.indexOf(".class")).replace('/', '.');
 
 	return returnValue;
     }
