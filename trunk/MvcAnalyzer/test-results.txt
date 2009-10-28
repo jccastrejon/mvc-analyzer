@@ -1,500 +1,483 @@
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest testGetClassUnsortedDependencies
-INFO: [java.io.InputStream, mx.itesm.arch.dependencies.ClassDependencies, java.lang.Object, java.util.List, java.util.logging.LogManager, java.lang.StringBuilder, java.lang.String, mx.itesm.arch.dependencies.DependencyAnalyzerTest, junit.framework.TestCase, java.lang.ClassLoader, mx.itesm.arch.dependencies.DependencyAnalyzer, java.io.IOException, java.util.Iterator, java.util.logging.Logger, java.lang.Exception, java.lang.Class, java.util.Set]
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: mx.itesm.arch.dependencies.DependencyAnalyzer - Internal: [mx.itesm.arch.dependencies.ClassDependencies, mx.itesm.arch.dependencies.DependencyAnalyzer$1, mx.itesm.arch.dependencies.DependencyAnalyzer, mx.itesm.arch.dependencies.DependencyVisitor] - External: [java.lang.IllegalArgumentException, java.util.ArrayList, java.io.InputStream, java.lang.Object, java.io.FilenameFilter, org.objectweb.asm.ClassReader, java.util.List, java.lang.StringBuilder, java.lang.String, java.io.IOException, java.util.jar.JarEntry, java.util.Iterator, java.net.URL, java.util.jar.JarInputStream, java.lang.Class, java.io.File, java.util.Set, org.objectweb.asm.ClassVisitor, java.util.Collection, java.io.FileInputStream]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.AnnotationVisitor - Internal: [] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: mx.itesm.arch.dependencies.DependencyAnalyzer$1 - Internal: [mx.itesm.arch.dependencies.DependencyAnalyzer$1] - External: [java.io.FilenameFilter, java.lang.Object, java.lang.StringBuilder, java.lang.String, java.io.File]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.AnnotationWriter - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.Item, org.objectweb.asm.Type, org.objectweb.asm.ByteVector, org.objectweb.asm.ClassWriter] - External: [[B, [F, [C, [D, [I, [J, [S, [Z]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: mx.itesm.arch.dependencies.DependencyVisitor - Internal: [mx.itesm.arch.dependencies.DependencyVisitor] - External: [org.objectweb.asm.Type, org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.FieldVisitor, java.lang.Object, java.util.HashSet, org.objectweb.asm.MethodVisitor, org.objectweb.asm.commons.EmptyVisitor, java.lang.StringBuilder, java.lang.String, org.objectweb.asm.Label, java.util.Set]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.Attribute - Internal: [org.objectweb.asm.ClassReader, org.objectweb.asm.ByteVector, org.objectweb.asm.Label, org.objectweb.asm.ClassWriter] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: mx.itesm.arch.dependencies.ClassDependencies - Internal: [mx.itesm.arch.dependencies.ClassDependencies] - External: [java.lang.Object, java.util.List, java.lang.StringBuilder, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.ByteVector - Internal: [] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: mx.itesm.arch.dependencies.DependencyAnalyzerTest - Internal: [mx.itesm.arch.dependencies.ClassDependencies, mx.itesm.arch.dependencies.DependencyAnalyzerTest, mx.itesm.arch.dependencies.DependencyAnalyzer] - External: [java.io.InputStream, java.lang.Object, java.util.List, java.util.logging.LogManager, java.lang.StringBuilder, java.lang.String, junit.framework.TestCase, java.lang.ClassLoader, java.io.IOException, java.util.Iterator, java.util.logging.Logger, java.lang.Exception, java.lang.Class, java.util.Set]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.ClassAdapter - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.FieldVisitor, org.objectweb.asm.MethodVisitor, org.objectweb.asm.Attribute, org.objectweb.asm.ClassVisitor] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.AnnotationVisitor - Internal: [org.objectweb.asm.AnnotationVisitor] - External: [java.lang.Object, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.ClassReader - Internal: [org.objectweb.asm.FieldVisitor, org.objectweb.asm.MethodVisitor, org.objectweb.asm.Item, org.objectweb.asm.Type, org.objectweb.asm.Label, org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.MethodWriter, org.objectweb.asm.Opcodes, org.objectweb.asm.ByteVector, org.objectweb.asm.Attribute, org.objectweb.asm.ClassVisitor, org.objectweb.asm.ClassWriter] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.AnnotationWriter - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.Item, org.objectweb.asm.Type, org.objectweb.asm.ByteVector, org.objectweb.asm.ClassWriter, org.objectweb.asm.AnnotationWriter] - External: [java.lang.Object, java.lang.Boolean, [B, [F, java.lang.String, [C, [D, java.lang.Short, [I, [J, java.lang.Character, [S, java.lang.Byte, [Z]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.ClassVisitor - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.FieldVisitor, org.objectweb.asm.MethodVisitor, org.objectweb.asm.Attribute] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.Attribute - Internal: [org.objectweb.asm.ClassReader, org.objectweb.asm.ByteVector, org.objectweb.asm.Attribute, org.objectweb.asm.Label, org.objectweb.asm.ClassWriter] - External: [java.lang.Object, java.lang.String, java.lang.System]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.ClassWriter - Internal: [org.objectweb.asm.FieldVisitor, org.objectweb.asm.ClassReader, org.objectweb.asm.MethodVisitor, org.objectweb.asm.Item, org.objectweb.asm.Type, org.objectweb.asm.AnnotationWriter, org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.MethodWriter, org.objectweb.asm.ByteVector, org.objectweb.asm.Attribute, org.objectweb.asm.ClassVisitor, org.objectweb.asm.FieldWriter] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.ByteVector - Internal: [org.objectweb.asm.ByteVector] - External: [java.lang.Object, java.lang.String, java.lang.System]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.Edge - Internal: [org.objectweb.asm.Label] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.ClassAdapter - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.ClassAdapter, org.objectweb.asm.FieldVisitor, org.objectweb.asm.MethodVisitor, org.objectweb.asm.Attribute, org.objectweb.asm.ClassVisitor] - External: [java.lang.Object, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.FieldVisitor - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.Attribute] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.ClassReader - Internal: [org.objectweb.asm.FieldVisitor, org.objectweb.asm.ClassReader, org.objectweb.asm.MethodVisitor, org.objectweb.asm.Item, org.objectweb.asm.Type, org.objectweb.asm.Label, org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.MethodWriter, org.objectweb.asm.Opcodes, org.objectweb.asm.ByteVector, org.objectweb.asm.Attribute, org.objectweb.asm.ClassVisitor, org.objectweb.asm.ClassWriter] - External: [java.io.InputStream, java.lang.Boolean, java.lang.Long, java.lang.System, java.lang.Float, java.io.IOException, java.lang.Double, java.lang.Character, java.lang.StringBuffer, java.lang.Object, java.lang.String, java.lang.Integer, java.lang.Short, java.lang.ClassLoader, java.lang.Byte]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.FieldWriter - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.FieldVisitor, org.objectweb.asm.ByteVector, org.objectweb.asm.Attribute, org.objectweb.asm.Item, org.objectweb.asm.ClassWriter, org.objectweb.asm.AnnotationWriter] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.ClassVisitor - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.FieldVisitor, org.objectweb.asm.MethodVisitor, org.objectweb.asm.Attribute, org.objectweb.asm.ClassVisitor] - External: [java.lang.Object, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.Frame - Internal: [org.objectweb.asm.Type, org.objectweb.asm.Label, org.objectweb.asm.Item, org.objectweb.asm.ClassWriter] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.ClassWriter - Internal: [org.objectweb.asm.FieldVisitor, org.objectweb.asm.ClassReader, org.objectweb.asm.MethodVisitor, org.objectweb.asm.Item, org.objectweb.asm.Type, org.objectweb.asm.AnnotationWriter, org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.MethodWriter, org.objectweb.asm.ByteVector, org.objectweb.asm.Attribute, org.objectweb.asm.ClassVisitor, org.objectweb.asm.ClassWriter, org.objectweb.asm.FieldWriter] - External: [java.lang.IllegalArgumentException, java.lang.Boolean, java.lang.Long, java.lang.System, java.lang.Float, java.lang.Double, java.lang.Class, java.lang.Character, java.lang.StringBuffer, java.lang.Object, java.lang.String, java.lang.Integer, java.lang.Short, java.lang.RuntimeException, java.lang.Exception, java.lang.Byte]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.Handler - Internal: [org.objectweb.asm.Label] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.Edge - Internal: [org.objectweb.asm.Edge, org.objectweb.asm.Label] - External: [java.lang.Object]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.Item - Internal: [] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.FieldVisitor - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.FieldVisitor, org.objectweb.asm.Attribute] - External: [java.lang.Object, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.Label - Internal: [org.objectweb.asm.Edge, org.objectweb.asm.MethodWriter, org.objectweb.asm.ByteVector, org.objectweb.asm.Frame] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.FieldWriter - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.FieldVisitor, org.objectweb.asm.ByteVector, org.objectweb.asm.Attribute, org.objectweb.asm.Item, org.objectweb.asm.ClassWriter, org.objectweb.asm.AnnotationWriter, org.objectweb.asm.FieldWriter] - External: [java.lang.Object, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.MethodAdapter - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.MethodVisitor, org.objectweb.asm.Attribute, org.objectweb.asm.Label] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.Frame - Internal: [org.objectweb.asm.Type, org.objectweb.asm.Frame, org.objectweb.asm.Label, org.objectweb.asm.Item, org.objectweb.asm.ClassWriter] - External: [java.lang.StringBuffer, java.lang.Object, java.lang.RuntimeException, java.lang.String, java.lang.System, java.lang.Math]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.MethodVisitor - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.Attribute, org.objectweb.asm.Label] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.Handler - Internal: [org.objectweb.asm.Handler, org.objectweb.asm.Label] - External: [java.lang.Object, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.MethodWriter - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.Handler, org.objectweb.asm.ClassReader, org.objectweb.asm.MethodVisitor, org.objectweb.asm.Item, org.objectweb.asm.Type, org.objectweb.asm.Edge, org.objectweb.asm.Frame, org.objectweb.asm.ByteVector, org.objectweb.asm.Attribute, org.objectweb.asm.Label, org.objectweb.asm.ClassWriter, org.objectweb.asm.AnnotationWriter] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.Item - Internal: [org.objectweb.asm.Item] - External: [java.lang.Double, java.lang.Object, java.lang.String, java.lang.Float]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.Opcodes - Internal: [] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.Label - Internal: [org.objectweb.asm.Edge, org.objectweb.asm.MethodWriter, org.objectweb.asm.ByteVector, org.objectweb.asm.Frame, org.objectweb.asm.Label] - External: [java.lang.StringBuffer, java.lang.Object, java.lang.String, java.lang.IllegalStateException, java.lang.System]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.Type - Internal: [] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.MethodAdapter - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.MethodAdapter, org.objectweb.asm.MethodVisitor, org.objectweb.asm.Attribute, org.objectweb.asm.Label] - External: [java.lang.Object, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.commons.AdviceAdapter - Internal: [org.objectweb.asm.commons.GeneratorAdapter, org.objectweb.asm.MethodVisitor, org.objectweb.asm.Opcodes, org.objectweb.asm.Type, org.objectweb.asm.Label] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.MethodVisitor - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.MethodVisitor, org.objectweb.asm.Attribute, org.objectweb.asm.Label] - External: [java.lang.Object, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.commons.AnalyzerAdapter - Internal: [org.objectweb.asm.MethodVisitor, org.objectweb.asm.Opcodes, org.objectweb.asm.Type, org.objectweb.asm.MethodAdapter, org.objectweb.asm.Label] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.MethodWriter - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.MethodWriter, org.objectweb.asm.Handler, org.objectweb.asm.ClassReader, org.objectweb.asm.MethodVisitor, org.objectweb.asm.Item, org.objectweb.asm.Type, org.objectweb.asm.Edge, org.objectweb.asm.Frame, org.objectweb.asm.ByteVector, org.objectweb.asm.Attribute, org.objectweb.asm.Label, org.objectweb.asm.ClassWriter, org.objectweb.asm.AnnotationWriter] - External: [java.lang.StringBuffer, java.lang.Object, java.lang.Integer, java.lang.String, java.lang.System, java.lang.Math]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.commons.CodeSizeEvaluator - Internal: [org.objectweb.asm.MethodAdapter, org.objectweb.asm.MethodVisitor, org.objectweb.asm.Label, org.objectweb.asm.Opcodes] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.Opcodes - Internal: [org.objectweb.asm.Opcodes] - External: [java.lang.Object, java.lang.String, java.lang.Integer]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.commons.EmptyVisitor - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.FieldVisitor, org.objectweb.asm.MethodVisitor, org.objectweb.asm.Attribute, org.objectweb.asm.Label, org.objectweb.asm.ClassVisitor] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.Type - Internal: [org.objectweb.asm.Type] - External: [java.lang.StringBuffer, java.lang.reflect.Constructor, java.lang.Object, java.lang.Boolean, java.lang.reflect.Method, java.lang.String, java.lang.Integer, java.lang.Short, java.lang.Float, java.lang.Double, java.lang.Class, java.lang.Character, java.lang.Byte, java.lang.Void]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.commons.GeneratorAdapter - Internal: [org.objectweb.asm.MethodVisitor, org.objectweb.asm.commons.Method, org.objectweb.asm.Type, org.objectweb.asm.commons.LocalVariablesSorter, org.objectweb.asm.commons.TableSwitchGenerator, org.objectweb.asm.Label, org.objectweb.asm.ClassVisitor] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.commons.AdviceAdapter - Internal: [org.objectweb.asm.commons.GeneratorAdapter, org.objectweb.asm.MethodVisitor, org.objectweb.asm.Opcodes, org.objectweb.asm.Type, org.objectweb.asm.commons.AdviceAdapter, org.objectweb.asm.Label] - External: [java.util.ArrayList, java.lang.Object, java.util.Map, java.util.List, java.lang.Long, java.lang.String, java.util.HashMap, java.lang.Double, java.util.Collection]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.commons.InstructionAdapter - Internal: [org.objectweb.asm.MethodVisitor, org.objectweb.asm.Type, org.objectweb.asm.MethodAdapter, org.objectweb.asm.Label] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.commons.AnalyzerAdapter - Internal: [org.objectweb.asm.commons.AnalyzerAdapter, org.objectweb.asm.MethodVisitor, org.objectweb.asm.Opcodes, org.objectweb.asm.Type, org.objectweb.asm.MethodAdapter, org.objectweb.asm.Label] - External: [java.lang.IllegalArgumentException, java.util.ArrayList, java.lang.StringBuffer, java.util.Map, java.lang.Object, java.util.List, java.lang.Long, java.lang.String, java.lang.Integer, java.lang.IllegalStateException, java.lang.Float, java.util.HashMap, java.lang.Double, java.lang.RuntimeException, java.lang.Math]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.commons.JSRInlinerAdapter$1 - Internal: [] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.commons.CodeSizeEvaluator - Internal: [org.objectweb.asm.MethodAdapter, org.objectweb.asm.commons.CodeSizeEvaluator, org.objectweb.asm.MethodVisitor, org.objectweb.asm.Label, org.objectweb.asm.Opcodes] - External: [java.lang.Double, java.lang.Object, java.lang.Long, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.commons.JSRInlinerAdapter$Instantiation - Internal: [org.objectweb.asm.tree.LabelNode, org.objectweb.asm.tree.AbstractInsnNode, org.objectweb.asm.tree.InsnList, org.objectweb.asm.commons.JSRInlinerAdapter] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.commons.EmptyVisitor - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.FieldVisitor, org.objectweb.asm.MethodVisitor, org.objectweb.asm.commons.EmptyVisitor, org.objectweb.asm.Attribute, org.objectweb.asm.Label, org.objectweb.asm.ClassVisitor] - External: [java.lang.Object, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.commons.JSRInlinerAdapter$Subroutine - Internal: [] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.commons.GeneratorAdapter - Internal: [org.objectweb.asm.commons.GeneratorAdapter, org.objectweb.asm.MethodVisitor, org.objectweb.asm.commons.Method, org.objectweb.asm.Type, org.objectweb.asm.commons.LocalVariablesSorter, org.objectweb.asm.commons.TableSwitchGenerator, org.objectweb.asm.Label, org.objectweb.asm.ClassVisitor] - External: [java.lang.IllegalArgumentException, java.util.ArrayList, java.lang.StringBuffer, java.lang.Object, java.util.List, java.lang.Long, java.lang.String, java.lang.Integer, java.lang.IllegalStateException, java.lang.Float, java.lang.Double, java.util.Arrays]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.commons.JSRInlinerAdapter - Internal: [org.objectweb.asm.tree.InsnNode, org.objectweb.asm.MethodVisitor, org.objectweb.asm.tree.LookupSwitchInsnNode, org.objectweb.asm.tree.JumpInsnNode, org.objectweb.asm.tree.AbstractInsnNode, org.objectweb.asm.tree.TableSwitchInsnNode, org.objectweb.asm.tree.InsnList, org.objectweb.asm.tree.LocalVariableNode, org.objectweb.asm.Label, org.objectweb.asm.tree.LabelNode, org.objectweb.asm.tree.MethodNode, org.objectweb.asm.Opcodes, org.objectweb.asm.tree.TryCatchBlockNode] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.commons.InstructionAdapter - Internal: [org.objectweb.asm.MethodVisitor, org.objectweb.asm.commons.InstructionAdapter, org.objectweb.asm.Type, org.objectweb.asm.MethodAdapter, org.objectweb.asm.Label] - External: [java.lang.IllegalArgumentException, java.lang.Object, java.lang.Boolean, java.lang.Long, java.lang.String, java.lang.Integer, java.lang.Short, java.lang.Float, java.lang.Double, java.lang.Character, java.lang.Byte]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.commons.LocalVariablesSorter - Internal: [org.objectweb.asm.MethodVisitor, org.objectweb.asm.Opcodes, org.objectweb.asm.Type, org.objectweb.asm.MethodAdapter, org.objectweb.asm.Label] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.commons.JSRInlinerAdapter$1 - Internal: [org.objectweb.asm.commons.JSRInlinerAdapter$1] - External: [java.lang.Object]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.commons.Method - Internal: [org.objectweb.asm.Type] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.commons.JSRInlinerAdapter$Instantiation - Internal: [org.objectweb.asm.tree.LabelNode, org.objectweb.asm.commons.JSRInlinerAdapter$1, org.objectweb.asm.tree.AbstractInsnNode, org.objectweb.asm.commons.JSRInlinerAdapter$Subroutine, org.objectweb.asm.commons.JSRInlinerAdapter$Instantiation, org.objectweb.asm.tree.InsnList, org.objectweb.asm.commons.JSRInlinerAdapter] - External: [java.lang.StringBuffer, java.util.Map, java.lang.Object, java.lang.String, java.util.AbstractMap, java.util.HashMap, java.util.BitSet, java.lang.RuntimeException, java.util.Set]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.commons.Remapper - Internal: [org.objectweb.asm.Type, org.objectweb.asm.commons.RemappingSignatureAdapter, org.objectweb.asm.signature.SignatureWriter, org.objectweb.asm.signature.SignatureVisitor, org.objectweb.asm.signature.SignatureReader] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.commons.JSRInlinerAdapter$Subroutine - Internal: [org.objectweb.asm.commons.JSRInlinerAdapter$Subroutine] - External: [java.lang.StringBuffer, java.util.BitSet, java.lang.Object, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.commons.RemappingAnnotationAdapter - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.commons.Remapper] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.commons.JSRInlinerAdapter - Internal: [org.objectweb.asm.tree.InsnNode, org.objectweb.asm.MethodVisitor, org.objectweb.asm.tree.LookupSwitchInsnNode, org.objectweb.asm.commons.JSRInlinerAdapter$1, org.objectweb.asm.tree.JumpInsnNode, org.objectweb.asm.tree.AbstractInsnNode, org.objectweb.asm.tree.TableSwitchInsnNode, org.objectweb.asm.tree.InsnList, org.objectweb.asm.tree.LocalVariableNode, org.objectweb.asm.Label, org.objectweb.asm.commons.JSRInlinerAdapter, org.objectweb.asm.tree.LabelNode, org.objectweb.asm.tree.MethodNode, org.objectweb.asm.Opcodes, org.objectweb.asm.commons.JSRInlinerAdapter$Subroutine, org.objectweb.asm.tree.TryCatchBlockNode, org.objectweb.asm.commons.JSRInlinerAdapter$Instantiation] - External: [java.util.Map, java.io.PrintStream, java.lang.System, java.util.HashMap, java.util.BitSet, java.util.Set, java.util.ArrayList, java.util.LinkedList, java.lang.StringBuffer, java.util.Map$Entry, java.lang.Object, java.util.List, java.lang.String, java.util.Iterator, java.lang.RuntimeException]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.commons.RemappingClassAdapter - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.ClassAdapter, org.objectweb.asm.FieldVisitor, org.objectweb.asm.commons.Remapper, org.objectweb.asm.commons.RemappingFieldAdapter, org.objectweb.asm.MethodVisitor, org.objectweb.asm.commons.RemappingAnnotationAdapter, org.objectweb.asm.commons.RemappingMethodAdapter, org.objectweb.asm.ClassVisitor] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.commons.LocalVariablesSorter - Internal: [org.objectweb.asm.MethodVisitor, org.objectweb.asm.Opcodes, org.objectweb.asm.Type, org.objectweb.asm.commons.LocalVariablesSorter, org.objectweb.asm.MethodAdapter, org.objectweb.asm.Label] - External: [java.lang.StringBuffer, java.lang.Object, java.lang.String, java.lang.Integer, java.lang.IllegalStateException, java.lang.System, java.lang.Math]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.commons.RemappingFieldAdapter - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.commons.Remapper, org.objectweb.asm.FieldVisitor, org.objectweb.asm.commons.RemappingAnnotationAdapter, org.objectweb.asm.Attribute] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.commons.Method - Internal: [org.objectweb.asm.Type, org.objectweb.asm.commons.Method] - External: [java.lang.IllegalArgumentException, java.lang.StringBuffer, java.lang.reflect.Constructor, java.util.Map, java.lang.Object, java.lang.reflect.Method, java.lang.String, java.util.HashMap]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.commons.RemappingMethodAdapter - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.commons.Remapper, org.objectweb.asm.commons.LocalVariablesSorter, org.objectweb.asm.MethodVisitor, org.objectweb.asm.commons.RemappingAnnotationAdapter, org.objectweb.asm.Label] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.commons.Remapper - Internal: [org.objectweb.asm.Type, org.objectweb.asm.commons.Remapper, org.objectweb.asm.commons.RemappingSignatureAdapter, org.objectweb.asm.signature.SignatureWriter, org.objectweb.asm.signature.SignatureVisitor, org.objectweb.asm.signature.SignatureReader] - External: [java.lang.StringBuffer, java.lang.Object, java.lang.String, java.lang.System]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.commons.RemappingSignatureAdapter - Internal: [org.objectweb.asm.commons.Remapper, org.objectweb.asm.signature.SignatureVisitor] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.commons.RemappingAnnotationAdapter - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.commons.Remapper, org.objectweb.asm.commons.RemappingAnnotationAdapter] - External: [java.lang.Object, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.commons.SerialVersionUIDAdder$Item - Internal: [] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.commons.RemappingClassAdapter - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.ClassAdapter, org.objectweb.asm.FieldVisitor, org.objectweb.asm.commons.Remapper, org.objectweb.asm.commons.RemappingFieldAdapter, org.objectweb.asm.MethodVisitor, org.objectweb.asm.commons.RemappingAnnotationAdapter, org.objectweb.asm.commons.RemappingMethodAdapter, org.objectweb.asm.ClassVisitor, org.objectweb.asm.commons.RemappingClassAdapter] - External: [java.lang.Object, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.commons.SerialVersionUIDAdder - Internal: [org.objectweb.asm.FieldVisitor, org.objectweb.asm.MethodVisitor, org.objectweb.asm.ClassAdapter, org.objectweb.asm.ClassVisitor] - External: [[Lorg.objectweb.asm.commons.SerialVersionUIDAdder$Item;]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.commons.RemappingFieldAdapter - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.commons.Remapper, org.objectweb.asm.FieldVisitor, org.objectweb.asm.commons.RemappingFieldAdapter, org.objectweb.asm.commons.RemappingAnnotationAdapter, org.objectweb.asm.Attribute] - External: [java.lang.Object, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.commons.SimpleRemapper - Internal: [org.objectweb.asm.commons.Remapper] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.commons.RemappingMethodAdapter - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.commons.Remapper, org.objectweb.asm.commons.LocalVariablesSorter, org.objectweb.asm.MethodVisitor, org.objectweb.asm.commons.RemappingAnnotationAdapter, org.objectweb.asm.commons.RemappingMethodAdapter, org.objectweb.asm.Label] - External: [java.lang.Object, java.lang.String, java.lang.System]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.commons.StaticInitMerger - Internal: [org.objectweb.asm.ClassAdapter, org.objectweb.asm.MethodVisitor, org.objectweb.asm.ClassVisitor] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.commons.RemappingSignatureAdapter - Internal: [org.objectweb.asm.commons.Remapper, org.objectweb.asm.commons.RemappingSignatureAdapter, org.objectweb.asm.signature.SignatureVisitor] - External: [java.lang.StringBuffer, java.lang.Object, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.commons.TableSwitchGenerator - Internal: [org.objectweb.asm.Label] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.commons.SerialVersionUIDAdder$Item - Internal: [org.objectweb.asm.commons.SerialVersionUIDAdder$Item] - External: [java.lang.Comparable, java.lang.Object, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.signature.SignatureReader - Internal: [org.objectweb.asm.signature.SignatureVisitor] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.commons.SerialVersionUIDAdder - Internal: [org.objectweb.asm.FieldVisitor, org.objectweb.asm.MethodVisitor, org.objectweb.asm.ClassAdapter, org.objectweb.asm.commons.SerialVersionUIDAdder$Item, org.objectweb.asm.ClassVisitor, org.objectweb.asm.commons.SerialVersionUIDAdder] - External: [[Lorg.objectweb.asm.commons.SerialVersionUIDAdder$Item;, java.lang.Long, java.lang.UnsupportedOperationException, java.io.DataOutput, java.io.IOException, java.lang.Throwable, java.util.Collection, java.io.ByteArrayOutputStream, java.util.ArrayList, java.io.DataOutputStream, java.lang.StringBuffer, java.lang.Object, java.security.MessageDigest, java.lang.String, java.lang.RuntimeException, java.lang.Exception, java.util.Arrays, java.io.OutputStream, java.lang.Math]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.signature.SignatureVisitor - Internal: [] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.commons.SimpleRemapper - Internal: [org.objectweb.asm.commons.Remapper, org.objectweb.asm.commons.SimpleRemapper] - External: [java.lang.StringBuffer, java.lang.Object, java.util.Map, java.util.Collections, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.signature.SignatureWriter - Internal: [org.objectweb.asm.signature.SignatureVisitor] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.commons.StaticInitMerger - Internal: [org.objectweb.asm.ClassAdapter, org.objectweb.asm.MethodVisitor, org.objectweb.asm.ClassVisitor, org.objectweb.asm.commons.StaticInitMerger] - External: [java.lang.StringBuffer, java.lang.Object, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.AbstractInsnNode - Internal: [org.objectweb.asm.tree.LabelNode, org.objectweb.asm.MethodVisitor] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.commons.TableSwitchGenerator - Internal: [org.objectweb.asm.commons.TableSwitchGenerator, org.objectweb.asm.Label] - External: [java.lang.Object]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.AnnotationNode - Internal: [org.objectweb.asm.AnnotationVisitor] - External: [[Ljava.lang.String;]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.signature.SignatureReader - Internal: [org.objectweb.asm.signature.SignatureVisitor, org.objectweb.asm.signature.SignatureReader] - External: [java.lang.Object, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.ClassNode - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.FieldVisitor, org.objectweb.asm.tree.MethodNode, org.objectweb.asm.MethodVisitor, org.objectweb.asm.tree.AnnotationNode, org.objectweb.asm.tree.MemberNode, org.objectweb.asm.tree.FieldNode, org.objectweb.asm.Attribute, org.objectweb.asm.tree.InnerClassNode, org.objectweb.asm.ClassVisitor] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.signature.SignatureVisitor - Internal: [org.objectweb.asm.signature.SignatureVisitor] - External: [java.lang.Object, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.FieldInsnNode - Internal: [org.objectweb.asm.MethodVisitor, org.objectweb.asm.tree.AbstractInsnNode] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.signature.SignatureWriter - Internal: [org.objectweb.asm.signature.SignatureWriter, org.objectweb.asm.signature.SignatureVisitor] - External: [java.lang.StringBuffer, java.lang.Object, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.FieldNode - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.FieldVisitor, org.objectweb.asm.Attribute, org.objectweb.asm.ClassVisitor, org.objectweb.asm.tree.AnnotationNode, org.objectweb.asm.tree.MemberNode] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.AbstractInsnNode - Internal: [org.objectweb.asm.tree.LabelNode, org.objectweb.asm.MethodVisitor, org.objectweb.asm.tree.AbstractInsnNode] - External: [java.util.Map, java.lang.Object, java.util.List]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.FrameNode - Internal: [org.objectweb.asm.tree.LabelNode, org.objectweb.asm.MethodVisitor, org.objectweb.asm.Label, org.objectweb.asm.tree.AbstractInsnNode] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.AnnotationNode - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.tree.AnnotationNode] - External: [java.util.ArrayList, java.lang.Object, java.util.List, java.lang.String, [Ljava.lang.String;]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.IincInsnNode - Internal: [org.objectweb.asm.MethodVisitor, org.objectweb.asm.tree.AbstractInsnNode] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.ClassNode - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.FieldVisitor, org.objectweb.asm.tree.MethodNode, org.objectweb.asm.MethodVisitor, org.objectweb.asm.tree.ClassNode, org.objectweb.asm.tree.AnnotationNode, org.objectweb.asm.tree.MemberNode, org.objectweb.asm.tree.FieldNode, org.objectweb.asm.Attribute, org.objectweb.asm.tree.InnerClassNode, org.objectweb.asm.ClassVisitor] - External: [java.util.ArrayList, java.lang.Object, java.util.List, java.lang.String, java.util.Arrays, java.util.Collection]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.InnerClassNode - Internal: [org.objectweb.asm.ClassVisitor] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.FieldInsnNode - Internal: [org.objectweb.asm.MethodVisitor, org.objectweb.asm.tree.FieldInsnNode, org.objectweb.asm.tree.AbstractInsnNode] - External: [java.util.Map, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.InsnList$1 - Internal: [] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.FieldNode - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.FieldVisitor, org.objectweb.asm.tree.FieldNode, org.objectweb.asm.Attribute, org.objectweb.asm.ClassVisitor, org.objectweb.asm.tree.AnnotationNode, org.objectweb.asm.tree.MemberNode] - External: [java.lang.Object, java.util.List, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.InsnList$InsnListIterator - Internal: [org.objectweb.asm.tree.InsnList, org.objectweb.asm.tree.AbstractInsnNode] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.FrameNode - Internal: [org.objectweb.asm.tree.LabelNode, org.objectweb.asm.MethodVisitor, org.objectweb.asm.Label, org.objectweb.asm.tree.FrameNode, org.objectweb.asm.tree.AbstractInsnNode] - External: [java.util.ArrayList, java.util.Map, java.lang.Object, java.util.List, java.util.Arrays]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.InsnList - Internal: [org.objectweb.asm.tree.LabelNode, org.objectweb.asm.MethodVisitor, org.objectweb.asm.tree.AbstractInsnNode] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.IincInsnNode - Internal: [org.objectweb.asm.MethodVisitor, org.objectweb.asm.tree.IincInsnNode, org.objectweb.asm.tree.AbstractInsnNode] - External: [java.util.Map]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.InsnNode - Internal: [org.objectweb.asm.MethodVisitor, org.objectweb.asm.tree.AbstractInsnNode] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.InnerClassNode - Internal: [org.objectweb.asm.tree.InnerClassNode, org.objectweb.asm.ClassVisitor] - External: [java.lang.Object, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.IntInsnNode - Internal: [org.objectweb.asm.MethodVisitor, org.objectweb.asm.tree.AbstractInsnNode] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.InsnList$1 - Internal: [org.objectweb.asm.tree.InsnList$1] - External: [java.lang.Object]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.JumpInsnNode - Internal: [org.objectweb.asm.tree.LabelNode, org.objectweb.asm.MethodVisitor, org.objectweb.asm.Label, org.objectweb.asm.tree.AbstractInsnNode] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.InsnList$InsnListIterator - Internal: [org.objectweb.asm.tree.InsnList$InsnListIterator, org.objectweb.asm.tree.InsnList, org.objectweb.asm.tree.InsnList$1, org.objectweb.asm.tree.AbstractInsnNode] - External: [java.lang.Object, java.util.NoSuchElementException, java.util.ListIterator]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.LabelNode - Internal: [org.objectweb.asm.MethodVisitor, org.objectweb.asm.Label, org.objectweb.asm.tree.AbstractInsnNode] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.InsnList - Internal: [org.objectweb.asm.tree.LabelNode, org.objectweb.asm.tree.InsnList$InsnListIterator, org.objectweb.asm.tree.InsnList, org.objectweb.asm.MethodVisitor, org.objectweb.asm.tree.InsnList$1, org.objectweb.asm.tree.AbstractInsnNode] - External: [java.lang.IllegalArgumentException, java.lang.IndexOutOfBoundsException, java.lang.Object, java.util.ListIterator]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.LdcInsnNode - Internal: [org.objectweb.asm.MethodVisitor, org.objectweb.asm.tree.AbstractInsnNode] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.InsnNode - Internal: [org.objectweb.asm.MethodVisitor, org.objectweb.asm.tree.InsnNode, org.objectweb.asm.tree.AbstractInsnNode] - External: [java.util.Map]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.LineNumberNode - Internal: [org.objectweb.asm.tree.LabelNode, org.objectweb.asm.MethodVisitor, org.objectweb.asm.Label, org.objectweb.asm.tree.AbstractInsnNode] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.IntInsnNode - Internal: [org.objectweb.asm.MethodVisitor, org.objectweb.asm.tree.IntInsnNode, org.objectweb.asm.tree.AbstractInsnNode] - External: [java.util.Map]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.LocalVariableNode - Internal: [org.objectweb.asm.tree.LabelNode, org.objectweb.asm.MethodVisitor, org.objectweb.asm.Label] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.JumpInsnNode - Internal: [org.objectweb.asm.tree.LabelNode, org.objectweb.asm.MethodVisitor, org.objectweb.asm.Label, org.objectweb.asm.tree.AbstractInsnNode, org.objectweb.asm.tree.JumpInsnNode] - External: [java.util.Map]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.LookupSwitchInsnNode - Internal: [org.objectweb.asm.tree.LabelNode, org.objectweb.asm.MethodVisitor, org.objectweb.asm.Label, org.objectweb.asm.tree.AbstractInsnNode] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.LabelNode - Internal: [org.objectweb.asm.tree.LabelNode, org.objectweb.asm.MethodVisitor, org.objectweb.asm.Label, org.objectweb.asm.tree.AbstractInsnNode] - External: [java.lang.Object, java.util.Map]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.MemberNode - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.Attribute, org.objectweb.asm.tree.AnnotationNode] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.LdcInsnNode - Internal: [org.objectweb.asm.tree.LdcInsnNode, org.objectweb.asm.MethodVisitor, org.objectweb.asm.tree.AbstractInsnNode] - External: [java.util.Map, java.lang.Object]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.MethodInsnNode - Internal: [org.objectweb.asm.MethodVisitor, org.objectweb.asm.tree.AbstractInsnNode] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.LineNumberNode - Internal: [org.objectweb.asm.tree.LabelNode, org.objectweb.asm.MethodVisitor, org.objectweb.asm.Label, org.objectweb.asm.tree.LineNumberNode, org.objectweb.asm.tree.AbstractInsnNode] - External: [java.util.Map]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.MethodNode$1 - Internal: [org.objectweb.asm.tree.MethodNode] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.LocalVariableNode - Internal: [org.objectweb.asm.tree.LabelNode, org.objectweb.asm.MethodVisitor, org.objectweb.asm.tree.LocalVariableNode, org.objectweb.asm.Label] - External: [java.lang.Object, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.MethodNode - Internal: [org.objectweb.asm.tree.LdcInsnNode, org.objectweb.asm.tree.TypeInsnNode, org.objectweb.asm.MethodVisitor, org.objectweb.asm.tree.InsnNode, org.objectweb.asm.tree.IincInsnNode, org.objectweb.asm.tree.LookupSwitchInsnNode, org.objectweb.asm.tree.AbstractInsnNode, org.objectweb.asm.tree.JumpInsnNode, org.objectweb.asm.Type, org.objectweb.asm.tree.TableSwitchInsnNode, org.objectweb.asm.tree.InsnList, org.objectweb.asm.tree.LocalVariableNode, org.objectweb.asm.Label, org.objectweb.asm.tree.FrameNode, org.objectweb.asm.tree.IntInsnNode, org.objectweb.asm.tree.VarInsnNode, org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.tree.LabelNode, org.objectweb.asm.tree.MultiANewArrayInsnNode, org.objectweb.asm.tree.LineNumberNode, org.objectweb.asm.tree.AnnotationNode, org.objectweb.asm.tree.MemberNode, org.objectweb.asm.tree.TryCatchBlockNode, org.objectweb.asm.Attribute, org.objectweb.asm.ClassVisitor, org.objectweb.asm.tree.MethodInsnNode, org.objectweb.asm.tree.FieldInsnNode] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.LookupSwitchInsnNode - Internal: [org.objectweb.asm.tree.LabelNode, org.objectweb.asm.MethodVisitor, org.objectweb.asm.Label, org.objectweb.asm.tree.LookupSwitchInsnNode, org.objectweb.asm.tree.AbstractInsnNode] - External: [java.util.ArrayList, java.util.Map, java.lang.Object, java.util.List, java.lang.Integer, java.util.Arrays, java.util.Collection]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.MultiANewArrayInsnNode - Internal: [org.objectweb.asm.MethodVisitor, org.objectweb.asm.tree.AbstractInsnNode] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.MemberNode - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.Attribute, org.objectweb.asm.tree.AnnotationNode, org.objectweb.asm.tree.MemberNode] - External: [java.util.ArrayList, java.lang.Object, java.util.List, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.TableSwitchInsnNode - Internal: [org.objectweb.asm.tree.LabelNode, org.objectweb.asm.MethodVisitor, org.objectweb.asm.Label, org.objectweb.asm.tree.AbstractInsnNode] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.MethodInsnNode - Internal: [org.objectweb.asm.MethodVisitor, org.objectweb.asm.tree.MethodInsnNode, org.objectweb.asm.tree.AbstractInsnNode] - External: [java.util.Map, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.TryCatchBlockNode - Internal: [org.objectweb.asm.tree.LabelNode, org.objectweb.asm.MethodVisitor, org.objectweb.asm.Label] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.MethodNode$1 - Internal: [org.objectweb.asm.tree.MethodNode, org.objectweb.asm.tree.MethodNode$1] - External: [java.util.ArrayList, java.lang.Object]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.TypeInsnNode - Internal: [org.objectweb.asm.MethodVisitor, org.objectweb.asm.tree.AbstractInsnNode] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.MethodNode - Internal: [org.objectweb.asm.tree.LdcInsnNode, org.objectweb.asm.tree.TypeInsnNode, org.objectweb.asm.MethodVisitor, org.objectweb.asm.tree.InsnNode, org.objectweb.asm.tree.IincInsnNode, org.objectweb.asm.tree.LookupSwitchInsnNode, org.objectweb.asm.tree.AbstractInsnNode, org.objectweb.asm.tree.JumpInsnNode, org.objectweb.asm.Type, org.objectweb.asm.tree.TableSwitchInsnNode, org.objectweb.asm.tree.InsnList, org.objectweb.asm.tree.LocalVariableNode, org.objectweb.asm.Label, org.objectweb.asm.tree.FrameNode, org.objectweb.asm.tree.IntInsnNode, org.objectweb.asm.tree.VarInsnNode, org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.tree.LabelNode, org.objectweb.asm.tree.MethodNode, org.objectweb.asm.tree.MultiANewArrayInsnNode, org.objectweb.asm.tree.MethodNode$1, org.objectweb.asm.tree.LineNumberNode, org.objectweb.asm.tree.AnnotationNode, org.objectweb.asm.tree.MemberNode, org.objectweb.asm.tree.TryCatchBlockNode, org.objectweb.asm.Attribute, org.objectweb.asm.ClassVisitor, org.objectweb.asm.tree.MethodInsnNode, org.objectweb.asm.tree.FieldInsnNode] - External: [java.util.Collection, java.util.ArrayList, java.lang.Object, java.util.List, java.lang.String, java.util.Arrays]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.VarInsnNode - Internal: [org.objectweb.asm.MethodVisitor, org.objectweb.asm.tree.AbstractInsnNode] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.MultiANewArrayInsnNode - Internal: [org.objectweb.asm.tree.MultiANewArrayInsnNode, org.objectweb.asm.MethodVisitor, org.objectweb.asm.tree.AbstractInsnNode] - External: [java.util.Map, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.analysis.Analyzer - Internal: [org.objectweb.asm.tree.analysis.Interpreter, org.objectweb.asm.tree.analysis.Value, org.objectweb.asm.tree.IincInsnNode, org.objectweb.asm.tree.LookupSwitchInsnNode, org.objectweb.asm.tree.AbstractInsnNode, org.objectweb.asm.tree.JumpInsnNode, org.objectweb.asm.Type, org.objectweb.asm.tree.analysis.Frame, org.objectweb.asm.tree.TableSwitchInsnNode, org.objectweb.asm.tree.InsnList, org.objectweb.asm.tree.VarInsnNode, org.objectweb.asm.tree.LabelNode, org.objectweb.asm.tree.MethodNode, org.objectweb.asm.tree.analysis.Subroutine, org.objectweb.asm.Opcodes, org.objectweb.asm.tree.analysis.AnalyzerException, org.objectweb.asm.tree.TryCatchBlockNode] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.TableSwitchInsnNode - Internal: [org.objectweb.asm.tree.LabelNode, org.objectweb.asm.tree.TableSwitchInsnNode, org.objectweb.asm.MethodVisitor, org.objectweb.asm.Label, org.objectweb.asm.tree.AbstractInsnNode] - External: [java.util.ArrayList, java.util.Map, java.lang.Object, java.util.List, java.util.Arrays, java.util.Collection]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.analysis.AnalyzerException - Internal: [org.objectweb.asm.tree.analysis.Value] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.TryCatchBlockNode - Internal: [org.objectweb.asm.tree.LabelNode, org.objectweb.asm.tree.TryCatchBlockNode, org.objectweb.asm.MethodVisitor, org.objectweb.asm.Label] - External: [java.lang.Object, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.analysis.BasicInterpreter - Internal: [org.objectweb.asm.tree.analysis.BasicValue, org.objectweb.asm.tree.MultiANewArrayInsnNode, org.objectweb.asm.tree.TypeInsnNode, org.objectweb.asm.tree.LdcInsnNode, org.objectweb.asm.tree.analysis.Interpreter, org.objectweb.asm.Opcodes, org.objectweb.asm.tree.analysis.Value, org.objectweb.asm.tree.analysis.AnalyzerException, org.objectweb.asm.tree.AbstractInsnNode, org.objectweb.asm.Type, org.objectweb.asm.tree.IntInsnNode, org.objectweb.asm.tree.MethodInsnNode, org.objectweb.asm.tree.FieldInsnNode] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.TypeInsnNode - Internal: [org.objectweb.asm.tree.TypeInsnNode, org.objectweb.asm.MethodVisitor, org.objectweb.asm.tree.AbstractInsnNode] - External: [java.util.Map, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.analysis.BasicValue - Internal: [org.objectweb.asm.Type, org.objectweb.asm.tree.analysis.Value] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.VarInsnNode - Internal: [org.objectweb.asm.MethodVisitor, org.objectweb.asm.tree.AbstractInsnNode, org.objectweb.asm.tree.VarInsnNode] - External: [java.util.Map]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.analysis.BasicVerifier - Internal: [org.objectweb.asm.tree.analysis.BasicValue, org.objectweb.asm.tree.analysis.Value, org.objectweb.asm.tree.analysis.AnalyzerException, org.objectweb.asm.tree.AbstractInsnNode, org.objectweb.asm.Type, org.objectweb.asm.tree.MethodInsnNode, org.objectweb.asm.tree.FieldInsnNode, org.objectweb.asm.tree.analysis.BasicInterpreter] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.analysis.Analyzer - Internal: [org.objectweb.asm.tree.analysis.Interpreter, org.objectweb.asm.tree.analysis.Value, org.objectweb.asm.tree.IincInsnNode, org.objectweb.asm.tree.LookupSwitchInsnNode, org.objectweb.asm.tree.AbstractInsnNode, org.objectweb.asm.tree.JumpInsnNode, org.objectweb.asm.Type, org.objectweb.asm.tree.analysis.Frame, org.objectweb.asm.tree.TableSwitchInsnNode, org.objectweb.asm.tree.InsnList, org.objectweb.asm.tree.analysis.Analyzer, org.objectweb.asm.tree.VarInsnNode, org.objectweb.asm.tree.LabelNode, org.objectweb.asm.tree.MethodNode, org.objectweb.asm.tree.analysis.Subroutine, org.objectweb.asm.Opcodes, org.objectweb.asm.tree.analysis.AnalyzerException, org.objectweb.asm.tree.TryCatchBlockNode] - External: [java.util.Map, java.util.HashMap, java.lang.Throwable, java.util.ArrayList, java.lang.StringBuffer, java.lang.Object, java.util.List, java.lang.String, java.lang.Exception]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.analysis.Frame - Internal: [org.objectweb.asm.tree.MultiANewArrayInsnNode, org.objectweb.asm.tree.analysis.Interpreter, org.objectweb.asm.tree.analysis.Value, org.objectweb.asm.tree.IincInsnNode, org.objectweb.asm.tree.analysis.AnalyzerException, org.objectweb.asm.tree.AbstractInsnNode, org.objectweb.asm.Type, org.objectweb.asm.tree.MethodInsnNode, org.objectweb.asm.tree.VarInsnNode] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.analysis.AnalyzerException - Internal: [org.objectweb.asm.tree.analysis.Value, org.objectweb.asm.tree.analysis.AnalyzerException] - External: [java.lang.StringBuffer, java.lang.Object, java.lang.Exception, java.lang.Throwable, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.analysis.Interpreter - Internal: [org.objectweb.asm.Type, org.objectweb.asm.tree.analysis.Value, org.objectweb.asm.tree.analysis.AnalyzerException, org.objectweb.asm.tree.AbstractInsnNode] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.analysis.BasicInterpreter - Internal: [org.objectweb.asm.tree.analysis.BasicValue, org.objectweb.asm.tree.MultiANewArrayInsnNode, org.objectweb.asm.tree.TypeInsnNode, org.objectweb.asm.tree.LdcInsnNode, org.objectweb.asm.tree.analysis.Interpreter, org.objectweb.asm.Opcodes, org.objectweb.asm.tree.analysis.Value, org.objectweb.asm.tree.analysis.AnalyzerException, org.objectweb.asm.tree.AbstractInsnNode, org.objectweb.asm.Type, org.objectweb.asm.tree.IntInsnNode, org.objectweb.asm.tree.MethodInsnNode, org.objectweb.asm.tree.FieldInsnNode, org.objectweb.asm.tree.analysis.BasicInterpreter] - External: [java.lang.StringBuffer, java.lang.Object, java.util.List, java.lang.Long, java.lang.String, java.lang.Integer, java.lang.Float, java.lang.Error, java.lang.Double, java.lang.Class]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.analysis.SimpleVerifier - Internal: [org.objectweb.asm.tree.analysis.BasicValue, org.objectweb.asm.tree.analysis.BasicVerifier, org.objectweb.asm.tree.analysis.Value, org.objectweb.asm.tree.analysis.AnalyzerException, org.objectweb.asm.Type] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.analysis.BasicValue - Internal: [org.objectweb.asm.Type, org.objectweb.asm.tree.analysis.BasicValue, org.objectweb.asm.tree.analysis.Value] - External: [java.lang.Object, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.analysis.SmallSet - Internal: [] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.analysis.BasicVerifier - Internal: [org.objectweb.asm.tree.analysis.BasicValue, org.objectweb.asm.tree.analysis.BasicVerifier, org.objectweb.asm.tree.analysis.Value, org.objectweb.asm.tree.analysis.AnalyzerException, org.objectweb.asm.tree.AbstractInsnNode, org.objectweb.asm.Type, org.objectweb.asm.tree.MethodInsnNode, org.objectweb.asm.tree.FieldInsnNode, org.objectweb.asm.tree.analysis.BasicInterpreter] - External: [java.lang.StringBuffer, java.lang.Object, java.util.List, java.lang.String, java.lang.Error]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.analysis.SourceInterpreter - Internal: [org.objectweb.asm.tree.LdcInsnNode, org.objectweb.asm.tree.analysis.Interpreter, org.objectweb.asm.Opcodes, org.objectweb.asm.tree.analysis.Value, org.objectweb.asm.tree.analysis.SourceValue, org.objectweb.asm.tree.AbstractInsnNode, org.objectweb.asm.Type, org.objectweb.asm.tree.analysis.SmallSet, org.objectweb.asm.tree.MethodInsnNode, org.objectweb.asm.tree.FieldInsnNode] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.analysis.Frame - Internal: [org.objectweb.asm.tree.MultiANewArrayInsnNode, org.objectweb.asm.tree.analysis.Interpreter, org.objectweb.asm.tree.analysis.Value, org.objectweb.asm.tree.IincInsnNode, org.objectweb.asm.tree.analysis.AnalyzerException, org.objectweb.asm.tree.AbstractInsnNode, org.objectweb.asm.Type, org.objectweb.asm.tree.analysis.Frame, org.objectweb.asm.tree.MethodInsnNode, org.objectweb.asm.tree.VarInsnNode] - External: [java.util.ArrayList, java.lang.IndexOutOfBoundsException, java.lang.StringBuffer, java.lang.Object, java.util.List, java.lang.String, java.lang.System, java.lang.RuntimeException]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.analysis.SourceValue - Internal: [org.objectweb.asm.tree.analysis.SmallSet, org.objectweb.asm.tree.analysis.Value, org.objectweb.asm.tree.AbstractInsnNode] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.analysis.Interpreter - Internal: [org.objectweb.asm.Type, org.objectweb.asm.tree.analysis.Interpreter, org.objectweb.asm.tree.analysis.Value, org.objectweb.asm.tree.analysis.AnalyzerException, org.objectweb.asm.tree.AbstractInsnNode] - External: [java.lang.Object, java.util.List]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.analysis.Subroutine - Internal: [org.objectweb.asm.tree.LabelNode, org.objectweb.asm.tree.analysis.AnalyzerException, org.objectweb.asm.tree.JumpInsnNode] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.analysis.SimpleVerifier - Internal: [org.objectweb.asm.tree.analysis.BasicValue, org.objectweb.asm.tree.analysis.SimpleVerifier, org.objectweb.asm.tree.analysis.BasicVerifier, org.objectweb.asm.tree.analysis.Value, org.objectweb.asm.tree.analysis.AnalyzerException, org.objectweb.asm.Type] - External: [java.lang.StringBuffer, java.lang.Object, java.util.List, java.lang.String, java.lang.ClassLoader, java.lang.Error, java.lang.RuntimeException, java.lang.Class, java.lang.ClassNotFoundException]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.tree.analysis.Value - Internal: [] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.analysis.SmallSet - Internal: [org.objectweb.asm.tree.analysis.SmallSet] - External: [java.lang.Object, java.util.Iterator, java.util.HashSet, java.util.Set, java.util.AbstractSet]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.util.ASMifiable - Internal: [] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.analysis.SourceInterpreter - Internal: [org.objectweb.asm.tree.analysis.SourceInterpreter, org.objectweb.asm.tree.LdcInsnNode, org.objectweb.asm.tree.analysis.Interpreter, org.objectweb.asm.Opcodes, org.objectweb.asm.tree.analysis.Value, org.objectweb.asm.tree.analysis.SourceValue, org.objectweb.asm.tree.AbstractInsnNode, org.objectweb.asm.Type, org.objectweb.asm.tree.analysis.SmallSet, org.objectweb.asm.tree.MethodInsnNode, org.objectweb.asm.tree.FieldInsnNode] - External: [java.lang.Object, java.util.List, java.lang.Long, java.lang.String, java.lang.Double, java.util.HashSet, java.util.Set, java.util.Collection, java.lang.Math]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.util.ASMifierAbstractVisitor - Internal: [org.objectweb.asm.util.ASMifiable, org.objectweb.asm.Type, org.objectweb.asm.util.AbstractVisitor, org.objectweb.asm.util.ASMifierAnnotationVisitor, org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.Attribute] - External: [[B, [F, [C, [D, [I, [J, [S, [Z]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.analysis.SourceValue - Internal: [org.objectweb.asm.tree.analysis.SmallSet, org.objectweb.asm.tree.analysis.Value, org.objectweb.asm.tree.analysis.SourceValue, org.objectweb.asm.tree.AbstractInsnNode] - External: [java.lang.Object, java.util.Set]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.util.ASMifierAnnotationVisitor - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.util.AbstractVisitor, org.objectweb.asm.util.ASMifierAbstractVisitor] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.analysis.Subroutine - Internal: [org.objectweb.asm.tree.LabelNode, org.objectweb.asm.tree.analysis.Subroutine, org.objectweb.asm.tree.analysis.AnalyzerException, org.objectweb.asm.tree.JumpInsnNode] - External: [java.util.ArrayList, java.lang.Object, java.util.List, java.lang.System, java.util.Collection]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.util.ASMifierClassVisitor - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.FieldVisitor, org.objectweb.asm.ClassReader, org.objectweb.asm.MethodVisitor, org.objectweb.asm.util.ASMifierMethodVisitor, org.objectweb.asm.util.ASMifierFieldVisitor, org.objectweb.asm.util.ASMifierAnnotationVisitor, org.objectweb.asm.util.ASMifierAbstractVisitor, org.objectweb.asm.Attribute, org.objectweb.asm.ClassVisitor] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.tree.analysis.Value - Internal: [org.objectweb.asm.tree.analysis.Value] - External: [java.lang.Object]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.util.ASMifierFieldVisitor - Internal: [org.objectweb.asm.FieldVisitor, org.objectweb.asm.util.ASMifierAbstractVisitor] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.util.ASMifiable - Internal: [org.objectweb.asm.util.ASMifiable] - External: [java.lang.StringBuffer, java.util.Map, java.lang.Object, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.util.ASMifierMethodVisitor - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.MethodVisitor, org.objectweb.asm.util.ASMifierAbstractVisitor, org.objectweb.asm.util.ASMifierAnnotationVisitor, org.objectweb.asm.Label] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.util.ASMifierAbstractVisitor - Internal: [org.objectweb.asm.util.ASMifiable, org.objectweb.asm.Type, org.objectweb.asm.util.AbstractVisitor, org.objectweb.asm.util.ASMifierAnnotationVisitor, org.objectweb.asm.util.ASMifierAbstractVisitor, org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.Attribute] - External: [java.util.Map, java.lang.Boolean, java.lang.Long, java.lang.Float, java.lang.Double, java.lang.Character, java.lang.StringBuffer, java.lang.Object, [B, java.util.List, [F, java.lang.String, java.lang.Integer, [C, [D, java.lang.Short, [I, [J, java.lang.Byte, [S, [Z]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.util.AbstractVisitor - Internal: [org.objectweb.asm.Attribute] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.util.ASMifierAnnotationVisitor - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.util.AbstractVisitor, org.objectweb.asm.util.ASMifierAbstractVisitor, org.objectweb.asm.util.ASMifierAnnotationVisitor] - External: [java.lang.StringBuffer, java.lang.Object, java.util.List, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.util.CheckAnnotationAdapter - Internal: [org.objectweb.asm.util.CheckMethodAdapter, org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.Type] - External: [[B, [F, [C, [D, [I, [J, [S, [Z]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.util.ASMifierClassVisitor - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.FieldVisitor, org.objectweb.asm.util.ASMifierClassVisitor, org.objectweb.asm.ClassReader, org.objectweb.asm.MethodVisitor, org.objectweb.asm.util.ASMifierMethodVisitor, org.objectweb.asm.util.ASMifierFieldVisitor, org.objectweb.asm.util.ASMifierAnnotationVisitor, org.objectweb.asm.util.ASMifierAbstractVisitor, org.objectweb.asm.Attribute, org.objectweb.asm.ClassVisitor] - External: [java.io.InputStream, java.lang.StringBuffer, java.lang.Object, java.util.List, java.lang.String, java.io.PrintStream, java.lang.System, java.io.PrintWriter, java.lang.Exception, java.io.OutputStream, java.io.FileInputStream]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.util.CheckClassAdapter - Internal: [org.objectweb.asm.FieldVisitor, org.objectweb.asm.util.CheckAnnotationAdapter, org.objectweb.asm.ClassReader, org.objectweb.asm.MethodVisitor, org.objectweb.asm.tree.analysis.Interpreter, org.objectweb.asm.tree.analysis.Value, org.objectweb.asm.tree.AbstractInsnNode, org.objectweb.asm.Type, org.objectweb.asm.tree.analysis.Frame, org.objectweb.asm.tree.InsnList, org.objectweb.asm.tree.analysis.Analyzer, org.objectweb.asm.util.CheckFieldAdapter, org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.util.CheckMethodAdapter, org.objectweb.asm.ClassAdapter, org.objectweb.asm.tree.MethodNode, org.objectweb.asm.tree.analysis.SimpleVerifier, org.objectweb.asm.tree.ClassNode, org.objectweb.asm.util.TraceMethodVisitor, org.objectweb.asm.tree.TryCatchBlockNode, org.objectweb.asm.Attribute, org.objectweb.asm.ClassVisitor] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.util.ASMifierFieldVisitor - Internal: [org.objectweb.asm.FieldVisitor, org.objectweb.asm.util.ASMifierAbstractVisitor, org.objectweb.asm.util.ASMifierFieldVisitor] - External: [java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.util.CheckFieldAdapter - Internal: [org.objectweb.asm.util.CheckMethodAdapter, org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.FieldVisitor, org.objectweb.asm.util.CheckAnnotationAdapter, org.objectweb.asm.Attribute] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.util.ASMifierMethodVisitor - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.MethodVisitor, org.objectweb.asm.util.ASMifierMethodVisitor, org.objectweb.asm.util.ASMifierAbstractVisitor, org.objectweb.asm.util.ASMifierAnnotationVisitor, org.objectweb.asm.Label] - External: [java.lang.StringBuffer, java.util.Map, java.lang.Object, java.util.List, java.lang.String, java.lang.Integer, java.util.HashMap]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.util.CheckMethodAdapter$1 - Internal: [org.objectweb.asm.tree.MethodNode, org.objectweb.asm.MethodVisitor, org.objectweb.asm.tree.analysis.BasicVerifier, org.objectweb.asm.tree.analysis.Interpreter, org.objectweb.asm.util.CheckClassAdapter, org.objectweb.asm.tree.analysis.Frame, org.objectweb.asm.tree.analysis.Analyzer] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.util.AbstractVisitor - Internal: [org.objectweb.asm.util.AbstractVisitor, org.objectweb.asm.Attribute] - External: [java.util.ArrayList, java.lang.StringBuffer, java.io.PrintWriter, java.lang.Object, java.util.List, java.lang.Integer, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.util.CheckMethodAdapter - Internal: [org.objectweb.asm.util.CheckAnnotationAdapter, org.objectweb.asm.MethodVisitor, org.objectweb.asm.Type, org.objectweb.asm.Label, org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.Opcodes, org.objectweb.asm.MethodAdapter, org.objectweb.asm.Attribute] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.util.CheckAnnotationAdapter - Internal: [org.objectweb.asm.util.CheckMethodAdapter, org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.util.CheckAnnotationAdapter, org.objectweb.asm.Type] - External: [java.lang.IllegalArgumentException, java.lang.Object, [B, java.lang.Boolean, java.lang.Long, [F, java.lang.String, java.lang.Integer, [C, java.lang.IllegalStateException, [D, java.lang.Short, [I, java.lang.Float, [J, java.lang.Double, java.lang.Character, [S, java.lang.Byte, [Z]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.util.CheckSignatureAdapter - Internal: [org.objectweb.asm.util.CheckMethodAdapter, org.objectweb.asm.signature.SignatureVisitor] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.util.CheckClassAdapter - Internal: [org.objectweb.asm.FieldVisitor, org.objectweb.asm.util.CheckAnnotationAdapter, org.objectweb.asm.ClassReader, org.objectweb.asm.MethodVisitor, org.objectweb.asm.tree.analysis.Interpreter, org.objectweb.asm.tree.analysis.Value, org.objectweb.asm.tree.AbstractInsnNode, org.objectweb.asm.Type, org.objectweb.asm.tree.analysis.Frame, org.objectweb.asm.tree.InsnList, org.objectweb.asm.tree.analysis.Analyzer, org.objectweb.asm.util.CheckFieldAdapter, org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.util.CheckMethodAdapter, org.objectweb.asm.ClassAdapter, org.objectweb.asm.tree.MethodNode, org.objectweb.asm.tree.analysis.SimpleVerifier, org.objectweb.asm.tree.ClassNode, org.objectweb.asm.util.CheckClassAdapter, org.objectweb.asm.util.TraceMethodVisitor, org.objectweb.asm.tree.TryCatchBlockNode, org.objectweb.asm.Attribute, org.objectweb.asm.ClassVisitor] - External: [java.lang.IllegalArgumentException, java.io.InputStream, java.util.Map, java.io.PrintStream, java.lang.System, java.util.HashMap, java.io.PrintWriter, java.io.FileInputStream, java.util.ArrayList, java.lang.StringBuffer, java.lang.Object, java.util.List, java.lang.Integer, java.lang.String, java.lang.IllegalStateException, java.lang.ClassLoader, java.util.Iterator, java.lang.Exception, java.io.OutputStream]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.util.TraceAbstractVisitor - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.util.Traceable, org.objectweb.asm.util.AbstractVisitor, org.objectweb.asm.Attribute, org.objectweb.asm.util.TraceAnnotationVisitor] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.util.CheckFieldAdapter - Internal: [org.objectweb.asm.util.CheckMethodAdapter, org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.FieldVisitor, org.objectweb.asm.util.CheckAnnotationAdapter, org.objectweb.asm.Attribute, org.objectweb.asm.util.CheckFieldAdapter] - External: [java.lang.IllegalArgumentException, java.lang.Object, java.lang.String, java.lang.IllegalStateException]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.util.TraceAnnotationVisitor - Internal: [org.objectweb.asm.Type, org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.util.TraceAbstractVisitor] - External: [[B, [F, [C, [D, [I, [J, [S, [Z]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.util.CheckMethodAdapter$1 - Internal: [org.objectweb.asm.tree.MethodNode, org.objectweb.asm.MethodVisitor, org.objectweb.asm.tree.analysis.BasicVerifier, org.objectweb.asm.tree.analysis.Interpreter, org.objectweb.asm.util.CheckMethodAdapter$1, org.objectweb.asm.util.CheckClassAdapter, org.objectweb.asm.tree.analysis.Frame, org.objectweb.asm.tree.analysis.Analyzer] - External: [java.lang.StringBuffer, java.io.Writer, java.lang.String, java.io.StringWriter, java.io.PrintWriter, java.lang.RuntimeException, java.lang.Exception]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.util.TraceClassVisitor - Internal: [org.objectweb.asm.FieldVisitor, org.objectweb.asm.ClassReader, org.objectweb.asm.MethodVisitor, org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.util.TraceAbstractVisitor, org.objectweb.asm.util.TraceFieldVisitor, org.objectweb.asm.util.TraceMethodVisitor, org.objectweb.asm.signature.SignatureVisitor, org.objectweb.asm.Attribute, org.objectweb.asm.signature.SignatureReader, org.objectweb.asm.util.TraceAnnotationVisitor, org.objectweb.asm.ClassVisitor, org.objectweb.asm.util.TraceSignatureVisitor] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.util.CheckMethodAdapter - Internal: [org.objectweb.asm.util.CheckAnnotationAdapter, org.objectweb.asm.MethodVisitor, org.objectweb.asm.Type, org.objectweb.asm.Label, org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.util.CheckMethodAdapter, org.objectweb.asm.util.CheckMethodAdapter$1, org.objectweb.asm.Opcodes, org.objectweb.asm.MethodAdapter, org.objectweb.asm.Attribute] - External: [java.lang.IllegalArgumentException, java.util.Map, java.lang.Long, java.lang.reflect.Field, java.lang.Float, java.util.HashMap, java.lang.Double, java.lang.NoSuchFieldException, java.lang.Class, java.lang.Character, java.lang.IllegalAccessException, java.lang.NoClassDefFoundError, java.lang.StringBuffer, java.lang.Object, java.lang.String, java.lang.Integer, java.lang.IllegalStateException, java.lang.Error, java.lang.ClassNotFoundException]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.util.TraceFieldVisitor - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.FieldVisitor, org.objectweb.asm.util.TraceAbstractVisitor, org.objectweb.asm.Attribute, org.objectweb.asm.util.TraceAnnotationVisitor] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.util.CheckSignatureAdapter - Internal: [org.objectweb.asm.util.CheckMethodAdapter, org.objectweb.asm.signature.SignatureVisitor, org.objectweb.asm.util.CheckSignatureAdapter] - External: [java.lang.IllegalArgumentException, java.lang.Object, java.lang.String, java.lang.IllegalStateException]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.util.TraceMethodVisitor - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.util.TraceAbstractVisitor, org.objectweb.asm.MethodVisitor, org.objectweb.asm.Type, org.objectweb.asm.util.AbstractVisitor, org.objectweb.asm.util.Traceable, org.objectweb.asm.signature.SignatureVisitor, org.objectweb.asm.signature.SignatureReader, org.objectweb.asm.Attribute, org.objectweb.asm.Label, org.objectweb.asm.util.TraceAnnotationVisitor, org.objectweb.asm.util.TraceSignatureVisitor] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.util.TraceAbstractVisitor - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.util.Traceable, org.objectweb.asm.util.AbstractVisitor, org.objectweb.asm.util.TraceAbstractVisitor, org.objectweb.asm.Attribute, org.objectweb.asm.util.TraceAnnotationVisitor] - External: [java.lang.StringBuffer, java.util.Map, java.lang.Object, java.util.List, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.util.TraceSignatureVisitor - Internal: [org.objectweb.asm.signature.SignatureVisitor] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.util.TraceAnnotationVisitor - Internal: [org.objectweb.asm.Type, org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.util.TraceAbstractVisitor, org.objectweb.asm.util.TraceAnnotationVisitor] - External: [java.lang.Boolean, java.lang.Long, java.lang.Float, java.lang.Double, java.lang.Character, java.lang.Class, java.lang.StringBuffer, java.lang.Object, [B, java.util.List, java.lang.Integer, java.lang.String, [F, [C, java.lang.Short, [D, [I, [J, java.lang.Byte, [S, [Z]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.util.Traceable - Internal: [] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.util.TraceClassVisitor - Internal: [org.objectweb.asm.FieldVisitor, org.objectweb.asm.ClassReader, org.objectweb.asm.MethodVisitor, org.objectweb.asm.util.TraceClassVisitor, org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.util.TraceAbstractVisitor, org.objectweb.asm.util.TraceFieldVisitor, org.objectweb.asm.util.TraceMethodVisitor, org.objectweb.asm.signature.SignatureVisitor, org.objectweb.asm.Attribute, org.objectweb.asm.signature.SignatureReader, org.objectweb.asm.util.TraceAnnotationVisitor, org.objectweb.asm.ClassVisitor, org.objectweb.asm.util.TraceSignatureVisitor] - External: [java.io.InputStream, java.io.PrintStream, java.lang.System, java.io.PrintWriter, java.io.FileInputStream, java.lang.StringBuffer, java.lang.Object, java.util.List, java.lang.String, java.lang.Exception, java.io.OutputStream]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$1 - Internal: [] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.util.TraceFieldVisitor - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.FieldVisitor, org.objectweb.asm.util.TraceAbstractVisitor, org.objectweb.asm.util.TraceFieldVisitor, org.objectweb.asm.Attribute, org.objectweb.asm.util.TraceAnnotationVisitor] - External: [java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$AnnotationDefaultRule - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.MethodVisitor, org.objectweb.asm.xml.ASMContentHandler] - External: [org.xml.sax.Attributes]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.util.TraceMethodVisitor - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.util.TraceAbstractVisitor, org.objectweb.asm.MethodVisitor, org.objectweb.asm.Type, org.objectweb.asm.util.AbstractVisitor, org.objectweb.asm.util.Traceable, org.objectweb.asm.util.TraceMethodVisitor, org.objectweb.asm.signature.SignatureVisitor, org.objectweb.asm.signature.SignatureReader, org.objectweb.asm.Attribute, org.objectweb.asm.Label, org.objectweb.asm.util.TraceAnnotationVisitor, org.objectweb.asm.util.TraceSignatureVisitor] - External: [java.lang.StringBuffer, java.util.Map, java.lang.Object, java.util.List, java.lang.Integer, java.lang.String, java.util.HashMap]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$AnnotationParameterRule - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.MethodVisitor, org.objectweb.asm.xml.ASMContentHandler] - External: [org.xml.sax.Attributes]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.util.TraceSignatureVisitor - Internal: [org.objectweb.asm.signature.SignatureVisitor, org.objectweb.asm.util.TraceSignatureVisitor] - External: [java.lang.StringBuffer, java.lang.Object, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$AnnotationRule - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.FieldVisitor, org.objectweb.asm.MethodVisitor, org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.ClassVisitor] - External: [org.xml.sax.Attributes]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.util.Traceable - Internal: [org.objectweb.asm.util.Traceable] - External: [java.lang.StringBuffer, java.util.Map, java.lang.Object]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$AnnotationValueAnnotationRule - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.xml.ASMContentHandler] - External: [org.xml.sax.Attributes]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$1 - Internal: [org.objectweb.asm.xml.ASMContentHandler$1] - External: [java.lang.Object]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$AnnotationValueArrayRule - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.xml.ASMContentHandler] - External: [org.xml.sax.Attributes]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$AnnotationDefaultRule - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.xml.ASMContentHandler$AnnotationDefaultRule, org.objectweb.asm.MethodVisitor, org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.xml.ASMContentHandler$Rule, org.objectweb.asm.xml.ASMContentHandler$1] - External: [java.lang.Object, org.xml.sax.Attributes, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$AnnotationValueEnumRule - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.xml.ASMContentHandler] - External: [org.xml.sax.Attributes]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$AnnotationParameterRule - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.xml.ASMContentHandler$AnnotationParameterRule, org.objectweb.asm.MethodVisitor, org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.xml.ASMContentHandler$Rule, org.objectweb.asm.xml.ASMContentHandler$1] - External: [java.lang.Object, java.lang.Boolean, java.lang.Integer, org.xml.sax.Attributes, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$AnnotationValueRule - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.xml.ASMContentHandler] - External: [org.xml.sax.Attributes, org.xml.sax.SAXException]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$AnnotationRule - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.FieldVisitor, org.objectweb.asm.MethodVisitor, org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.xml.ASMContentHandler$Rule, org.objectweb.asm.ClassVisitor, org.objectweb.asm.xml.ASMContentHandler$1, org.objectweb.asm.xml.ASMContentHandler$AnnotationRule] - External: [java.lang.Object, java.lang.Boolean, org.xml.sax.Attributes, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$ClassRule - Internal: [org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.ClassWriter] - External: [org.xml.sax.Attributes]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$AnnotationValueAnnotationRule - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.xml.ASMContentHandler$AnnotationValueAnnotationRule, org.objectweb.asm.xml.ASMContentHandler$Rule, org.objectweb.asm.xml.ASMContentHandler$1] - External: [java.lang.Object, org.xml.sax.Attributes, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$ExceptionRule - Internal: [org.objectweb.asm.xml.ASMContentHandler] - External: [org.xml.sax.Attributes]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$AnnotationValueArrayRule - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.xml.ASMContentHandler$Rule, org.objectweb.asm.xml.ASMContentHandler$AnnotationValueArrayRule, org.objectweb.asm.xml.ASMContentHandler$1] - External: [java.lang.Object, org.xml.sax.Attributes, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$ExceptionsRule - Internal: [org.objectweb.asm.MethodVisitor, org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.ClassWriter] - External: [[Ljava.lang.String;]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$AnnotationValueEnumRule - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.xml.ASMContentHandler$Rule, org.objectweb.asm.xml.ASMContentHandler$1, org.objectweb.asm.xml.ASMContentHandler$AnnotationValueEnumRule] - External: [java.lang.Object, org.xml.sax.Attributes, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$FieldRule - Internal: [org.objectweb.asm.FieldVisitor, org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.ClassWriter] - External: [org.xml.sax.Attributes, org.xml.sax.SAXException]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$AnnotationValueRule - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.xml.ASMContentHandler$AnnotationValueRule, org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.xml.ASMContentHandler$Rule, org.objectweb.asm.xml.ASMContentHandler$1] - External: [java.lang.Object, org.xml.sax.Attributes, java.lang.String, org.xml.sax.SAXException]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$FrameRule - Internal: [org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.MethodVisitor] - External: [org.xml.sax.Attributes]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$ClassRule - Internal: [org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.xml.ASMContentHandler$ClassRule, org.objectweb.asm.xml.ASMContentHandler$Rule, org.objectweb.asm.ClassWriter, org.objectweb.asm.xml.ASMContentHandler$1] - External: [java.util.ArrayList, java.lang.Object, java.util.Map, java.lang.Integer, org.xml.sax.Attributes, java.lang.String, java.util.HashMap]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$FrameTypeRule - Internal: [org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.Label] - External: [org.xml.sax.Attributes]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$ExceptionRule - Internal: [org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.xml.ASMContentHandler$Rule, org.objectweb.asm.xml.ASMContentHandler$ExceptionRule, org.objectweb.asm.xml.ASMContentHandler$1] - External: [java.lang.Object, java.util.List, org.xml.sax.Attributes, java.lang.String, java.util.HashMap]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$InnerClassRule - Internal: [org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.ClassWriter] - External: [org.xml.sax.Attributes]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$ExceptionsRule - Internal: [org.objectweb.asm.xml.ASMContentHandler$ExceptionsRule, org.objectweb.asm.MethodVisitor, org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.xml.ASMContentHandler$Rule, org.objectweb.asm.ClassWriter, org.objectweb.asm.xml.ASMContentHandler$1] - External: [java.util.Map, java.lang.Object, java.util.List, java.lang.String, [Ljava.lang.String;, java.util.HashMap]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$InterfaceRule - Internal: [org.objectweb.asm.xml.ASMContentHandler] - External: [org.xml.sax.Attributes]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$FieldRule - Internal: [org.objectweb.asm.FieldVisitor, org.objectweb.asm.xml.ASMContentHandler$FieldRule, org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.xml.ASMContentHandler$Rule, org.objectweb.asm.ClassWriter, org.objectweb.asm.xml.ASMContentHandler$1] - External: [java.lang.Object, org.xml.sax.Attributes, java.lang.String, org.xml.sax.SAXException]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$InterfacesRule - Internal: [org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.ClassWriter] - External: [[Ljava.lang.String;]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$FrameRule - Internal: [org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.MethodVisitor, org.objectweb.asm.xml.ASMContentHandler$FrameRule, org.objectweb.asm.xml.ASMContentHandler$1, org.objectweb.asm.xml.ASMContentHandler$Rule] - External: [java.util.ArrayList, java.util.Map, java.lang.Object, java.util.List, java.lang.String, java.lang.Integer, java.util.HashMap, org.xml.sax.Attributes]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$LabelRule - Internal: [org.objectweb.asm.MethodVisitor, org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.Label] - External: [org.xml.sax.Attributes]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$FrameTypeRule - Internal: [org.objectweb.asm.xml.ASMContentHandler$FrameTypeRule, org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.Label, org.objectweb.asm.xml.ASMContentHandler$Rule, org.objectweb.asm.xml.ASMContentHandler$1] - External: [java.util.Map, java.lang.Object, java.util.List, java.lang.Integer, org.xml.sax.Attributes, java.lang.String, java.util.HashMap]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$LineNumberRule - Internal: [org.objectweb.asm.MethodVisitor, org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.Label] - External: [org.xml.sax.Attributes]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$InnerClassRule - Internal: [org.objectweb.asm.xml.ASMContentHandler$InnerClassRule, org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.xml.ASMContentHandler$Rule, org.objectweb.asm.ClassWriter, org.objectweb.asm.xml.ASMContentHandler$1] - External: [org.xml.sax.Attributes, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$LocalVarRule - Internal: [org.objectweb.asm.MethodVisitor, org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.Label] - External: [org.xml.sax.Attributes]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$InterfaceRule - Internal: [org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.xml.ASMContentHandler$InterfaceRule, org.objectweb.asm.xml.ASMContentHandler$Rule, org.objectweb.asm.xml.ASMContentHandler$1] - External: [java.lang.Object, java.util.List, org.xml.sax.Attributes, java.lang.String, java.util.HashMap]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$LookupSwitchLabelRule - Internal: [org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.Label] - External: [org.xml.sax.Attributes]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$InterfacesRule - Internal: [org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.xml.ASMContentHandler$Rule, org.objectweb.asm.ClassWriter, org.objectweb.asm.xml.ASMContentHandler$1, org.objectweb.asm.xml.ASMContentHandler$InterfacesRule] - External: [java.util.Map, java.lang.Object, java.util.List, java.lang.Integer, java.lang.String, [Ljava.lang.String;, java.util.HashMap]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$LookupSwitchRule - Internal: [org.objectweb.asm.MethodVisitor, org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.Label] - External: [[Lorg.objectweb.asm.Label;, org.xml.sax.Attributes]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$LabelRule - Internal: [org.objectweb.asm.xml.ASMContentHandler$LabelRule, org.objectweb.asm.MethodVisitor, org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.Label, org.objectweb.asm.xml.ASMContentHandler$Rule, org.objectweb.asm.xml.ASMContentHandler$1] - External: [java.lang.Object, org.xml.sax.Attributes, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$MaxRule - Internal: [org.objectweb.asm.MethodVisitor, org.objectweb.asm.xml.ASMContentHandler] - External: [org.xml.sax.Attributes]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$LineNumberRule - Internal: [org.objectweb.asm.xml.ASMContentHandler$LineNumberRule, org.objectweb.asm.MethodVisitor, org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.Label, org.objectweb.asm.xml.ASMContentHandler$Rule, org.objectweb.asm.xml.ASMContentHandler$1] - External: [java.lang.Object, java.lang.Integer, org.xml.sax.Attributes, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$MethodRule - Internal: [org.objectweb.asm.MethodVisitor, org.objectweb.asm.xml.ASMContentHandler] - External: [org.xml.sax.Attributes]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$LocalVarRule - Internal: [org.objectweb.asm.MethodVisitor, org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.Label, org.objectweb.asm.xml.ASMContentHandler$Rule, org.objectweb.asm.xml.ASMContentHandler$LocalVarRule, org.objectweb.asm.xml.ASMContentHandler$1] - External: [java.lang.Object, java.lang.Integer, org.xml.sax.Attributes, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$Opcode - Internal: [] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$LookupSwitchLabelRule - Internal: [org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.Label, org.objectweb.asm.xml.ASMContentHandler$Rule, org.objectweb.asm.xml.ASMContentHandler$LookupSwitchLabelRule, org.objectweb.asm.xml.ASMContentHandler$1] - External: [java.util.Map, java.lang.Object, java.util.List, org.xml.sax.Attributes, java.lang.String, java.util.HashMap]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$OpcodeGroup - Internal: [] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$LookupSwitchRule - Internal: [org.objectweb.asm.MethodVisitor, org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.xml.ASMContentHandler$1, org.objectweb.asm.xml.ASMContentHandler$Rule, org.objectweb.asm.Label, org.objectweb.asm.xml.ASMContentHandler$LookupSwitchRule] - External: [java.util.ArrayList, java.util.Map, java.lang.Object, java.util.List, java.lang.String, java.lang.Integer, [Lorg.objectweb.asm.Label;, java.util.HashMap, org.xml.sax.Attributes]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$OpcodesRule - Internal: [org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.MethodVisitor, org.objectweb.asm.Label] - External: [org.xml.sax.Attributes, org.xml.sax.SAXException]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$MaxRule - Internal: [org.objectweb.asm.xml.ASMContentHandler$MaxRule, org.objectweb.asm.MethodVisitor, org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.xml.ASMContentHandler$Rule, org.objectweb.asm.xml.ASMContentHandler$1] - External: [java.lang.Integer, org.xml.sax.Attributes, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$OuterClassRule - Internal: [org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.ClassWriter] - External: [org.xml.sax.Attributes]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$MethodRule - Internal: [org.objectweb.asm.MethodVisitor, org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.xml.ASMContentHandler$MethodRule, org.objectweb.asm.xml.ASMContentHandler$Rule, org.objectweb.asm.xml.ASMContentHandler$1] - External: [java.util.ArrayList, java.lang.Object, java.util.Map, org.xml.sax.Attributes, java.lang.String, java.util.HashMap]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$Rule - Internal: [org.objectweb.asm.MethodVisitor, org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.Type, org.objectweb.asm.Label] - External: [org.xml.sax.Attributes, org.xml.sax.SAXException]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$Opcode - Internal: [org.objectweb.asm.xml.ASMContentHandler$Opcode, org.objectweb.asm.xml.ASMContentHandler$1] - External: [java.lang.Object]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$RuleSet - Internal: [] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$OpcodeGroup - Internal: [org.objectweb.asm.xml.ASMContentHandler$OpcodeGroup] - External: [java.lang.Object]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$SourceRule - Internal: [org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.ClassWriter] - External: [org.xml.sax.Attributes]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$OpcodesRule - Internal: [org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.MethodVisitor, org.objectweb.asm.xml.ASMContentHandler$Opcode, org.objectweb.asm.xml.ASMContentHandler$OpcodesRule, org.objectweb.asm.xml.ASMContentHandler$1, org.objectweb.asm.xml.ASMContentHandler$Rule, org.objectweb.asm.Label] - External: [java.lang.StringBuffer, java.util.Map, java.lang.Object, java.lang.String, java.lang.Integer, java.lang.Error, org.xml.sax.Attributes, org.xml.sax.SAXException]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$TableSwitchLabelRule - Internal: [org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.Label] - External: [org.xml.sax.Attributes]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$OuterClassRule - Internal: [org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.xml.ASMContentHandler$Rule, org.objectweb.asm.ClassWriter, org.objectweb.asm.xml.ASMContentHandler$OuterClassRule, org.objectweb.asm.xml.ASMContentHandler$1] - External: [org.xml.sax.Attributes, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$TableSwitchRule - Internal: [org.objectweb.asm.MethodVisitor, org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.Label] - External: [[Lorg.objectweb.asm.Label;, org.xml.sax.Attributes]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$Rule - Internal: [org.objectweb.asm.MethodVisitor, org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.Type, org.objectweb.asm.Label, org.objectweb.asm.xml.ASMContentHandler$Rule] - External: [java.lang.StringBuffer, java.util.Map, java.lang.Object, java.lang.Boolean, java.lang.Long, java.lang.String, java.lang.Integer, java.lang.Short, java.lang.Float, java.lang.Double, java.lang.Exception, java.lang.RuntimeException, java.lang.Class, java.lang.Character, org.xml.sax.Attributes, java.lang.Byte, org.xml.sax.SAXException]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$TryCatchRule - Internal: [org.objectweb.asm.MethodVisitor, org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.Label] - External: [org.xml.sax.Attributes]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$RuleSet - Internal: [org.objectweb.asm.xml.ASMContentHandler$RuleSet, org.objectweb.asm.xml.ASMContentHandler$1] - External: [java.util.ArrayList, java.util.Iterator, java.util.Map, java.lang.Object, java.util.List, java.lang.String, java.util.HashMap]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.ASMContentHandler - Internal: [org.objectweb.asm.xml.SAXCodeAdapter, org.objectweb.asm.Opcodes, org.objectweb.asm.ClassWriter] - External: [org.xml.sax.SAXException, org.xml.sax.Attributes, org.xml.sax.helpers.DefaultHandler]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$SourceRule - Internal: [org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.xml.ASMContentHandler$Rule, org.objectweb.asm.ClassWriter, org.objectweb.asm.xml.ASMContentHandler$SourceRule, org.objectweb.asm.xml.ASMContentHandler$1] - External: [org.xml.sax.Attributes, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.Processor$1 - Internal: [] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$TableSwitchLabelRule - Internal: [org.objectweb.asm.xml.ASMContentHandler$TableSwitchLabelRule, org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.Label, org.objectweb.asm.xml.ASMContentHandler$Rule, org.objectweb.asm.xml.ASMContentHandler$1] - External: [java.lang.Object, java.util.List, org.xml.sax.Attributes, java.lang.String, java.util.HashMap]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.Processor$ASMContentHandlerFactory - Internal: [org.objectweb.asm.xml.ASMContentHandler] - External: [org.xml.sax.ContentHandler]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$TableSwitchRule - Internal: [org.objectweb.asm.MethodVisitor, org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.xml.ASMContentHandler$TableSwitchRule, org.objectweb.asm.xml.ASMContentHandler$1, org.objectweb.asm.xml.ASMContentHandler$Rule, org.objectweb.asm.Label] - External: [java.util.ArrayList, java.util.Map, java.lang.Object, java.util.List, java.lang.String, java.lang.Integer, [Lorg.objectweb.asm.Label;, java.util.HashMap, org.xml.sax.Attributes]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.Processor$ContentHandlerFactory - Internal: [] - External: [org.xml.sax.ContentHandler]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.ASMContentHandler$TryCatchRule - Internal: [org.objectweb.asm.MethodVisitor, org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.Label, org.objectweb.asm.xml.ASMContentHandler$Rule, org.objectweb.asm.xml.ASMContentHandler$TryCatchRule, org.objectweb.asm.xml.ASMContentHandler$1] - External: [java.lang.Object, org.xml.sax.Attributes, java.lang.String]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.Processor$EntryElement - Internal: [] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.ASMContentHandler - Internal: [org.objectweb.asm.xml.ASMContentHandler$AnnotationDefaultRule, org.objectweb.asm.xml.ASMContentHandler$ClassRule, org.objectweb.asm.xml.ASMContentHandler$MaxRule, org.objectweb.asm.xml.SAXCodeAdapter, org.objectweb.asm.xml.ASMContentHandler$AnnotationValueAnnotationRule, org.objectweb.asm.xml.ASMContentHandler$ExceptionRule, org.objectweb.asm.xml.ASMContentHandler$InterfacesRule, org.objectweb.asm.xml.ASMContentHandler$InnerClassRule, org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.xml.ASMContentHandler$MethodRule, org.objectweb.asm.Opcodes, org.objectweb.asm.xml.ASMContentHandler$TableSwitchRule, org.objectweb.asm.xml.ASMContentHandler$1, org.objectweb.asm.xml.ASMContentHandler$AnnotationValueRule, org.objectweb.asm.xml.ASMContentHandler$LineNumberRule, org.objectweb.asm.xml.ASMContentHandler$Rule, org.objectweb.asm.xml.ASMContentHandler$RuleSet, org.objectweb.asm.xml.ASMContentHandler$LabelRule, org.objectweb.asm.xml.ASMContentHandler$FrameTypeRule, org.objectweb.asm.xml.ASMContentHandler$LocalVarRule, org.objectweb.asm.xml.ASMContentHandler$SourceRule, org.objectweb.asm.xml.ASMContentHandler$OuterClassRule, org.objectweb.asm.xml.ASMContentHandler$OpcodesRule, org.objectweb.asm.xml.ASMContentHandler$FrameRule, org.objectweb.asm.xml.ASMContentHandler$FieldRule, org.objectweb.asm.xml.ASMContentHandler$AnnotationParameterRule, org.objectweb.asm.xml.ASMContentHandler$TableSwitchLabelRule, org.objectweb.asm.xml.ASMContentHandler$ExceptionsRule, org.objectweb.asm.xml.ASMContentHandler$InterfaceRule, org.objectweb.asm.xml.ASMContentHandler$Opcode, org.objectweb.asm.xml.ASMContentHandler$AnnotationValueArrayRule, org.objectweb.asm.xml.ASMContentHandler$AnnotationRule, org.objectweb.asm.xml.ASMContentHandler$LookupSwitchLabelRule, org.objectweb.asm.xml.ASMContentHandler$LookupSwitchRule, org.objectweb.asm.xml.ASMContentHandler$TryCatchRule, org.objectweb.asm.ClassWriter, org.objectweb.asm.xml.ASMContentHandler$AnnotationValueEnumRule] - External: [java.lang.Class, org.xml.sax.SAXException, java.lang.Object, java.util.List, java.lang.Integer, java.util.Map, java.util.HashMap, java.io.IOException, java.util.ArrayList, java.lang.NoClassDefFoundError, java.lang.StringBuffer, java.lang.String, java.lang.Exception, org.xml.sax.Attributes, org.xml.sax.helpers.DefaultHandler, java.io.OutputStream, java.lang.ClassNotFoundException]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.Processor$InputSlicingHandler - Internal: [] - External: [org.xml.sax.Attributes, org.xml.sax.helpers.DefaultHandler, org.xml.sax.ContentHandler, org.xml.sax.SAXException]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.Processor$1 - Internal: [org.objectweb.asm.xml.Processor$1] - External: [java.lang.Object]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.Processor$OutputSlicingHandler - Internal: [] - External: [org.xml.sax.ContentHandler, org.xml.sax.Attributes, org.xml.sax.helpers.DefaultHandler, org.xml.sax.SAXException]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.Processor$ASMContentHandlerFactory - Internal: [org.objectweb.asm.xml.ASMContentHandler, org.objectweb.asm.xml.Processor$ASMContentHandlerFactory, org.objectweb.asm.xml.Processor$1, org.objectweb.asm.xml.Processor$ContentHandlerFactory] - External: [java.lang.Object, java.io.OutputStream, org.xml.sax.ContentHandler]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.Processor$ProtectedInputStream - Internal: [] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.Processor$ContentHandlerFactory - Internal: [org.objectweb.asm.xml.Processor$ContentHandlerFactory] - External: [java.lang.Object, org.xml.sax.ContentHandler]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.Processor$SAXWriter - Internal: [] - External: [org.xml.sax.ext.LexicalHandler, org.xml.sax.Attributes, org.xml.sax.helpers.DefaultHandler, org.xml.sax.SAXException]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.Processor$EntryElement - Internal: [org.objectweb.asm.xml.Processor$EntryElement] - External: [java.lang.Object, java.lang.String, java.io.OutputStream, java.io.IOException]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.Processor$SAXWriterFactory - Internal: [] - External: [org.xml.sax.ContentHandler]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.Processor$InputSlicingHandler - Internal: [org.objectweb.asm.xml.Processor$InputSlicingHandler, org.objectweb.asm.xml.Processor$1, org.objectweb.asm.xml.Processor$ContentHandlerFactory] - External: [java.lang.Object, org.xml.sax.Attributes, java.lang.String, org.xml.sax.helpers.DefaultHandler, org.xml.sax.ContentHandler, org.xml.sax.SAXException]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.Processor$SingleDocElement - Internal: [] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.Processor$OutputSlicingHandler - Internal: [org.objectweb.asm.xml.Processor$EntryElement, org.objectweb.asm.xml.Processor$OutputSlicingHandler, org.objectweb.asm.xml.Processor$ContentHandlerFactory, org.objectweb.asm.xml.Processor$1] - External: [java.lang.StringBuffer, java.lang.Object, java.lang.String, org.xml.sax.ContentHandler, java.io.IOException, java.lang.Exception, org.xml.sax.Attributes, org.xml.sax.helpers.DefaultHandler, java.io.OutputStream, org.xml.sax.SAXException]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.Processor$SubdocumentHandlerFactory - Internal: [] - External: [org.xml.sax.ContentHandler]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.Processor$ProtectedInputStream - Internal: [org.objectweb.asm.xml.Processor$ProtectedInputStream, org.objectweb.asm.xml.Processor$1] - External: [java.io.InputStream, java.io.IOException]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.Processor$TransformerHandlerFactory - Internal: [] - External: [org.xml.sax.ContentHandler]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.Processor$SAXWriter - Internal: [org.objectweb.asm.xml.Processor$SAXWriter, org.objectweb.asm.xml.Processor$1] - External: [org.xml.sax.ext.LexicalHandler, java.lang.StringBuffer, java.lang.Exception, java.io.Writer, java.lang.Integer, org.xml.sax.Attributes, java.lang.String, org.xml.sax.helpers.DefaultHandler, java.io.IOException, org.xml.sax.SAXException]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.Processor$ZipEntryElement - Internal: [] - External: []}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.Processor$SAXWriterFactory - Internal: [org.objectweb.asm.xml.Processor$SAXWriter, org.objectweb.asm.xml.Processor$SAXWriterFactory, org.objectweb.asm.xml.Processor$1, org.objectweb.asm.xml.Processor$ContentHandlerFactory] - External: [java.lang.Object, java.io.Writer, org.xml.sax.ContentHandler]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.Processor - Internal: [org.objectweb.asm.xml.SAXClassAdapter, org.objectweb.asm.ClassVisitor, org.objectweb.asm.ClassReader] - External: [org.xml.sax.XMLReader, org.xml.sax.helpers.XMLReaderFactory, org.xml.sax.SAXException, org.xml.sax.ContentHandler, org.xml.sax.InputSource, org.xml.sax.helpers.AttributesImpl, org.xml.sax.Attributes]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.Processor$SingleDocElement - Internal: [org.objectweb.asm.xml.Processor$SingleDocElement, org.objectweb.asm.xml.Processor$EntryElement, org.objectweb.asm.xml.Processor$1] - External: [java.lang.Object, java.lang.String, java.io.OutputStream, java.io.IOException]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.SAXAdapter - Internal: [org.objectweb.asm.Attribute] - External: [org.xml.sax.Attributes, org.xml.sax.ContentHandler, org.xml.sax.SAXException]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.Processor$SubdocumentHandlerFactory - Internal: [org.objectweb.asm.xml.Processor$SubdocumentHandlerFactory, org.objectweb.asm.xml.Processor$1, org.objectweb.asm.xml.Processor$ContentHandlerFactory] - External: [java.lang.Object, org.xml.sax.ContentHandler]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.SAXAnnotationAdapter - Internal: [org.objectweb.asm.xml.SAXClassAdapter, org.objectweb.asm.Type, org.objectweb.asm.xml.SAXAdapter, org.objectweb.asm.AnnotationVisitor] - External: [[B, org.xml.sax.helpers.AttributesImpl, [F, [C, [D, org.xml.sax.ContentHandler, [I, [J, org.xml.sax.Attributes, [S, [Z]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.Processor$TransformerHandlerFactory - Internal: [org.objectweb.asm.xml.Processor$TransformerHandlerFactory, org.objectweb.asm.xml.Processor$ContentHandlerFactory, org.objectweb.asm.xml.Processor$1] - External: [javax.xml.transform.TransformerConfigurationException, java.lang.Object, javax.xml.transform.sax.TransformerHandler, java.lang.String, javax.xml.transform.sax.SAXResult, org.xml.sax.ContentHandler, javax.xml.transform.sax.SAXTransformerFactory, javax.xml.transform.Templates, javax.xml.transform.Result, java.lang.RuntimeException]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.SAXClassAdapter - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.FieldVisitor, org.objectweb.asm.xml.SAXFieldAdapter, org.objectweb.asm.MethodVisitor, org.objectweb.asm.xml.SAXAnnotationAdapter, org.objectweb.asm.xml.SAXCodeAdapter, org.objectweb.asm.xml.SAXAdapter, org.objectweb.asm.ClassVisitor] - External: [org.xml.sax.helpers.AttributesImpl, org.xml.sax.ContentHandler, org.xml.sax.Attributes]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.Processor$ZipEntryElement - Internal: [org.objectweb.asm.xml.Processor$EntryElement, org.objectweb.asm.xml.Processor$ZipEntryElement, org.objectweb.asm.xml.Processor$1] - External: [java.util.zip.ZipOutputStream, java.lang.Object, java.lang.String, java.util.zip.ZipEntry, java.io.OutputStream, java.io.IOException]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.SAXCodeAdapter - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.MethodVisitor, org.objectweb.asm.xml.SAXAnnotationAdapter, org.objectweb.asm.Type, org.objectweb.asm.xml.SAXClassAdapter, org.objectweb.asm.util.AbstractVisitor, org.objectweb.asm.xml.SAXAdapter, org.objectweb.asm.Label] - External: [org.xml.sax.helpers.AttributesImpl, org.xml.sax.ContentHandler, org.xml.sax.Attributes]}
 
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.Processor - Internal: [org.objectweb.asm.xml.Processor$EntryElement, org.objectweb.asm.xml.Processor$ContentHandlerFactory, org.objectweb.asm.xml.SAXClassAdapter, org.objectweb.asm.xml.Processor$InputSlicingHandler, org.objectweb.asm.xml.Processor$SAXWriterFactory, org.objectweb.asm.xml.Processor, org.objectweb.asm.xml.Processor$TransformerHandlerFactory, org.objectweb.asm.xml.Processor$ASMContentHandlerFactory, org.objectweb.asm.xml.Processor$ZipEntryElement, org.objectweb.asm.ClassVisitor, org.objectweb.asm.xml.Processor$SAXWriter, org.objectweb.asm.ClassReader, org.objectweb.asm.xml.Processor$ProtectedInputStream, org.objectweb.asm.xml.Processor$SubdocumentHandlerFactory, org.objectweb.asm.xml.Processor$1, org.objectweb.asm.xml.Processor$OutputSlicingHandler, org.objectweb.asm.xml.Processor$SingleDocElement] - External: [java.io.InputStream, javax.xml.transform.Source, java.lang.System, java.util.zip.ZipOutputStream, java.lang.Throwable, java.lang.Class, org.xml.sax.XMLReader, javax.xml.transform.stream.StreamSource, org.xml.sax.helpers.XMLReaderFactory, org.xml.sax.SAXException, java.lang.Object, javax.xml.transform.TransformerFactory, org.xml.sax.ContentHandler, java.util.zip.ZipInputStream, java.io.BufferedOutputStream, java.lang.Thread, org.xml.sax.InputSource, java.io.PrintStream, java.io.IOException, javax.xml.transform.sax.SAXTransformerFactory, javax.xml.transform.TransformerException, java.util.zip.ZipEntry, java.io.ByteArrayInputStream, java.io.FileInputStream, java.io.ByteArrayOutputStream, java.lang.StringBuffer, java.io.FileOutputStream, java.io.Writer, java.lang.String, org.xml.sax.helpers.AttributesImpl, java.lang.ClassLoader, java.io.OutputStreamWriter, javax.xml.transform.Templates, java.lang.Exception, org.xml.sax.Attributes, java.io.OutputStream]}
-
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.SAXAdapter - Internal: [org.objectweb.asm.xml.SAXAdapter, org.objectweb.asm.Attribute] - External: [java.lang.Object, java.lang.Exception, java.lang.RuntimeException, java.lang.Throwable, org.xml.sax.Attributes, java.lang.String, org.xml.sax.ContentHandler, org.xml.sax.SAXException]}
-
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.SAXAnnotationAdapter - Internal: [org.objectweb.asm.xml.SAXAnnotationAdapter, org.objectweb.asm.xml.SAXClassAdapter, org.objectweb.asm.Type, org.objectweb.asm.xml.SAXAdapter, org.objectweb.asm.AnnotationVisitor] - External: [java.lang.Boolean, java.lang.Long, java.lang.Float, java.lang.Double, java.lang.Class, java.lang.Character, java.lang.Object, [B, java.lang.Integer, org.xml.sax.helpers.AttributesImpl, java.lang.String, [F, [C, java.lang.Short, [D, org.xml.sax.ContentHandler, [I, [J, org.xml.sax.Attributes, java.lang.Byte, [S, [Z]}
-
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.SAXClassAdapter - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.FieldVisitor, org.objectweb.asm.xml.SAXFieldAdapter, org.objectweb.asm.MethodVisitor, org.objectweb.asm.xml.SAXAnnotationAdapter, org.objectweb.asm.xml.SAXClassAdapter, org.objectweb.asm.xml.SAXCodeAdapter, org.objectweb.asm.xml.SAXAdapter, org.objectweb.asm.ClassVisitor] - External: [java.lang.StringBuffer, java.lang.Object, java.lang.String, org.xml.sax.helpers.AttributesImpl, java.lang.Integer, org.xml.sax.ContentHandler, org.xml.sax.Attributes]}
-
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.SAXCodeAdapter - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.MethodVisitor, org.objectweb.asm.xml.SAXAnnotationAdapter, org.objectweb.asm.Type, org.objectweb.asm.xml.SAXClassAdapter, org.objectweb.asm.util.AbstractVisitor, org.objectweb.asm.xml.SAXCodeAdapter, org.objectweb.asm.xml.SAXAdapter, org.objectweb.asm.Label] - External: [java.util.Map, java.lang.Object, java.lang.String, org.xml.sax.helpers.AttributesImpl, java.lang.Integer, org.xml.sax.ContentHandler, java.util.HashMap, java.lang.Class, org.xml.sax.Attributes]}
-
-Oct 27, 2009 3:39:14 PM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
-INFO: {Class: org.objectweb.asm.xml.SAXFieldAdapter - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.FieldVisitor, org.objectweb.asm.xml.SAXAdapter, org.objectweb.asm.xml.SAXFieldAdapter, org.objectweb.asm.xml.SAXAnnotationAdapter] - External: [java.lang.String, org.xml.sax.Attributes, org.xml.sax.ContentHandler]}
+Oct 28, 2009 9:28:21 AM mx.itesm.arch.dependencies.DependencyAnalyzerTest verifyDependencies
+INFO: {Class: org.objectweb.asm.xml.SAXFieldAdapter - Internal: [org.objectweb.asm.AnnotationVisitor, org.objectweb.asm.FieldVisitor, org.objectweb.asm.xml.SAXAdapter, org.objectweb.asm.xml.SAXAnnotationAdapter] - External: [org.xml.sax.Attributes, org.xml.sax.ContentHandler]}
 

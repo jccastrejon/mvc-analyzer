@@ -65,7 +65,7 @@ public class DependencyAnalyzer {
 	}
 
     };
-
+    
     /**
      * Recover the dependencies from each Java class within the specified
      * directory.
@@ -250,6 +250,12 @@ public class DependencyAnalyzer {
 	internalDependencies = new ArrayList<String>();
 	externalDependencies = new ArrayList<String>();
 	for (String dependency : dependencies) {
+
+	    if (!DependencyAnalyzer.isValidDependency(className, dependency)) {
+		continue;
+	    }
+
+	    // Internal
 	    isInternalDependency = false;
 	    for (String internalClass : internalClasses) {
 		if (dependency.equals(internalClass)) {
@@ -259,6 +265,7 @@ public class DependencyAnalyzer {
 		}
 	    }
 
+	    // External
 	    if (!isInternalDependency) {
 		externalDependencies.add(dependency);
 	    }
@@ -363,5 +370,57 @@ public class DependencyAnalyzer {
      */
     private static String getPathFromClassName(final String className, final String rootPath) {
 	return rootPath + "/" + className.replace('.', '/') + ".class";
+    }
+
+    /**
+     * Determine if a dependency is valid for a given class. That is, it's not
+     * part of the java.* packages, it's not the same class, and it's not an
+     * inner class defined in the same class.
+     * 
+     * @param className
+     * @param dependency
+     * @return
+     */
+    private static boolean isValidDependency(String className, String dependency) {
+	boolean returnValue;
+	int innerClassIndex;
+	int classNameInnerClassIndex;
+	String declaringClass;
+
+	if ((className == null) || (dependency == null)) {
+	    throw new IllegalArgumentException("Invalid dependency: " + dependency + " for class: "
+		    + className);
+	}
+
+	innerClassIndex = dependency.indexOf('$');
+	classNameInnerClassIndex = className.indexOf('$');
+	returnValue = true;
+	// Leave out java language classes
+	if (dependency.startsWith("java")) {
+	    returnValue = false;
+	}
+
+	// Leave out self-references
+	else if (dependency.equals(className)) {
+	    returnValue = false;
+	}
+
+	// Leave out inner classes defined in this class
+	if (innerClassIndex > 0) {
+	    declaringClass = dependency.substring(0, innerClassIndex);
+	    // Dependency with declaring class
+	    if (declaringClass.equals(className)) {
+		returnValue = false;
+	    }
+
+	    // Dependency with other inner classes defined in the same class.
+	    if (classNameInnerClassIndex > 0) {
+		if (className.substring(0, classNameInnerClassIndex).equals(declaringClass)) {
+		    returnValue = false;
+		}
+	    }
+	}
+
+	return returnValue;
     }
 }
