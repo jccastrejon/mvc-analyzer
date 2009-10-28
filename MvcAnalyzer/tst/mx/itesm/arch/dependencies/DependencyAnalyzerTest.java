@@ -100,8 +100,8 @@ public class DependencyAnalyzerTest extends TestCase {
 	}
 
 	for (ClassDependencies dependency : dependencies) {
-	    assertFalse(dependency.getInternalDependencies().isEmpty());
-	    assertFalse(dependency.getExternalDependencies().isEmpty());
+	    assertNotNull(dependency.getInternalDependencies());
+	    assertNotNull(dependency.getExternalDependencies());
 	}
     }
 }
