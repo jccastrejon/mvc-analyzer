@@ -3,7 +3,11 @@ package mx.itesm.arch.dependencies;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -55,24 +59,74 @@ public class DependenciesUtil {
 	String dotCommand;
 	FileWriter fileWriter;
 	StringBuilder dotDescription;
+	String currentPackageName;
+	Set<String> currentPackage;
+	Map<String, Set<String>> internalPackages;
+	Map<String, Set<String>> externalPackages;
 
+	// Validate arguments
 	if ((imageFile == null) || (!imageFile.getAbsolutePath().endsWith(".svg"))) {
 	    throw new IllegalArgumentException("Not an svg file: " + imageFile.getAbsolutePath());
 	}
 
+	// Build dot file
 	fileName = imageFile.getName().substring(0, imageFile.getName().indexOf('.'));
 	dotFile = new File(imageFile.getParent() + "/" + fileName + ".dot");
 
-	// Build dot file
+	// Simple Dependencies
+	externalPackages = new HashMap<String, Set<String>>();
 	dotDescription = new StringBuilder("digraph " + fileName
-		+ " {\n\tnode[shape=box, fontsize=10];\n");
+		+ " {\n\tnode[shape=box, fontsize=8];\n");
 	for (ClassDependencies dependency : dependencies) {
 	    className = DependenciesUtil.getDotValidName(dependency.getClassName());
+
+	    // Add internal dependencies
 	    for (String internalDependency : dependency.getInternalDependencies()) {
 		dotDescription.append("\t" + className + " -> "
-			+ DependenciesUtil.getDotValidName(internalDependency) + "\n");
+			+ DependenciesUtil.getDotValidName(internalDependency) + ";\n");
+	    }
+
+	    // Add external dependencies, also group them by packages
+	    for (String externalDependency : dependency.getExternalDependencies()) {
+		dotDescription.append("\t" + className + " -> "
+			+ DependenciesUtil.getDotValidName(externalDependency) + ";\n");
+		currentPackageName = externalDependency.substring(0, externalDependency
+			.lastIndexOf('.'));
+
+		if (!externalPackages.containsKey(currentPackageName)) {
+		    externalPackages.put(currentPackageName, new HashSet<String>());
+		}
+
+		externalPackages.get(currentPackageName).add(
+			DependenciesUtil.getDotValidName(externalDependency));
 	    }
 	}
+
+	// Group internal packages
+	internalPackages = new HashMap<String, Set<String>>();
+	for (ClassDependencies dependency : dependencies) {
+	    currentPackageName = dependency.getClassName().substring(0,
+		    dependency.getClassName().lastIndexOf('.'));
+
+	    if (!internalPackages.containsKey(currentPackageName)) {
+		internalPackages.put(currentPackageName, new HashSet<String>());
+	    }
+
+	    currentPackage = internalPackages.get(currentPackageName);
+
+	    for (ClassDependencies otherDependency : dependencies) {
+		if (otherDependency.getClassName().startsWith(currentPackageName)) {
+		    currentPackage.add(DependenciesUtil.getDotValidName(otherDependency
+			    .getClassName()));
+		}
+	    }
+	}
+
+	// Add clusters
+	DependenciesUtil.addClustersToDotDescription(internalPackages, dotDescription);
+	DependenciesUtil.addClustersToDotDescription(externalPackages, dotDescription);
+
+	// End of dot description
 	dotDescription.append("}");
 
 	// Save dot file
@@ -96,7 +150,32 @@ public class DependenciesUtil {
 	    logger.log(Level.WARNING, "Error creating image file: " + imageFile.getAbsolutePath(),
 		    e);
 	}
+    }
 
+    /**
+     * Add the specified clusters to the dot description.
+     * 
+     * @param clusters
+     *            Clusters.
+     * @param dotDescription
+     *            dot Description.
+     */
+    private static void addClustersToDotDescription(final Map<String, Set<String>> clusters,
+	    final StringBuilder dotDescription) {
+
+	if ((clusters != null) && (!clusters.isEmpty())) {
+	    for (String packageName : clusters.keySet()) {
+		dotDescription.append("\tsubgraph \"cluster_" + packageName + "\" {\n");
+		dotDescription.append("\t\tfontsize=8;label = \"" + packageName + "\";\n");
+
+		dotDescription.append("\t\t");
+		for (String packageDependency : clusters.get(packageName)) {
+		    dotDescription.append(packageDependency + ";");
+		}
+
+		dotDescription.append("\n\t}\n");
+	    }
+	}
     }
 
     /**
@@ -110,11 +189,10 @@ public class DependenciesUtil {
 	String returnValue;
 
 	// TODO: Use this name when grouping by packages
-	// int classNameIndex;
-	// classNameIndex = className.lastIndexOf('.') + 1;
-	// returnValue = className.substring(classNameIndex,
-	// className.length());
-	returnValue = "\"" + className + "\"";
+	int classNameIndex;
+	classNameIndex = className.lastIndexOf('.') + 1;
+	returnValue = "\"" + className.substring(classNameIndex, className.length()) + "\"";
+	// returnValue = "\"" + className + "\"";
 
 	return returnValue;
     }

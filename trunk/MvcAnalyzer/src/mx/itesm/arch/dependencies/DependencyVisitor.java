@@ -37,7 +37,8 @@ public class DependencyVisitor extends EmptyVisitor {
      *            Class name.
      */
     private void addDependencyFromName(final String dependency) {
-	if (dependency != null) {
+	// Don't add null or array dependencies
+	if ((dependency != null) && (!dependency.startsWith("["))) {
 	    // Convert to standard package name
 	    dependencies.add(dependency.replace('/', '.'));
 	}
@@ -50,9 +51,12 @@ public class DependencyVisitor extends EmptyVisitor {
      *            Classes names.
      */
     private void addDependenciesFromNames(final String[] dependencies) {
+	// Don't add null or array dependencies
 	if (dependencies != null) {
 	    for (int i = 0; i < dependencies.length; i++) {
-		this.addDependencyFromName(dependencies[i]);
+		if (!dependencies[i].startsWith("[")) {
+		    this.addDependencyFromName(dependencies[i]);
+		}
 	    }
 	}
     }
