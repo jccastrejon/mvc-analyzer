@@ -2,7 +2,9 @@ package mx.itesm.arch.dependencies;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.io.FilenameFilter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -23,6 +25,51 @@ public class DependenciesUtil {
      * Class logger.
      */
     private static Logger logger = Logger.getLogger(DependenciesUtil.class.getName());
+
+    /**
+     * Filter used to analyze only directories and .class files.
+     */
+    private final static FilenameFilter CLASS_FILTER = new FilenameFilter() {
+	@Override
+	public boolean accept(final File dir, final String name) {
+	    String extension;
+	    File file;
+	    boolean returnValue = false;
+
+	    file = new File(dir.getAbsolutePath() + "/" + name);
+	    if (file.isDirectory()) {
+		returnValue = true;
+	    } else {
+		extension = this.getExtensionName(file);
+		if (extension != null) {
+		    if (extension.equals("class")) {
+			return true;
+		    }
+		}
+	    }
+
+	    return returnValue;
+	}
+
+	/**
+	 * Get a file extension from a file.
+	 * 
+	 * @param file
+	 *            File.
+	 * @return File's extension.
+	 */
+	public String getExtensionName(final File file) {
+	    String returnValue = null;
+	    String name = file.getName();
+	    int i = name.lastIndexOf('.');
+
+	    if (i > 0 && i < name.length() - 1) {
+		returnValue = name.substring(i + 1).toLowerCase();
+	    }
+	    return returnValue;
+	}
+
+    };
 
     /**
      * Export a graphic representation of the Classes dependencies list.
@@ -150,6 +197,156 @@ public class DependenciesUtil {
 	    logger.log(Level.WARNING, "Error creating image file: " + imageFile.getAbsolutePath(),
 		    e);
 	}
+    }
+
+    /**
+     * Get a referemce to a directory only if the specified path points to a
+     * valid directory, that is, it exists, it's indeed a directory, and can be
+     * read. If provided with an invalid path it will throw a
+     * IllegalArgumentException.
+     * 
+     * @param path
+     *            Directory path.
+     * @return File reference.
+     */
+    public static File getDirectory(final String path) {
+	File returnValue;
+
+	if (path == null) {
+	    throw new IllegalArgumentException("Directory must not be null");
+	} else {
+	    returnValue = new File(path);
+	}
+
+	if (!returnValue.exists()) {
+	    throw new IllegalArgumentException("Directory " + path + " doesn't exist");
+	} else if (!returnValue.isDirectory()) {
+	    throw new IllegalArgumentException("Path " + path + " is not a directory");
+	} else if (!returnValue.canRead()) {
+	    throw new IllegalArgumentException("Directory " + path + " cannot be read");
+	}
+
+	return returnValue;
+    }
+
+    /**
+     * Get all the Classes names in a directory, considering also its
+     * subdirectories.
+     * 
+     * @param directory
+     *            Directory.
+     * @return List with the Classes names.
+     */
+    public static List<String> getClassesInDirectory(final File directory, final File rootDirectory) {
+	File currentFile;
+	File[] directoryFiles;
+	List<String> returnValue;
+	List<String> innerFiles;
+
+	returnValue = new ArrayList<String>();
+	directoryFiles = directory.listFiles(DependenciesUtil.CLASS_FILTER);
+	for (int i = 0; i < directoryFiles.length; i++) {
+	    currentFile = directoryFiles[i];
+
+	    if (currentFile.isDirectory()) {
+		// Recover subdirectory classes
+		innerFiles = DependenciesUtil.getClassesInDirectory(currentFile, rootDirectory);
+		returnValue.addAll(innerFiles);
+	    } else {
+		returnValue.add(DependenciesUtil.getClassNameFromPath(
+			currentFile.getAbsolutePath(), rootDirectory.getAbsolutePath()));
+	    }
+	}
+
+	return returnValue;
+    }
+
+    /**
+     * Get a Class Name from a Class File Path.
+     * 
+     * @param rootPath
+     *            Rooth Path containing the Class File Path.
+     * @param path
+     *            Class File Path.
+     * @return Class Name.
+     */
+    public static String getClassNameFromPath(final String path, final String rootPath) {
+	String returnValue;
+
+	if (path == null) {
+	    throw new IllegalArgumentException("Invalid path");
+	}
+
+	// {rootAbsolutePath}/{classPath}
+	returnValue = path.substring(path.indexOf(rootPath) + rootPath.length() + 1);
+	returnValue = returnValue.substring(0, returnValue.indexOf(".class")).replace('/', '.');
+
+	return returnValue;
+    }
+
+    /**
+     * Get a Class File Path from a Class Name.
+     * 
+     * @param className
+     *            Class Name.
+     * @param rootPath
+     *            Rooth Path containing the Class File Path.
+     * @return Class File Path.
+     */
+    public static String getPathFromClassName(final String className, final String rootPath) {
+	return rootPath + "/" + className.replace('.', '/') + ".class";
+    }
+
+    /**
+     * Determine if a dependency is valid for a given class. That is, it's not
+     * part of the java.* packages, it's not the same class, and it's not an
+     * inner class defined in the same class.
+     * 
+     * @param className
+     * @param dependency
+     * @return
+     */
+    public static boolean isValidDependency(String className, String dependency) {
+	boolean returnValue;
+	int innerClassIndex;
+	int classNameInnerClassIndex;
+	String declaringClass;
+
+	if ((className == null) || (dependency == null)) {
+	    throw new IllegalArgumentException("Invalid dependency: " + dependency + " for class: "
+		    + className);
+	}
+
+	innerClassIndex = dependency.indexOf('$');
+	classNameInnerClassIndex = className.indexOf('$');
+	returnValue = true;
+	// Leave out java language classes
+	if (dependency.startsWith("java")) {
+	    returnValue = false;
+	}
+
+	// Leave out self-references
+	else if (dependency.equals(className)) {
+	    returnValue = false;
+	}
+
+	// Leave out inner classes defined in this class
+	if (innerClassIndex > 0) {
+	    declaringClass = dependency.substring(0, innerClassIndex);
+	    // Dependency with declaring class
+	    if (declaringClass.equals(className)) {
+		returnValue = false;
+	    }
+
+	    // Dependency with other inner classes defined in the same class.
+	    if (classNameInnerClassIndex > 0) {
+		if (className.substring(0, classNameInnerClassIndex).equals(declaringClass)) {
+		    returnValue = false;
+		}
+	    }
+	}
+
+	return returnValue;
     }
 
     /**

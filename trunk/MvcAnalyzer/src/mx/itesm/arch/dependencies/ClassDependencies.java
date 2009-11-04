@@ -9,6 +9,11 @@ import java.util.List;
 public class ClassDependencies {
 
     /**
+     * 
+     */
+    private String layer;
+
+    /**
      * Class name.
      */
     private String className;
@@ -83,6 +88,21 @@ public class ClassDependencies {
      */
     public void setClassName(String className) {
 	this.className = className;
+    }
+
+    /**
+     * @return the layer
+     */
+    public String getLayer() {
+	return layer;
+    }
+
+    /**
+     * @param layer
+     *            the layer to set
+     */
+    public void setLayer(String layer) {
+	this.layer = layer;
     }
 
     @Override
