@@ -123,7 +123,7 @@ public class DependenciesUtil {
 	// Simple Dependencies
 	externalPackages = new HashMap<String, Set<String>>();
 	dotDescription = new StringBuilder("digraph " + fileName
-		+ " {\n\tnode[shape=box, fontsize=8];\n");
+		+ " {\n\tnode[shape=box, fontsize=8, height=.1, width=.1];\n");
 	for (ClassDependencies dependency : dependencies) {
 	    className = DependenciesUtil.getDotValidName(dependency.getClassName());
 
