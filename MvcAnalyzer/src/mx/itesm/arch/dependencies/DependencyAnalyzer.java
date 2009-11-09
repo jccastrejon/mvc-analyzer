@@ -115,11 +115,16 @@ public class DependencyAnalyzer {
     }
 
     /**
+     * Recover the dependencies from each Java class within the specified JAR
+     * file. The specified Input Stream is used to read the file contents.
      * 
      * @param file
+     *            Path to the JAR file.
      * @param inputStream
-     * @return
+     *            Input Stream to the JAR file.
+     * @return Dependencies for each class within the JAR file.
      * @throws IOException
+     *             If an I/O error has occurred.
      */
     public static List<ClassDependencies> getJarDependencies(final String file,
 	    final InputStream inputStream) throws IOException {
