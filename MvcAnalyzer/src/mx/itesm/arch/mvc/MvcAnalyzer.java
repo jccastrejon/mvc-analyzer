@@ -149,20 +149,20 @@ public class MvcAnalyzer {
     }
 
     /**
-     * Classify each class within the specified JAR file into one of the layers
+     * Classify each class within the specified WAR file into one of the layers
      * of the MVC pattern.
      * 
      * @param file
-     *            Path to the JAR file.
+     *            Path to the WAR file.
      * @throws Exception
      *             If an Exception occurs during classification.
      */
     public static void classifyClassesinWar(final String file) throws Exception {
-	List<ClassDependencies> jarDependencies;
+	List<ClassDependencies> warDependencies;
 
-	// Classify each class in the specified jar
-	jarDependencies = DependencyAnalyzer.getJarDependencies(file);
-	MvcAnalyzer.classifyClasses(jarDependencies);
+	// Classify each class in the specified war
+	warDependencies = DependencyAnalyzer.getWarDependencies(file);
+	MvcAnalyzer.classifyClasses(warDependencies);
     }
 
     /**
