@@ -15,9 +15,15 @@ public class MvcAnalyzerTest extends TestCase {
      * 
      */
     public void testClassifyClassesInDirectory() throws Exception {
-	MvcAnalyzer mvcAnalyzer;
+	MvcAnalyzer.classifyClassesInDirectory("bin");
+    }
 
-	mvcAnalyzer = new MvcAnalyzer();
-	mvcAnalyzer.classifyClassesInDirectory("bin");
+    /**
+     * 
+     * @throws Exception
+     */
+    public void testClassifyClassesInWar() throws Exception {
+	MvcAnalyzer
+		.classifyClassesinWar("/home/jccastrejon/java/spring-framework-2.5.6.SEC01/samples/petclinic/dist/petclinic.war");
     }
 }
