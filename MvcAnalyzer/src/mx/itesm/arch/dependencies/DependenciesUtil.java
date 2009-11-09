@@ -152,8 +152,7 @@ public class DependenciesUtil {
 	// Group internal packages
 	internalPackages = new HashMap<String, Set<String>>();
 	for (ClassDependencies dependency : dependencies) {
-	    currentPackageName = dependency.getClassName().substring(0,
-		    dependency.getClassName().lastIndexOf('.'));
+	    currentPackageName = dependency.getPackageName();
 
 	    if (!internalPackages.containsKey(currentPackageName)) {
 		internalPackages.put(currentPackageName, new HashSet<String>());

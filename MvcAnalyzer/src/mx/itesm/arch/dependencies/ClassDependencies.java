@@ -3,15 +3,27 @@ package mx.itesm.arch.dependencies;
 import java.util.List;
 
 /**
+ * Holds a class' dependency and classification data. That is, the dependencies
+ * with other classes in the same project, <em>internal dependencies</em>, and
+ * the dependencies with external projects, <em>external dependencies</em>. Once
+ * the class is classified into one of the MVC layers, the mvcLayer attribute is
+ * set. To uniquely identify a class, it's package and class name are also
+ * stored here here.
+ * 
  * @author jccastrejon
  * 
  */
 public class ClassDependencies {
 
     /**
-     * 
+     * MVC Layer.
      */
-    private String layer;
+    private String mvcLayer;
+
+    /**
+     * Package Name.
+     */
+    private String packageName;
 
     /**
      * Class name.
@@ -38,11 +50,21 @@ public class ClassDependencies {
      * @param externalDependencies
      *            Dependencies with external classes (libraries).
      */
-    public ClassDependencies(String className, List<String> internalDependencies,
-	    List<String> externalDependencies) {
+    public ClassDependencies(final String className, final List<String> internalDependencies,
+	    final List<String> externalDependencies) {
 	this.className = className;
 	this.internalDependencies = internalDependencies;
 	this.externalDependencies = externalDependencies;
+
+	if (className.indexOf('.') > 0) {
+	    this.packageName = className.substring(0, className.lastIndexOf('.'));
+	}
+    }
+
+    @Override
+    public String toString() {
+	return "{Class: " + this.className + " - Internal: " + this.internalDependencies
+		+ " - External: " + this.externalDependencies + "}";
     }
 
     /**
@@ -91,23 +113,32 @@ public class ClassDependencies {
     }
 
     /**
-     * @return the layer
+     * @return the packageName
      */
-    public String getLayer() {
-	return layer;
+    public String getPackageName() {
+	return packageName;
     }
 
     /**
-     * @param layer
-     *            the layer to set
+     * @param packageName
+     *            the packageName to set
      */
-    public void setLayer(String layer) {
-	this.layer = layer;
+    public void setPackageName(String packageName) {
+	this.packageName = packageName;
     }
 
-    @Override
-    public String toString() {
-	return "{Class: " + this.className + " - Internal: " + this.internalDependencies
-		+ " - External: " + this.externalDependencies + "}";
+    /**
+     * @return the mvcLayer
+     */
+    public String getMvcLayer() {
+	return mvcLayer;
+    }
+
+    /**
+     * @param mvcLayer
+     *            the mvcLayer to set
+     */
+    public void setMvcLayer(String mvcLayer) {
+	this.mvcLayer = mvcLayer;
     }
 }

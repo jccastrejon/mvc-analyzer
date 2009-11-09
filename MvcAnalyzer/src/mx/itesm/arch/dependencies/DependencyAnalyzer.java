@@ -9,6 +9,9 @@ import java.util.List;
 import java.util.Set;
 import java.util.jar.JarEntry;
 import java.util.jar.JarInputStream;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
+import java.util.zip.ZipInputStream;
 
 import org.objectweb.asm.ClassReader;
 
@@ -51,6 +54,43 @@ public class DependencyAnalyzer {
 	}
 
 	return returnValue;
+    }
+
+    public static List<ClassDependencies> getWarDependencies(final String file) throws Exception {
+	ZipFile zipFile;
+	ZipEntry zipEntry;
+	ZipInputStream inputStream;
+	List<ClassDependencies> returnValue;
+
+	// .class files in the WAR file
+	returnValue = DependencyAnalyzer.getJarDependencies(file);
+
+	// JAR files that belong to the same project
+	inputStream = new ZipInputStream(new FileInputStream(file));
+	zipEntry = inputStream.getNextEntry();
+	zipFile = new ZipFile(file);
+	while (zipEntry != null) {
+	    if ((!zipEntry.isDirectory()) && zipEntry.getName().endsWith(".jar")) {
+		// Consider only JAR files that start with the same name as the
+		// WAR file
+		if (zipEntry.getName().toLowerCase().startsWith(
+			file.substring(0, file.lastIndexOf('.')).toLowerCase())) {
+		    returnValue.addAll(DependencyAnalyzer.getJarDependencies(zipFile
+			    .getInputStream(zipEntry)));
+		}
+	    }
+	}
+
+	return returnValue;
+    }
+
+    /**
+     * 
+     * @param file
+     * @return
+     */
+    public static List<ClassDependencies> getJarDependencies(final InputStream file) {
+	return null;
     }
 
     /**

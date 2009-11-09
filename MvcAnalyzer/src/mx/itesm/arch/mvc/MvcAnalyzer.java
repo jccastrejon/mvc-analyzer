@@ -1,7 +1,5 @@
 package mx.itesm.arch.mvc;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
@@ -93,7 +91,12 @@ public class MvcAnalyzer {
     /**
      * Path to the properties file containing the model's variables.
      */
-    private final static String PROPERTIES_FILE_PATH = "/mvc-variables.properties";
+    private final static String PROPERTIES_FILE_PATH = "/cfg/mvc-variables.properties";
+
+    /**
+     * Path to the file containing the model's classifier.
+     */
+    private final static String CLASSIFIER_FILE_PATH = "/cfg/mvc-classifier.model";
 
     /**
      * Properties file containing the variables data.
@@ -120,35 +123,69 @@ public class MvcAnalyzer {
 	    MvcAnalyzer.classifierVariables.load(MvcAnalyzer.class
 		    .getResourceAsStream(MvcAnalyzer.PROPERTIES_FILE_PATH));
 
-	    MvcAnalyzer.classifier = (Classifier) SerializationHelper.read(new FileInputStream(
-		    new File("cfg/mvc-classifier.model")));
+	    MvcAnalyzer.classifier = (Classifier) SerializationHelper.read(MvcAnalyzer.class
+		    .getResourceAsStream(MvcAnalyzer.CLASSIFIER_FILE_PATH));
 	} catch (Exception e) {
-	    logger.log(Level.SEVERE, "Properties file" + MvcAnalyzer.PROPERTIES_FILE_PATH
+	    logger.log(Level.SEVERE, "Properties file: " + MvcAnalyzer.PROPERTIES_FILE_PATH
 		    + " could not be read", e);
 	}
     }
 
     /**
-     * Classify the classes contained in the specified path into one of the
-     * layers of the MVC pattern.
+     * Classify each class within the specified path into one of the layers of
+     * the MVC pattern.
      * 
      * @param path
      *            Path to the directory containing the classes.
      * @throws Exception
      *             If an Exception occurs during classification.
      */
-    public void classifyClassesInDirectory(final String path) throws Exception {
+    public static void classifyClassesInDirectory(final String path) throws Exception {
+	List<ClassDependencies> directoryDependencies;
+
+	// Classify each class in the specified path
+	directoryDependencies = DependencyAnalyzer.getDirectoryDependencies(path);
+	MvcAnalyzer.classifyClasses(directoryDependencies);
+    }
+
+    /**
+     * Classify each class within the specified JAR file into one of the layers
+     * of the MVC pattern.
+     * 
+     * @param file
+     *            Path to the JAR file.
+     * @throws Exception
+     *             If an Exception occurs during classification.
+     */
+    public static void classifyClassesinWar(final String file) throws Exception {
+	List<ClassDependencies> jarDependencies;
+
+	// Classify each class in the specified jar
+	jarDependencies = DependencyAnalyzer.getJarDependencies(file);
+	MvcAnalyzer.classifyClasses(jarDependencies);
+    }
+
+    /**
+     * Classify each class in the specified List into one of the layers of the
+     * MVC pattern.
+     * 
+     * @param dependencies
+     *            List containinge the dependencies for each class to classify.
+     * @throws Exception
+     *             If an Exception occurs during classification.
+     */
+    private static void classifyClasses(final List<ClassDependencies> dependencies)
+	    throws Exception {
 	int instanceLayer;
 	Instance instance;
 	boolean valueFound;
 	Instances instances;
 	String[] suffixValues;
-	Enumeration variableEnumeration;
 	FastVector attributes;
 	FastVector variableValues;
 	String[] externalApiValues;
+	Enumeration variableEnumeration;
 	Map<String, String[]> externalApiPackages;
-	List<ClassDependencies> directoryDependencies;
 
 	// Model variables
 	attributes = new FastVector();
@@ -181,9 +218,7 @@ public class MvcAnalyzer {
 	    }
 	}
 
-	// Classify each class in the specified path
-	directoryDependencies = DependencyAnalyzer.getDirectoryDependencies(path);
-	for (ClassDependencies classDependencies : directoryDependencies) {
+	for (ClassDependencies classDependencies : dependencies) {
 	    instance = new Instance(Variable.values().length);
 
 	    // Type
@@ -196,9 +231,11 @@ public class MvcAnalyzer {
 		    continue;
 		}
 
+		// Check if any of the class' external dependencies match with
+		// one of the key external dependencies
 		for (String externalDependency : classDependencies.getExternalDependencies()) {
 		    for (String externalPackage : externalApiPackages.get(externalApi)) {
-			if (externalDependency.contains(externalPackage)) {
+			if (externalDependency.toLowerCase().startsWith(externalPackage)) {
 			    valueFound = true;
 			    instance.setValue(Variable.ExternalAPI.getAttribute(), externalApi);
 			    break externalApi;
@@ -207,6 +244,7 @@ public class MvcAnalyzer {
 		}
 	    }
 
+	    // No key external dependency found
 	    if (!valueFound) {
 		instance.setValue(Variable.ExternalAPI.getAttribute(), "none");
 	    }
@@ -214,24 +252,25 @@ public class MvcAnalyzer {
 	    // Suffix
 	    valueFound = false;
 	    for (String suffix : suffixValues) {
-		if (classDependencies.getClassName().endsWith(suffix)) {
+		if (classDependencies.getClassName().toLowerCase().endsWith(suffix)) {
 		    valueFound = true;
 		    instance.setValue(Variable.Suffix.getAttribute(), suffix);
 		    break;
 		}
 	    }
 
+	    // No key suffix found
 	    if (!valueFound) {
 		instance.setValue(Variable.Suffix.getAttribute(), "none");
 	    }
 
-	    // Layer
+	    // Layer, the unknown variable
 	    instance.setMissing(Variable.Layer.getAttribute());
 	    instances.add(instance);
 	    instance.setDataset(instances);
 	    instanceLayer = (int) MvcAnalyzer.classifier.classifyInstance(instance);
-	    classDependencies.setLayer(Variable.Layer.getAttribute().value(instanceLayer));
-	    System.out.println(classDependencies.getLayer());
+	    classDependencies.setMvcLayer(Variable.Layer.getAttribute().value(instanceLayer));
+	    logger.info(classDependencies.getClassName() + " : " + classDependencies.getMvcLayer());
 	}
     }
 
@@ -244,10 +283,18 @@ public class MvcAnalyzer {
      * @return Property's values.
      */
     private static String[] getPropertyValues(final String propertyName) {
+	String[] returnValue;
+
 	if ((propertyName == null) || (!MvcAnalyzer.classifierVariables.containsKey(propertyName))) {
-	    throw new IllegalArgumentException();
+	    throw new IllegalArgumentException("Invalid property: " + propertyName);
 	}
 
-	return MvcAnalyzer.classifierVariables.getProperty(propertyName).split(",");
+	// Make sure all the values are in lower case
+	returnValue = MvcAnalyzer.classifierVariables.getProperty(propertyName).split(",");
+	for (int i = 0; i < returnValue.length; i++) {
+	    returnValue[i] = returnValue[i].toLowerCase();
+	}
+
+	return returnValue;
     }
 }

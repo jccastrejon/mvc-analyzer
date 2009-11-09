@@ -25,7 +25,7 @@ public class DependencyAnalyzerTest extends TestCase {
     public void setUp() throws Exception {
 	LogManager.getLogManager().readConfiguration(
 		DependencyAnalyzerTest.class.getClassLoader().getResourceAsStream(
-			"test-logging.properties"));
+			"cfg/test-logging.properties"));
     }
 
     /**
