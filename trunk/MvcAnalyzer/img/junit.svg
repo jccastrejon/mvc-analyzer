@@ -76,7 +76,7 @@
 <polygon style="fill:black;stroke:black;" points="194.137,-268.56 195,-258 187.74,-265.717 194.137,-268.56"/>
 </g>
 <!-- AboutDialog&#45;&gt;Version -->
-<g id="edge184" class="edge"><title>AboutDialog&#45;&gt;Version</title>
+<g id="edge182" class="edge"><title>AboutDialog&#45;&gt;Version</title>
 <path style="fill:none;stroke:black;" d="M764,-416C643,-414 234,-407 224,-398 189,-364 198,-300 202,-268"/>
 <polygon style="fill:black;stroke:black;" points="205.488,-268.299 203,-258 198.522,-267.602 205.488,-268.299"/>
 </g>
@@ -91,12 +91,12 @@
 <polygon style="fill:black;stroke:black;" points="1876.4,-371.478 1886,-367 1875.7,-364.512 1876.4,-371.478"/>
 </g>
 <!-- TestSelector -->
-<g id="node135" class="node"><title>TestSelector</title>
+<g id="node136" class="node"><title>TestSelector</title>
 <polygon style="fill:none;stroke:black;" points="1122,-318 1054,-318 1054,-300 1122,-300 1122,-318"/>
 <text text-anchor="middle" x="1088" y="-306.8" style="font-family:Times New Roman;font-size:8.00;">TestSelector</text>
 </g>
 <!-- AboutDialog&#45;&gt;TestSelector -->
-<g id="edge182" class="edge"><title>AboutDialog&#45;&gt;TestSelector</title>
+<g id="edge184" class="edge"><title>AboutDialog&#45;&gt;TestSelector</title>
 <path style="fill:none;stroke:black;" d="M830,-409C833,-409 836,-408 839,-408 854,-406 1097,-408 1107,-398 1126,-378 1112,-346 1100,-326"/>
 <polygon style="fill:black;stroke:black;" points="1103.27,-324.625 1095,-318 1097.33,-328.335 1103.27,-324.625"/>
 </g>
@@ -121,7 +121,7 @@
 <text text-anchor="middle" x="2105" y="-414.8" style="font-family:Times New Roman;font-size:8.00;">TestRunner$1</text>
 </g>
 <!-- TestRunner$1&#45;&gt;TestRunner -->
-<g id="edge244" class="edge"><title>TestRunner$1&#45;&gt;TestRunner</title>
+<g id="edge246" class="edge"><title>TestRunner$1&#45;&gt;TestRunner</title>
 <path style="fill:none;stroke:black;" d="M2068,-408C2035,-399 1986,-385 1953,-375"/>
 <polygon style="fill:black;stroke:black;" points="1953.58,-371.521 1943,-372 1951.57,-378.226 1953.58,-371.521"/>
 </g>
@@ -131,7 +131,7 @@
 <polygon style="fill:black;stroke:black;" points="1958.58,-370.521 1948,-371 1956.57,-377.226 1958.58,-370.521"/>
 </g>
 <!-- TestResult -->
-<g id="node16" class="node"><title>TestResult</title>
+<g id="node18" class="node"><title>TestResult</title>
 <polygon style="fill:none;stroke:black;" points="3388,-258 3328,-258 3328,-240 3388,-240 3388,-258"/>
 <text text-anchor="middle" x="3358" y="-246.8" style="font-family:Times New Roman;font-size:8.00;">TestResult</text>
 </g>
@@ -141,12 +141,12 @@
 <polygon style="fill:black;stroke:black;" points="3376.22,-263.221 3367,-258 3370.95,-267.831 3376.22,-263.221"/>
 </g>
 <!-- Test -->
-<g id="node20" class="node"><title>Test</title>
+<g id="node22" class="node"><title>Test</title>
 <polygon style="fill:none;stroke:black;" points="3443,-150 3411,-150 3411,-132 3443,-132 3443,-150"/>
 <text text-anchor="middle" x="3427" y="-138.8" style="font-family:Times New Roman;font-size:8.00;">Test</text>
 </g>
 <!-- TestRunner$1&#45;&gt;Test -->
-<g id="edge246" class="edge"><title>TestRunner$1&#45;&gt;Test</title>
+<g id="edge244" class="edge"><title>TestRunner$1&#45;&gt;Test</title>
 <path style="fill:none;stroke:black;" d="M2142,-409C2145,-409 2148,-408 2151,-408 2186,-404 3356,-410 3388,-398 3416,-387 3411,-364 3438,-354 3459,-345 3827,-360 3842,-344 3868,-317 3863,-211 3828,-178 3800,-151 3524,-157 3453,-149"/>
 <polygon style="fill:black;stroke:black;" points="3453.49,-145.529 3443,-147 3452.12,-152.393 3453.49,-145.529"/>
 </g>
@@ -161,22 +161,22 @@
 <polygon style="fill:black;stroke:black;" points="1991.1,-321.2 1981,-318 1986.9,-326.8 1991.1,-321.2"/>
 </g>
 <!-- TestRunner&#45;&gt;AboutDialog -->
-<g id="edge330" class="edge"><title>TestRunner&#45;&gt;AboutDialog</title>
+<g id="edge328" class="edge"><title>TestRunner&#45;&gt;AboutDialog</title>
 <path style="fill:none;stroke:black;" d="M1886,-371C1840,-379 1753,-392 1677,-398 1496,-411 1039,-387 857,-408 852,-409 846,-410 840,-411"/>
 <polygon style="fill:black;stroke:black;" points="839.119,-407.607 830,-413 840.492,-414.471 839.119,-407.607"/>
 </g>
 <!-- TestRunner&#45;&gt;AboutDialog -->
-<g id="edge48" class="edge"><title>TestRunner&#45;&gt;AboutDialog</title>
+<g id="edge38" class="edge"><title>TestRunner&#45;&gt;AboutDialog</title>
 <path style="fill:none;stroke:black;" d="M1886,-368C1838,-377 1742,-392 1659,-398 1481,-411 1037,-388 840,-408"/>
 <polygon style="fill:black;stroke:black;" points="839.602,-404.522 830,-409 840.299,-411.488 839.602,-404.522"/>
 </g>
 <!-- TestRunner&#45;&gt;Logo -->
-<g id="edge42" class="edge"><title>TestRunner&#45;&gt;Logo</title>
+<g id="edge36" class="edge"><title>TestRunner&#45;&gt;Logo</title>
 <path style="fill:none;stroke:black;" d="M1886,-362C1837,-359 1741,-355 1659,-354 1642,-353 404,-351 387,-344 379,-340 372,-333 366,-326"/>
 <polygon style="fill:black;stroke:black;" points="368.8,-323.9 360,-318 363.2,-328.1 368.8,-323.9"/>
 </g>
 <!-- TestRunner&#45;&gt;Version -->
-<g id="edge320" class="edge"><title>TestRunner&#45;&gt;Version</title>
+<g id="edge318" class="edge"><title>TestRunner&#45;&gt;Version</title>
 <path style="fill:none;stroke:black;" d="M1886,-362C1836,-360 1735,-355 1650,-354 1550,-351 841,-358 741,-344 657,-331 641,-304 556,-292 520,-286 260,-298 226,-284 218,-280 211,-273 206,-267"/>
 <polygon style="fill:black;stroke:black;" points="208.916,-265.042 201,-258 202.797,-268.441 208.916,-265.042"/>
 </g>
@@ -185,8 +185,23 @@
 <path style="fill:none;stroke:black;" d="M1886,-361C1839,-359 1747,-355 1668,-354 1568,-351 859,-358 759,-344 675,-331 659,-304 574,-292 538,-286 278,-298 244,-284 236,-280 228,-273 222,-266"/>
 <polygon style="fill:black;stroke:black;" points="224.219,-263.221 215,-258 218.951,-267.831 224.219,-263.221"/>
 </g>
+<!-- ProgressBar -->
+<g id="node15" class="node"><title>ProgressBar</title>
+<polygon style="fill:none;stroke:black;" points="2345,-318 2275,-318 2275,-300 2345,-300 2345,-318"/>
+<text text-anchor="middle" x="2310" y="-306.8" style="font-family:Times New Roman;font-size:8.00;">ProgressBar</text>
+</g>
+<!-- TestRunner&#45;&gt;ProgressBar -->
+<g id="edge34" class="edge"><title>TestRunner&#45;&gt;ProgressBar</title>
+<path style="fill:none;stroke:black;" d="M1948,-361C2030,-357 2245,-346 2252,-344 2264,-339 2276,-331 2286,-324"/>
+<polygon style="fill:black;stroke:black;" points="2288.1,-326.8 2294,-318 2283.9,-321.2 2288.1,-326.8"/>
+</g>
+<!-- TestRunner&#45;&gt;ProgressBar -->
+<g id="edge338" class="edge"><title>TestRunner&#45;&gt;ProgressBar</title>
+<path style="fill:none;stroke:black;" d="M1948,-362C2033,-358 2263,-346 2270,-344 2282,-340 2293,-332 2301,-325"/>
+<polygon style="fill:black;stroke:black;" points="2303.4,-327.546 2308,-318 2298.45,-322.596 2303.4,-327.546"/>
+</g>
 <!-- TestRunner&#45;&gt;TestResult -->
-<g id="edge338" class="edge"><title>TestRunner&#45;&gt;TestResult</title>
+<g id="edge334" class="edge"><title>TestRunner&#45;&gt;TestResult</title>
 <path style="fill:none;stroke:black;" d="M1948,-362C2029,-360 2248,-356 2431,-354 2454,-353 3205,-351 3225,-344 3269,-328 3309,-287 3334,-265"/>
 <polygon style="fill:black;stroke:black;" points="3336.78,-267.219 3342,-258 3332.17,-261.951 3336.78,-267.219"/>
 </g>
@@ -196,12 +211,12 @@
 <polygon style="fill:black;stroke:black;" points="3359.14,-268.56 3360,-258 3352.74,-265.717 3359.14,-268.56"/>
 </g>
 <!-- TestRunner&#45;&gt;TestResult -->
-<g id="edge46" class="edge"><title>TestRunner&#45;&gt;TestResult</title>
+<g id="edge48" class="edge"><title>TestRunner&#45;&gt;TestResult</title>
 <path style="fill:none;stroke:black;" d="M1948,-362C2030,-361 2259,-356 2449,-354 2472,-353 3223,-351 3243,-344 3286,-328 3325,-288 3345,-266"/>
 <polygon style="fill:black;stroke:black;" points="3347.8,-268.1 3351,-258 3342.2,-263.9 3347.8,-268.1"/>
 </g>
 <!-- TestListener -->
-<g id="node18" class="node"><title>TestListener</title>
+<g id="node20" class="node"><title>TestListener</title>
 <polygon style="fill:none;stroke:black;" points="3248,-204 3180,-204 3180,-186 3248,-186 3248,-204"/>
 <text text-anchor="middle" x="3214" y="-192.8" style="font-family:Times New Roman;font-size:8.00;">TestListener</text>
 </g>
@@ -216,12 +231,12 @@
 <polygon style="fill:black;stroke:black;" points="3196.38,-212.268 3203,-204 3192.66,-206.332 3196.38,-212.268"/>
 </g>
 <!-- TestRunner&#45;&gt;Test -->
-<g id="edge334" class="edge"><title>TestRunner&#45;&gt;Test</title>
+<g id="edge332" class="edge"><title>TestRunner&#45;&gt;Test</title>
 <path style="fill:none;stroke:black;" d="M1948,-362C2029,-360 2248,-356 2431,-354 2525,-352 3179,-354 3271,-344 3398,-329 3471,-382 3551,-284 3581,-247 3581,-214 3551,-178 3520,-139 3490,-162 3444,-152"/>
 <polygon style="fill:black;stroke:black;" points="3444.49,-148.529 3434,-150 3443.12,-155.393 3444.49,-148.529"/>
 </g>
 <!-- TestRunner&#45;&gt;Test -->
-<g id="edge40" class="edge"><title>TestRunner&#45;&gt;Test</title>
+<g id="edge44" class="edge"><title>TestRunner&#45;&gt;Test</title>
 <path style="fill:none;stroke:black;" d="M1948,-362C2030,-361 2259,-356 2449,-354 2543,-352 3197,-354 3289,-344 3416,-329 3489,-382 3569,-284 3599,-247 3599,-214 3569,-178 3538,-138 3508,-162 3453,-150"/>
 <polygon style="fill:black;stroke:black;" points="3453.58,-146.521 3443,-147 3451.57,-153.226 3453.58,-146.521"/>
 </g>
@@ -230,33 +245,18 @@
 <path style="fill:none;stroke:black;" d="M1948,-363C2033,-361 2271,-356 2467,-354 2561,-352 3215,-354 3307,-344 3434,-329 3507,-382 3587,-284 3617,-247 3617,-214 3587,-178 3554,-136 3522,-165 3470,-150 3465,-148 3460,-146 3453,-144"/>
 <polygon style="fill:black;stroke:black;" points="3453.49,-140.529 3443,-142 3452.12,-147.393 3453.49,-140.529"/>
 </g>
-<!-- ProgressBar -->
-<g id="node22" class="node"><title>ProgressBar</title>
-<polygon style="fill:none;stroke:black;" points="2345,-318 2275,-318 2275,-300 2345,-300 2345,-318"/>
-<text text-anchor="middle" x="2310" y="-306.8" style="font-family:Times New Roman;font-size:8.00;">ProgressBar</text>
-</g>
-<!-- TestRunner&#45;&gt;ProgressBar -->
-<g id="edge34" class="edge"><title>TestRunner&#45;&gt;ProgressBar</title>
-<path style="fill:none;stroke:black;" d="M1948,-361C2030,-357 2245,-346 2252,-344 2264,-339 2276,-331 2286,-324"/>
-<polygon style="fill:black;stroke:black;" points="2288.1,-326.8 2294,-318 2283.9,-321.2 2288.1,-326.8"/>
-</g>
-<!-- TestRunner&#45;&gt;ProgressBar -->
-<g id="edge342" class="edge"><title>TestRunner&#45;&gt;ProgressBar</title>
-<path style="fill:none;stroke:black;" d="M1948,-362C2033,-358 2263,-346 2270,-344 2282,-340 2293,-332 2301,-325"/>
-<polygon style="fill:black;stroke:black;" points="2303.4,-327.546 2308,-318 2298.45,-322.596 2303.4,-327.546"/>
-</g>
 <!-- BaseTestRunner -->
 <g id="node24" class="node"><title>BaseTestRunner</title>
 <polygon style="fill:none;stroke:black;" points="328,-258 244,-258 244,-240 328,-240 328,-258"/>
 <text text-anchor="middle" x="286" y="-246.8" style="font-family:Times New Roman;font-size:8.00;">BaseTestRunner</text>
 </g>
 <!-- TestRunner&#45;&gt;BaseTestRunner -->
-<g id="edge332" class="edge"><title>TestRunner&#45;&gt;BaseTestRunner</title>
+<g id="edge330" class="edge"><title>TestRunner&#45;&gt;BaseTestRunner</title>
 <path style="fill:none;stroke:black;" d="M1886,-362C1834,-360 1729,-356 1641,-354 1618,-353 829,-351 806,-344 768,-331 771,-304 732,-292 689,-277 363,-298 319,-284 308,-280 296,-273 289,-266"/>
 <polygon style="fill:black;stroke:black;" points="291.219,-263.221 282,-258 285.951,-267.831 291.219,-263.221"/>
 </g>
 <!-- TestRunner&#45;&gt;BaseTestRunner -->
-<g id="edge38" class="edge"><title>TestRunner&#45;&gt;BaseTestRunner</title>
+<g id="edge42" class="edge"><title>TestRunner&#45;&gt;BaseTestRunner</title>
 <path style="fill:none;stroke:black;" d="M1886,-362C1837,-359 1741,-355 1659,-354 1636,-353 847,-351 824,-344 786,-331 789,-304 750,-292 707,-277 381,-298 337,-284 325,-280 313,-272 304,-265"/>
 <polygon style="fill:black;stroke:black;" points="305.831,-261.951 296,-258 301.221,-267.219 305.831,-261.951"/>
 </g>
@@ -266,17 +266,17 @@
 <polygon style="fill:black;stroke:black;" points="319.441,-259.797 309,-258 316.042,-265.916 319.441,-259.797"/>
 </g>
 <!-- TestSuite -->
-<g id="node37" class="node"><title>TestSuite</title>
+<g id="node39" class="node"><title>TestSuite</title>
 <polygon style="fill:none;stroke:black;" points="3234,-318 3180,-318 3180,-300 3234,-300 3234,-318"/>
 <text text-anchor="middle" x="3207" y="-306.8" style="font-family:Times New Roman;font-size:8.00;">TestSuite</text>
 </g>
 <!-- TestRunner&#45;&gt;TestSuite -->
-<g id="edge326" class="edge"><title>TestRunner&#45;&gt;TestSuite</title>
+<g id="edge324" class="edge"><title>TestRunner&#45;&gt;TestSuite</title>
 <path style="fill:none;stroke:black;" d="M1948,-362C2029,-360 2248,-356 2431,-354 2451,-353 3130,-351 3148,-344 3159,-339 3168,-331 3178,-324"/>
 <polygon style="fill:black;stroke:black;" points="3180.1,-326.8 3186,-318 3175.9,-321.2 3180.1,-326.8"/>
 </g>
 <!-- TestRunner&#45;&gt;TestSuite -->
-<g id="edge36" class="edge"><title>TestRunner&#45;&gt;TestSuite</title>
+<g id="edge40" class="edge"><title>TestRunner&#45;&gt;TestSuite</title>
 <path style="fill:none;stroke:black;" d="M1948,-362C2030,-361 2259,-356 2449,-354 2469,-353 3148,-351 3166,-344 3176,-340 3185,-332 3193,-325"/>
 <polygon style="fill:black;stroke:black;" points="3195.4,-327.546 3200,-318 3190.45,-322.596 3195.4,-327.546"/>
 </g>
@@ -286,17 +286,17 @@
 <polygon style="fill:black;stroke:black;" points="3210.8,-328.1 3214,-318 3205.2,-323.9 3210.8,-328.1"/>
 </g>
 <!-- TestCase -->
-<g id="node42" class="node"><title>TestCase</title>
+<g id="node43" class="node"><title>TestCase</title>
 <polygon style="fill:none;stroke:black;" points="3458,-204 3404,-204 3404,-186 3458,-186 3458,-204"/>
 <text text-anchor="middle" x="3431" y="-192.8" style="font-family:Times New Roman;font-size:8.00;">TestCase</text>
 </g>
 <!-- TestRunner&#45;&gt;TestCase -->
-<g id="edge318" class="edge"><title>TestRunner&#45;&gt;TestCase</title>
+<g id="edge316" class="edge"><title>TestRunner&#45;&gt;TestCase</title>
 <path style="fill:none;stroke:black;" d="M1948,-362C2122,-359 2961,-345 2967,-344 3112,-317 3138,-275 3278,-232 3318,-219 3363,-208 3394,-202"/>
 <polygon style="fill:black;stroke:black;" points="3394.88,-205.393 3404,-200 3393.51,-198.529 3394.88,-205.393"/>
 </g>
 <!-- TestRunner&#45;&gt;TestCase -->
-<g id="edge44" class="edge"><title>TestRunner&#45;&gt;TestCase</title>
+<g id="edge46" class="edge"><title>TestRunner&#45;&gt;TestCase</title>
 <path style="fill:none;stroke:black;" d="M1948,-363C2123,-360 2979,-345 2985,-344 3130,-317 3156,-275 3296,-232 3329,-221 3366,-212 3394,-205"/>
 <polygon style="fill:black;stroke:black;" points="3394.88,-208.393 3404,-203 3393.51,-201.529 3394.88,-208.393"/>
 </g>
@@ -306,7 +306,7 @@
 <text text-anchor="middle" x="122" y="-138.8" style="font-family:Times New Roman;font-size:8.00;">TestSuiteLoader</text>
 </g>
 <!-- TestRunner&#45;&gt;TestSuiteLoader -->
-<g id="edge344" class="edge"><title>TestRunner&#45;&gt;TestSuiteLoader</title>
+<g id="edge340" class="edge"><title>TestRunner&#45;&gt;TestSuiteLoader</title>
 <path style="fill:none;stroke:black;" d="M1886,-362C1834,-360 1729,-356 1641,-354 1608,-353 465,-355 433,-344 399,-331 404,-304 369,-292 351,-285 34,-297 20,-284 -13,-249 12,-214 43,-178 52,-168 63,-160 76,-154"/>
 <polygon style="fill:black;stroke:black;" points="77.2834,-157.26 85,-150 74.4404,-150.863 77.2834,-157.26"/>
 </g>
@@ -331,7 +331,7 @@
 <polygon style="fill:black;stroke:black;" points="3276.62,-212.459 3283,-204 3272.74,-206.635 3276.62,-212.459"/>
 </g>
 <!-- StandardTestSuiteLoader -->
-<g id="node114" class="node"><title>StandardTestSuiteLoader</title>
+<g id="node115" class="node"><title>StandardTestSuiteLoader</title>
 <polygon style="fill:none;stroke:black;" points="192,-204 70,-204 70,-186 192,-186 192,-204"/>
 <text text-anchor="middle" x="131" y="-192.8" style="font-family:Times New Roman;font-size:8.00;">StandardTestSuiteLoader</text>
 </g>
@@ -346,7 +346,7 @@
 <text text-anchor="middle" x="561" y="-84.8" style="font-family:Times New Roman;font-size:8.00;">TestCollector</text>
 </g>
 <!-- TestRunner&#45;&gt;TestCollector -->
-<g id="edge346" class="edge"><title>TestRunner&#45;&gt;TestCollector</title>
+<g id="edge342" class="edge"><title>TestRunner&#45;&gt;TestCollector</title>
 <path style="fill:none;stroke:black;" d="M1886,-362C1837,-359 1741,-355 1659,-354 1625,-353 1079,-351 1045,-344 847,-298 643,-150 580,-102"/>
 <polygon style="fill:black;stroke:black;" points="582.1,-99.2 572,-96 577.9,-104.8 582.1,-99.2"/>
 </g>
@@ -356,7 +356,7 @@
 <text text-anchor="middle" x="553" y="-246.8" style="font-family:Times New Roman;font-size:8.00;">FailureDetailView</text>
 </g>
 <!-- TestRunner&#45;&gt;FailureDetailView -->
-<g id="edge322" class="edge"><title>TestRunner&#45;&gt;FailureDetailView</title>
+<g id="edge320" class="edge"><title>TestRunner&#45;&gt;FailureDetailView</title>
 <path style="fill:none;stroke:black;" d="M1886,-362C1837,-359 1741,-355 1659,-354 1638,-353 892,-352 872,-344 844,-331 853,-305 824,-292 789,-275 687,-291 648,-284 625,-279 600,-270 581,-262"/>
 <polygon style="fill:black;stroke:black;" points="582.56,-258.863 572,-258 579.717,-265.26 582.56,-258.863"/>
 </g>
@@ -371,12 +371,12 @@
 <polygon style="fill:black;stroke:black;" points="220.398,-206.478 230,-202 219.701,-199.512 220.398,-206.478"/>
 </g>
 <!-- TestRunner&#45;&gt;TestSelector -->
-<g id="edge336" class="edge"><title>TestRunner&#45;&gt;TestSelector</title>
+<g id="edge346" class="edge"><title>TestRunner&#45;&gt;TestSelector</title>
 <path style="fill:none;stroke:black;" d="M1886,-362C1787,-358 1482,-347 1437,-344 1328,-336 1199,-322 1132,-314"/>
 <polygon style="fill:black;stroke:black;" points="1132.3,-310.512 1122,-313 1131.6,-317.478 1132.3,-310.512"/>
 </g>
 <!-- TestRunner&#45;&gt;CounterPanel -->
-<g id="edge328" class="edge"><title>TestRunner&#45;&gt;CounterPanel</title>
+<g id="edge326" class="edge"><title>TestRunner&#45;&gt;CounterPanel</title>
 <path style="fill:none;stroke:black;" d="M1921,-354C1927,-346 1938,-334 1948,-325"/>
 <polygon style="fill:black;stroke:black;" points="1950.4,-327.546 1955,-318 1945.45,-322.596 1950.4,-327.546"/>
 </g>
@@ -386,7 +386,7 @@
 <text text-anchor="middle" x="1942" y="-246.8" style="font-family:Times New Roman;font-size:8.00;">StatusLine</text>
 </g>
 <!-- TestRunner&#45;&gt;StatusLine -->
-<g id="edge340" class="edge"><title>TestRunner&#45;&gt;StatusLine</title>
+<g id="edge336" class="edge"><title>TestRunner&#45;&gt;StatusLine</title>
 <path style="fill:none;stroke:black;" d="M1917,-354C1918,-340 1920,-313 1925,-292 1927,-284 1931,-275 1933,-267"/>
 <polygon style="fill:black;stroke:black;" points="1936.14,-268.56 1937,-258 1929.74,-265.717 1936.14,-268.56"/>
 </g>
@@ -411,12 +411,12 @@
 <polygon style="fill:black;stroke:black;" points="2619.1,-326.8 2625,-318 2614.9,-321.2 2619.1,-326.8"/>
 </g>
 <!-- TestRunContext -->
-<g id="node156" class="node"><title>TestRunContext</title>
+<g id="node158" class="node"><title>TestRunContext</title>
 <polygon style="fill:none;stroke:black;" points="2662,-258 2582,-258 2582,-240 2662,-240 2662,-258"/>
 <text text-anchor="middle" x="2622" y="-246.8" style="font-family:Times New Roman;font-size:8.00;">TestRunContext</text>
 </g>
 <!-- TestRunner&#45;&gt;TestRunContext -->
-<g id="edge324" class="edge"><title>TestRunner&#45;&gt;TestRunContext</title>
+<g id="edge322" class="edge"><title>TestRunner&#45;&gt;TestRunContext</title>
 <path style="fill:none;stroke:black;" d="M1948,-359C1963,-357 1981,-355 1997,-354 2025,-351 2220,-359 2242,-344 2264,-329 2245,-305 2266,-292 2281,-282 2557,-289 2573,-284 2585,-280 2596,-272 2605,-265"/>
 <polygon style="fill:black;stroke:black;" points="2607.78,-267.219 2613,-258 2603.17,-261.951 2607.78,-267.219"/>
 </g>
@@ -426,7 +426,7 @@
 <text text-anchor="middle" x="2530" y="-246.8" style="font-family:Times New Roman;font-size:8.00;">TestRunView</text>
 </g>
 <!-- TestRunner&#45;&gt;TestRunView -->
-<g id="edge316" class="edge"><title>TestRunner&#45;&gt;TestRunView</title>
+<g id="edge344" class="edge"><title>TestRunner&#45;&gt;TestRunView</title>
 <path style="fill:none;stroke:black;" d="M1948,-359C1963,-357 1981,-355 1997,-354 2023,-352 2205,-358 2226,-344 2248,-329 2230,-306 2251,-292 2272,-278 2452,-291 2475,-284 2488,-279 2501,-271 2512,-264"/>
 <polygon style="fill:black;stroke:black;" points="2514.1,-266.8 2520,-258 2509.9,-261.2 2514.1,-266.8"/>
 </g>
@@ -461,29 +461,29 @@
 <polygon style="fill:black;stroke:black;" points="1958.49,-368.529 1948,-370 1957.12,-375.393 1958.49,-368.529"/>
 </g>
 <!-- TestRunner$10&#45;&gt;TestRunner -->
-<g id="edge12" class="edge"><title>TestRunner$10&#45;&gt;TestRunner</title>
+<g id="edge14" class="edge"><title>TestRunner$10&#45;&gt;TestRunner</title>
 <path style="fill:none;stroke:black;" d="M2160,-409C2106,-398 2012,-379 1958,-370"/>
 <polygon style="fill:black;stroke:black;" points="1958.49,-366.529 1948,-368 1957.12,-373.393 1958.49,-366.529"/>
 </g>
+<!-- TestRunner$10&#45;&gt;ProgressBar -->
+<g id="edge12" class="edge"><title>TestRunner$10&#45;&gt;ProgressBar</title>
+<path style="fill:none;stroke:black;" d="M2208,-408C2227,-390 2269,-349 2293,-325"/>
+<polygon style="fill:black;stroke:black;" points="2295.78,-327.219 2301,-318 2291.17,-321.951 2295.78,-327.219"/>
+</g>
 <!-- TestRunner$10&#45;&gt;TestResult -->
-<g id="edge14" class="edge"><title>TestRunner$10&#45;&gt;TestResult</title>
+<g id="edge16" class="edge"><title>TestRunner$10&#45;&gt;TestResult</title>
 <path style="fill:none;stroke:black;" d="M2238,-409C2241,-409 2244,-408 2247,-408 2308,-402 3292,-416 3350,-398 3406,-380 3462,-338 3426,-292 3418,-281 3409,-290 3397,-284 3388,-279 3380,-272 3373,-265"/>
 <polygon style="fill:black;stroke:black;" points="3375.55,-262.596 3366,-258 3370.6,-267.546 3375.55,-262.596"/>
 </g>
 <!-- TestRunner$10&#45;&gt;TestListener -->
-<g id="edge16" class="edge"><title>TestRunner$10&#45;&gt;TestListener</title>
+<g id="edge18" class="edge"><title>TestRunner$10&#45;&gt;TestListener</title>
 <path style="fill:none;stroke:black;" d="M2238,-409C2241,-409 2244,-408 2247,-408 2311,-401 3334,-416 3395,-398 3484,-371 3526,-365 3569,-284 3580,-263 3585,-249 3569,-232 3547,-208 3322,-209 3258,-203"/>
 <polygon style="fill:black;stroke:black;" points="3258.3,-199.512 3248,-202 3257.6,-206.478 3258.3,-199.512"/>
 </g>
 <!-- TestRunner$10&#45;&gt;Test -->
-<g id="edge18" class="edge"><title>TestRunner$10&#45;&gt;Test</title>
+<g id="edge20" class="edge"><title>TestRunner$10&#45;&gt;Test</title>
 <path style="fill:none;stroke:black;" d="M2238,-409C2241,-409 2244,-408 2247,-408 2315,-401 3395,-415 3460,-398 3500,-387 3501,-364 3540,-354 3559,-348 3878,-356 3892,-344 3922,-319 3911,-185 3904,-178 3872,-143 3536,-158 3453,-149"/>
 <polygon style="fill:black;stroke:black;" points="3453.49,-145.529 3443,-147 3452.12,-152.393 3453.49,-145.529"/>
-</g>
-<!-- TestRunner$10&#45;&gt;ProgressBar -->
-<g id="edge20" class="edge"><title>TestRunner$10&#45;&gt;ProgressBar</title>
-<path style="fill:none;stroke:black;" d="M2208,-408C2227,-390 2269,-349 2293,-325"/>
-<polygon style="fill:black;stroke:black;" points="2295.78,-327.219 2301,-318 2291.17,-321.951 2295.78,-327.219"/>
 </g>
 <!-- TestRunner$10&#45;&gt;BaseTestRunner -->
 <g id="edge22" class="edge"><title>TestRunner$10&#45;&gt;BaseTestRunner</title>
@@ -506,7 +506,7 @@
 <polygon style="fill:black;stroke:black;" points="3406.62,-212.459 3413,-204 3402.74,-206.635 3406.62,-212.459"/>
 </g>
 <!-- Protectable -->
-<g id="node71" class="node"><title>Protectable</title>
+<g id="node72" class="node"><title>Protectable</title>
 <polygon style="fill:none;stroke:black;" points="3560,-204 3496,-204 3496,-186 3560,-186 3560,-204"/>
 <text text-anchor="middle" x="3528" y="-192.8" style="font-family:Times New Roman;font-size:8.00;">Protectable</text>
 </g>
@@ -551,7 +551,7 @@
 <polygon style="fill:black;stroke:black;" points="3170,-199.5 3180,-196 3170,-192.5 3170,-199.5"/>
 </g>
 <!-- BaseTestRunner&#45;&gt;Test -->
-<g id="edge158" class="edge"><title>BaseTestRunner&#45;&gt;Test</title>
+<g id="edge152" class="edge"><title>BaseTestRunner&#45;&gt;Test</title>
 <path style="fill:none;stroke:black;" d="M308,-240C317,-237 328,-234 337,-232 469,-204 506,-225 638,-204 690,-195 701,-184 752,-178 1030,-144 3141,-141 3401,-141"/>
 <polygon style="fill:black;stroke:black;" points="3401,-144.5 3411,-141 3401,-137.5 3401,-144.5"/>
 </g>
@@ -561,7 +561,7 @@
 <polygon style="fill:black;stroke:black;" points="3169.7,-309.488 3180,-307 3170.4,-302.522 3169.7,-309.488"/>
 </g>
 <!-- BaseTestRunner&#45;&gt;TestSuiteLoader -->
-<g id="edge156" class="edge"><title>BaseTestRunner&#45;&gt;TestSuiteLoader</title>
+<g id="edge158" class="edge"><title>BaseTestRunner&#45;&gt;TestSuiteLoader</title>
 <path style="fill:none;stroke:black;" d="M270,-240C257,-232 237,-218 221,-204 211,-193 213,-187 201,-178 189,-168 173,-160 159,-154"/>
 <polygon style="fill:black;stroke:black;" points="160.56,-150.863 150,-150 157.717,-157.26 160.56,-150.863"/>
 </g>
@@ -571,17 +571,17 @@
 <polygon style="fill:black;stroke:black;" points="3191,-37.5001 3201,-34 3191,-30.5001 3191,-37.5001"/>
 </g>
 <!-- ReloadingTestSuiteLoader -->
-<g id="node112" class="node"><title>ReloadingTestSuiteLoader</title>
+<g id="node113" class="node"><title>ReloadingTestSuiteLoader</title>
 <polygon style="fill:none;stroke:black;" points="474,-204 348,-204 348,-186 474,-186 474,-204"/>
 <text text-anchor="middle" x="411" y="-192.8" style="font-family:Times New Roman;font-size:8.00;">ReloadingTestSuiteLoader</text>
 </g>
 <!-- BaseTestRunner&#45;&gt;ReloadingTestSuiteLoader -->
-<g id="edge152" class="edge"><title>BaseTestRunner&#45;&gt;ReloadingTestSuiteLoader</title>
+<g id="edge154" class="edge"><title>BaseTestRunner&#45;&gt;ReloadingTestSuiteLoader</title>
 <path style="fill:none;stroke:black;" d="M307,-240C327,-231 358,-218 381,-208"/>
 <polygon style="fill:black;stroke:black;" points="382.283,-211.26 390,-204 379.44,-204.863 382.283,-211.26"/>
 </g>
 <!-- BaseTestRunner&#45;&gt;StandardTestSuiteLoader -->
-<g id="edge154" class="edge"><title>BaseTestRunner&#45;&gt;StandardTestSuiteLoader</title>
+<g id="edge156" class="edge"><title>BaseTestRunner&#45;&gt;StandardTestSuiteLoader</title>
 <path style="fill:none;stroke:black;" d="M260,-240C234,-231 195,-217 167,-207"/>
 <polygon style="fill:black;stroke:black;" points="167.584,-203.521 157,-204 165.573,-210.226 167.584,-203.521"/>
 </g>
@@ -676,12 +676,12 @@
 <polygon style="fill:black;stroke:black;" points="3394.88,-203.393 3404,-198 3393.51,-196.529 3394.88,-203.393"/>
 </g>
 <!-- TestCase&#45;&gt;TestResult -->
-<g id="edge108" class="edge"><title>TestCase&#45;&gt;TestResult</title>
+<g id="edge110" class="edge"><title>TestCase&#45;&gt;TestResult</title>
 <path style="fill:none;stroke:black;" d="M3424,-204C3414,-212 3398,-224 3385,-234"/>
 <polygon style="fill:black;stroke:black;" points="3382.38,-231.541 3376,-240 3386.26,-237.365 3382.38,-231.541"/>
 </g>
 <!-- TestCase&#45;&gt;Test -->
-<g id="edge110" class="edge"><title>TestCase&#45;&gt;Test</title>
+<g id="edge108" class="edge"><title>TestCase&#45;&gt;Test</title>
 <path style="fill:none;stroke:black;" d="M3430,-186C3429,-179 3429,-169 3428,-160"/>
 <polygon style="fill:black;stroke:black;" points="3431.5,-160 3428,-150 3424.5,-160 3431.5,-160"/>
 </g>
@@ -816,27 +816,27 @@
 <polygon style="fill:black;stroke:black;" points="3374.55,-262.596 3365,-258 3369.6,-267.546 3374.55,-262.596"/>
 </g>
 <!-- TestSetup$1&#45;&gt;TestDecorator -->
-<g id="edge84" class="edge"><title>TestSetup$1&#45;&gt;TestDecorator</title>
+<g id="edge80" class="edge"><title>TestSetup$1&#45;&gt;TestDecorator</title>
 <path style="fill:none;stroke:black;" d="M4431,-354C4434,-351 4437,-348 4439,-344 4448,-323 4453,-310 4439,-292 4423,-271 4354,-260 4306,-253"/>
 <polygon style="fill:black;stroke:black;" points="4306.3,-249.512 4296,-252 4305.6,-256.478 4306.3,-249.512"/>
 </g>
 <!-- TestSetup -->
-<g id="node69" class="node"><title>TestSetup</title>
+<g id="node70" class="node"><title>TestSetup</title>
 <polygon style="fill:none;stroke:black;" points="4242,-318 4184,-318 4184,-300 4242,-300 4242,-318"/>
 <text text-anchor="middle" x="4213" y="-306.8" style="font-family:Times New Roman;font-size:8.00;">TestSetup</text>
 </g>
 <!-- TestSetup$1&#45;&gt;TestSetup -->
-<g id="edge80" class="edge"><title>TestSetup$1&#45;&gt;TestSetup</title>
+<g id="edge82" class="edge"><title>TestSetup$1&#45;&gt;TestSetup</title>
 <path style="fill:none;stroke:black;" d="M4382,-355C4379,-355 4376,-354 4373,-354 4347,-350 4276,-354 4251,-344 4242,-340 4233,-332 4227,-325"/>
 <polygon style="fill:black;stroke:black;" points="4229.55,-322.596 4220,-318 4224.6,-327.546 4229.55,-322.596"/>
 </g>
 <!-- TestSetup$1&#45;&gt;Protectable -->
-<g id="edge82" class="edge"><title>TestSetup$1&#45;&gt;Protectable</title>
+<g id="edge84" class="edge"><title>TestSetup$1&#45;&gt;Protectable</title>
 <path style="fill:none;stroke:black;" d="M4382,-355C4379,-355 4376,-354 4373,-354 4286,-342 4263,-352 4175,-344 3993,-326 3941,-341 3766,-284 3720,-268 3716,-249 3670,-232 3638,-219 3599,-209 3570,-203"/>
 <polygon style="fill:black;stroke:black;" points="3570.49,-199.529 3560,-201 3569.12,-206.393 3570.49,-199.529"/>
 </g>
 <!-- TestSetup&#45;&gt;TestResult -->
-<g id="edge90" class="edge"><title>TestSetup&#45;&gt;TestResult</title>
+<g id="edge92" class="edge"><title>TestSetup&#45;&gt;TestResult</title>
 <path style="fill:none;stroke:black;" d="M4184,-308C4105,-305 3880,-297 3692,-292 3676,-291 3413,-290 3397,-284 3388,-280 3379,-272 3372,-265"/>
 <polygon style="fill:black;stroke:black;" points="3374.55,-262.596 3365,-258 3369.6,-267.546 3374.55,-262.596"/>
 </g>
@@ -846,12 +846,12 @@
 <polygon style="fill:black;stroke:black;" points="3453.49,-145.529 3443,-147 3452.12,-152.393 3453.49,-145.529"/>
 </g>
 <!-- TestSetup&#45;&gt;TestDecorator -->
-<g id="edge92" class="edge"><title>TestSetup&#45;&gt;TestDecorator</title>
+<g id="edge88" class="edge"><title>TestSetup&#45;&gt;TestDecorator</title>
 <path style="fill:none;stroke:black;" d="M4220,-300C4227,-291 4237,-277 4246,-266"/>
 <polygon style="fill:black;stroke:black;" points="4248.8,-268.1 4252,-258 4243.2,-263.9 4248.8,-268.1"/>
 </g>
 <!-- TestSetup&#45;&gt;Protectable -->
-<g id="edge88" class="edge"><title>TestSetup&#45;&gt;Protectable</title>
+<g id="edge90" class="edge"><title>TestSetup&#45;&gt;Protectable</title>
 <path style="fill:none;stroke:black;" d="M4184,-304C4075,-286 3697,-224 3570,-202"/>
 <polygon style="fill:black;stroke:black;" points="3570.49,-198.529 3560,-200 3569.12,-205.393 3570.49,-198.529"/>
 </g>
@@ -911,7 +911,7 @@
 <polygon style="fill:black;stroke:black;" points="174.492,-145.529 164,-147 173.119,-152.393 174.492,-145.529"/>
 </g>
 <!-- TestCaseClassLoader -->
-<g id="node125" class="node"><title>TestCaseClassLoader</title>
+<g id="node126" class="node"><title>TestCaseClassLoader</title>
 <polygon style="fill:none;stroke:black;" points="596,-150 488,-150 488,-132 596,-132 596,-150"/>
 <text text-anchor="middle" x="542" y="-138.8" style="font-family:Times New Roman;font-size:8.00;">TestCaseClassLoader</text>
 </g>
@@ -951,12 +951,12 @@
 <polygon style="fill:black;stroke:black;" points="3169.7,-309.488 3180,-307 3170.4,-302.522 3169.7,-309.488"/>
 </g>
 <!-- LoadingTestCollector&#45;&gt;ClassPathTestCollector -->
-<g id="edge168" class="edge"><title>LoadingTestCollector&#45;&gt;ClassPathTestCollector</title>
+<g id="edge166" class="edge"><title>LoadingTestCollector&#45;&gt;ClassPathTestCollector</title>
 <path style="fill:none;stroke:black;" d="M522,-186C501,-177 468,-164 444,-154"/>
 <polygon style="fill:black;stroke:black;" points="445.56,-150.863 435,-150 442.717,-157.26 445.56,-150.863"/>
 </g>
 <!-- LoadingTestCollector&#45;&gt;TestCaseClassLoader -->
-<g id="edge166" class="edge"><title>LoadingTestCollector&#45;&gt;TestCaseClassLoader</title>
+<g id="edge168" class="edge"><title>LoadingTestCollector&#45;&gt;TestCaseClassLoader</title>
 <path style="fill:none;stroke:black;" d="M544,-186C543,-179 543,-169 543,-160"/>
 <polygon style="fill:black;stroke:black;" points="546.478,-159.602 542,-150 539.512,-160.299 546.478,-159.602"/>
 </g>
@@ -1026,17 +1026,17 @@
 <polygon style="fill:black;stroke:black;" points="2644.5,-328 2641,-318 2637.5,-328 2644.5,-328"/>
 </g>
 <!-- FailureRunView&#45;&gt;TestRunner -->
-<g id="edge214" class="edge"><title>FailureRunView&#45;&gt;TestRunner</title>
+<g id="edge216" class="edge"><title>FailureRunView&#45;&gt;TestRunner</title>
 <path style="fill:none;stroke:black;" d="M2639,-318C2632,-326 2617,-338 2602,-344 2572,-354 2102,-361 1958,-363"/>
 <polygon style="fill:black;stroke:black;" points="1958,-359.5 1948,-363 1958,-366.5 1958,-359.5"/>
 </g>
 <!-- FailureRunView&#45;&gt;TestResult -->
-<g id="edge212" class="edge"><title>FailureRunView&#45;&gt;TestResult</title>
+<g id="edge210" class="edge"><title>FailureRunView&#45;&gt;TestResult</title>
 <path style="fill:none;stroke:black;" d="M2680,-305C2719,-301 2781,-295 2835,-292 2913,-286 2933,-289 3010,-284 3123,-275 3253,-261 3318,-254"/>
 <polygon style="fill:black;stroke:black;" points="3318.4,-257.478 3328,-253 3317.7,-250.512 3318.4,-257.478"/>
 </g>
 <!-- FailureRunView&#45;&gt;Test -->
-<g id="edge216" class="edge"><title>FailureRunView&#45;&gt;Test</title>
+<g id="edge212" class="edge"><title>FailureRunView&#45;&gt;Test</title>
 <path style="fill:none;stroke:black;" d="M2680,-304C2709,-301 2749,-294 2782,-284 2837,-267 2846,-253 2898,-232 2959,-206 2972,-193 3036,-178 3106,-161 3324,-147 3401,-143"/>
 <polygon style="fill:black;stroke:black;" points="3401.4,-146.478 3411,-142 3400.7,-139.512 3401.4,-146.478"/>
 </g>
@@ -1046,7 +1046,7 @@
 <polygon style="fill:black;stroke:black;" points="3256.88,-207.393 3266,-202 3255.51,-200.529 3256.88,-207.393"/>
 </g>
 <!-- FailureRunView&#45;&gt;TestRunContext -->
-<g id="edge210" class="edge"><title>FailureRunView&#45;&gt;TestRunContext</title>
+<g id="edge214" class="edge"><title>FailureRunView&#45;&gt;TestRunContext</title>
 <path style="fill:none;stroke:black;" d="M2638,-300C2636,-292 2632,-278 2628,-268"/>
 <polygon style="fill:black;stroke:black;" points="2631.23,-266.573 2625,-258 2624.52,-268.584 2631.23,-266.573"/>
 </g>
@@ -1061,12 +1061,12 @@
 <text text-anchor="middle" x="2347" y="-414.8" style="font-family:Times New Roman;font-size:8.00;">FailureRunView$FailureListCellRenderer</text>
 </g>
 <!-- FailureRunView$FailureListCellRenderer&#45;&gt;TestRunner -->
-<g id="edge204" class="edge"><title>FailureRunView$FailureListCellRenderer&#45;&gt;TestRunner</title>
+<g id="edge206" class="edge"><title>FailureRunView$FailureListCellRenderer&#45;&gt;TestRunner</title>
 <path style="fill:none;stroke:black;" d="M2275,-408C2184,-397 2031,-378 1958,-368"/>
 <polygon style="fill:black;stroke:black;" points="1958.3,-364.512 1948,-367 1957.6,-371.478 1958.3,-364.512"/>
 </g>
 <!-- FailureRunView$FailureListCellRenderer&#45;&gt;Test -->
-<g id="edge206" class="edge"><title>FailureRunView$FailureListCellRenderer&#45;&gt;Test</title>
+<g id="edge204" class="edge"><title>FailureRunView$FailureListCellRenderer&#45;&gt;Test</title>
 <path style="fill:none;stroke:black;" d="M2438,-408C2441,-408 2444,-408 2447,-408 2691,-395 3300,-415 3542,-398 3639,-391 3966,-405 3966,-309 3966,-309 3966,-309 3966,-249 3966,-215 3969,-198 3942,-178 3901,-145 3539,-159 3453,-149"/>
 <polygon style="fill:black;stroke:black;" points="3453.49,-145.529 3443,-147 3452.12,-152.393 3453.49,-145.529"/>
 </g>
@@ -1106,27 +1106,27 @@
 <polygon style="fill:black;stroke:black;" points="2529.47,-328.492 2528,-318 2522.61,-327.119 2529.47,-328.492"/>
 </g>
 <!-- TestHierarchyRunView&#45;&gt;TestRunner -->
-<g id="edge230" class="edge"><title>TestHierarchyRunView&#45;&gt;TestRunner</title>
+<g id="edge232" class="edge"><title>TestHierarchyRunView&#45;&gt;TestRunner</title>
 <path style="fill:none;stroke:black;" d="M2500,-318C2466,-326 2412,-338 2363,-344 2286,-353 2054,-359 1958,-362"/>
 <polygon style="fill:black;stroke:black;" points="1958,-358.5 1948,-362 1958,-365.5 1958,-358.5"/>
 </g>
 <!-- TestHierarchyRunView&#45;&gt;TestResult -->
-<g id="edge228" class="edge"><title>TestHierarchyRunView&#45;&gt;TestResult</title>
+<g id="edge224" class="edge"><title>TestHierarchyRunView&#45;&gt;TestResult</title>
 <path style="fill:none;stroke:black;" d="M2558,-300C2569,-297 2582,-294 2593,-292 2677,-280 2888,-288 2972,-284 3099,-276 3247,-262 3318,-253"/>
 <polygon style="fill:black;stroke:black;" points="3318.4,-256.478 3328,-252 3317.7,-249.512 3318.4,-256.478"/>
 </g>
 <!-- TestHierarchyRunView&#45;&gt;TestListener -->
-<g id="edge224" class="edge"><title>TestHierarchyRunView&#45;&gt;TestListener</title>
+<g id="edge222" class="edge"><title>TestHierarchyRunView&#45;&gt;TestListener</title>
 <path style="fill:none;stroke:black;" d="M2558,-300C2569,-297 2582,-294 2593,-292 2677,-279 2699,-296 2782,-284 2869,-270 2887,-250 2972,-232 3041,-217 3121,-207 3170,-200"/>
 <polygon style="fill:black;stroke:black;" points="3170.4,-203.478 3180,-199 3169.7,-196.512 3170.4,-203.478"/>
 </g>
 <!-- TestHierarchyRunView&#45;&gt;Test -->
-<g id="edge232" class="edge"><title>TestHierarchyRunView&#45;&gt;Test</title>
+<g id="edge226" class="edge"><title>TestHierarchyRunView&#45;&gt;Test</title>
 <path style="fill:none;stroke:black;" d="M2558,-300C2569,-297 2582,-294 2593,-292 2610,-289 2730,-292 2744,-284 2770,-270 2759,-248 2782,-232 2847,-185 2875,-193 2952,-178 3039,-161 3314,-146 3401,-142"/>
 <polygon style="fill:black;stroke:black;" points="3401,-145.5 3411,-142 3401,-138.5 3401,-145.5"/>
 </g>
 <!-- TestHierarchyRunView&#45;&gt;TestRunContext -->
-<g id="edge226" class="edge"><title>TestHierarchyRunView&#45;&gt;TestRunContext</title>
+<g id="edge230" class="edge"><title>TestHierarchyRunView&#45;&gt;TestRunContext</title>
 <path style="fill:none;stroke:black;" d="M2546,-300C2554,-295 2564,-289 2573,-284 2583,-277 2593,-270 2602,-264"/>
 <polygon style="fill:black;stroke:black;" points="2604.1,-266.8 2610,-258 2599.9,-261.2 2604.1,-266.8"/>
 </g>
@@ -1136,12 +1136,12 @@
 <polygon style="fill:black;stroke:black;" points="2533.5,-268 2530,-258 2526.5,-268 2533.5,-268"/>
 </g>
 <!-- TestSuitePanel -->
-<g id="node166" class="node"><title>TestSuitePanel</title>
+<g id="node169" class="node"><title>TestSuitePanel</title>
 <polygon style="fill:none;stroke:black;" points="2458,-258 2380,-258 2380,-240 2458,-240 2458,-258"/>
 <text text-anchor="middle" x="2419" y="-246.8" style="font-family:Times New Roman;font-size:8.00;">TestSuitePanel</text>
 </g>
 <!-- TestHierarchyRunView&#45;&gt;TestSuitePanel -->
-<g id="edge222" class="edge"><title>TestHierarchyRunView&#45;&gt;TestSuitePanel</title>
+<g id="edge228" class="edge"><title>TestHierarchyRunView&#45;&gt;TestSuitePanel</title>
 <path style="fill:none;stroke:black;" d="M2513,-300C2495,-290 2466,-274 2445,-263"/>
 <polygon style="fill:black;stroke:black;" points="2446.44,-259.797 2436,-258 2443.04,-265.916 2446.44,-259.797"/>
 </g>
@@ -1246,7 +1246,7 @@
 <text text-anchor="middle" x="2011" y="-414.8" style="font-family:Times New Roman;font-size:8.00;">TestRunner$16</text>
 </g>
 <!-- TestRunner$16&#45;&gt;TestRunner -->
-<g id="edge262" class="edge"><title>TestRunner$16&#45;&gt;TestRunner</title>
+<g id="edge266" class="edge"><title>TestRunner$16&#45;&gt;TestRunner</title>
 <path style="fill:none;stroke:black;" d="M1995,-408C1981,-400 1958,-387 1942,-377"/>
 <polygon style="fill:black;stroke:black;" points="1943.44,-373.797 1933,-372 1940.04,-379.916 1943.44,-373.797"/>
 </g>
@@ -1256,12 +1256,12 @@
 <polygon style="fill:black;stroke:black;" points="3365.39,-267.119 3360,-258 3358.53,-268.492 3365.39,-267.119"/>
 </g>
 <!-- TestRunner$16&#45;&gt;Test -->
-<g id="edge264" class="edge"><title>TestRunner$16&#45;&gt;Test</title>
+<g id="edge262" class="edge"><title>TestRunner$16&#45;&gt;Test</title>
 <path style="fill:none;stroke:black;" d="M2050,-409C2053,-409 2056,-408 2059,-408 2128,-401 3233,-414 3300,-398 3343,-387 3347,-368 3388,-354 3411,-346 3418,-350 3440,-344 3519,-322 3566,-350 3613,-284 3641,-245 3642,-213 3610,-178 3565,-126 3525,-164 3453,-149"/>
 <polygon style="fill:black;stroke:black;" points="3453.49,-145.529 3443,-147 3452.12,-152.393 3453.49,-145.529"/>
 </g>
 <!-- TestRunner$16&#45;&gt;BaseTestRunner -->
-<g id="edge266" class="edge"><title>TestRunner$16&#45;&gt;BaseTestRunner</title>
+<g id="edge264" class="edge"><title>TestRunner$16&#45;&gt;BaseTestRunner</title>
 <path style="fill:none;stroke:black;" d="M1972,-409C1969,-409 1966,-408 1963,-408 1952,-406 262,-406 253,-398 220,-364 238,-336 253,-292 257,-283 263,-273 269,-266"/>
 <polygon style="fill:black;stroke:black;" points="272.049,-267.831 276,-258 266.781,-263.221 272.049,-267.831"/>
 </g>
@@ -1271,19 +1271,19 @@
 <text text-anchor="middle" x="2495" y="-414.8" style="font-family:Times New Roman;font-size:8.00;">TestRunner$18</text>
 </g>
 <!-- TestRunner$18&#45;&gt;TestRunner -->
-<g id="edge270" class="edge"><title>TestRunner$18&#45;&gt;TestRunner</title>
+<g id="edge274" class="edge"><title>TestRunner$18&#45;&gt;TestRunner</title>
 <path style="fill:none;stroke:black;" d="M2456,-409C2453,-409 2450,-408 2447,-408 2377,-399 2359,-403 2287,-398 2168,-388 2027,-374 1958,-367"/>
 <polygon style="fill:black;stroke:black;" points="1958.3,-363.512 1948,-366 1957.6,-370.478 1958.3,-363.512"/>
 </g>
-<!-- TestRunner$18&#45;&gt;Test -->
-<g id="edge272" class="edge"><title>TestRunner$18&#45;&gt;Test</title>
-<path style="fill:none;stroke:black;" d="M2534,-409C2537,-409 2540,-408 2543,-408 2563,-406 3965,-410 3980,-398 4013,-372 4004,-349 4004,-309 4004,-309 4004,-309 4004,-249 4004,-215 4007,-198 3980,-178 3936,-143 3544,-160 3453,-149"/>
-<polygon style="fill:black;stroke:black;" points="3453.49,-145.529 3443,-147 3452.12,-152.393 3453.49,-145.529"/>
-</g>
 <!-- TestRunner$18&#45;&gt;ProgressBar -->
-<g id="edge274" class="edge"><title>TestRunner$18&#45;&gt;ProgressBar</title>
+<g id="edge272" class="edge"><title>TestRunner$18&#45;&gt;ProgressBar</title>
 <path style="fill:none;stroke:black;" d="M2460,-408C2452,-405 2442,-402 2434,-398 2394,-378 2351,-344 2329,-325"/>
 <polygon style="fill:black;stroke:black;" points="2330.83,-321.951 2321,-318 2326.22,-327.219 2330.83,-321.951"/>
+</g>
+<!-- TestRunner$18&#45;&gt;Test -->
+<g id="edge270" class="edge"><title>TestRunner$18&#45;&gt;Test</title>
+<path style="fill:none;stroke:black;" d="M2534,-409C2537,-409 2540,-408 2543,-408 2563,-406 3965,-410 3980,-398 4013,-372 4004,-349 4004,-309 4004,-309 4004,-309 4004,-249 4004,-215 4007,-198 3980,-178 3936,-143 3544,-160 3453,-149"/>
+<polygon style="fill:black;stroke:black;" points="3453.49,-145.529 3443,-147 3452.12,-152.393 3453.49,-145.529"/>
 </g>
 <!-- TestRunner$18&#45;&gt;CounterPanel -->
 <g id="edge268" class="edge"><title>TestRunner$18&#45;&gt;CounterPanel</title>
@@ -1296,19 +1296,19 @@
 <text text-anchor="middle" x="1917" y="-414.8" style="font-family:Times New Roman;font-size:8.00;">TestRunner$2</text>
 </g>
 <!-- TestRunner$2&#45;&gt;TestRunner -->
-<g id="edge280" class="edge"><title>TestRunner$2&#45;&gt;TestRunner</title>
+<g id="edge282" class="edge"><title>TestRunner$2&#45;&gt;TestRunner</title>
 <path style="fill:none;stroke:black;" d="M1917,-408C1917,-401 1917,-391 1917,-382"/>
 <polygon style="fill:black;stroke:black;" points="1920.5,-382 1917,-372 1913.5,-382 1920.5,-382"/>
+</g>
+<!-- TestRunner$2&#45;&gt;ProgressBar -->
+<g id="edge280" class="edge"><title>TestRunner$2&#45;&gt;ProgressBar</title>
+<path style="fill:none;stroke:black;" d="M1954,-409C2043,-390 2259,-344 2261,-344 2272,-339 2283,-331 2292,-324"/>
+<polygon style="fill:black;stroke:black;" points="2294.1,-326.8 2300,-318 2289.9,-321.2 2294.1,-326.8"/>
 </g>
 <!-- TestRunner$2&#45;&gt;TestResult -->
 <g id="edge278" class="edge"><title>TestRunner$2&#45;&gt;TestResult</title>
 <path style="fill:none;stroke:black;" d="M1954,-409C1957,-409 1960,-408 1963,-408 2125,-391 2533,-406 2695,-398 2828,-391 3174,-409 3289,-344 3320,-327 3341,-290 3351,-267"/>
 <polygon style="fill:black;stroke:black;" points="3354.14,-268.56 3355,-258 3347.74,-265.717 3354.14,-268.56"/>
-</g>
-<!-- TestRunner$2&#45;&gt;ProgressBar -->
-<g id="edge282" class="edge"><title>TestRunner$2&#45;&gt;ProgressBar</title>
-<path style="fill:none;stroke:black;" d="M1954,-409C2043,-390 2259,-344 2261,-344 2272,-339 2283,-331 2292,-324"/>
-<polygon style="fill:black;stroke:black;" points="2294.1,-326.8 2300,-318 2289.9,-321.2 2294.1,-326.8"/>
 </g>
 <!-- TestRunner$2&#45;&gt;CounterPanel -->
 <g id="edge276" class="edge"><title>TestRunner$2&#45;&gt;CounterPanel</title>
@@ -1321,7 +1321,7 @@
 <text text-anchor="middle" x="2589" y="-414.8" style="font-family:Times New Roman;font-size:8.00;">TestRunner$3</text>
 </g>
 <!-- TestRunner$3&#45;&gt;TestRunner -->
-<g id="edge286" class="edge"><title>TestRunner$3&#45;&gt;TestRunner</title>
+<g id="edge288" class="edge"><title>TestRunner$3&#45;&gt;TestRunner</title>
 <path style="fill:none;stroke:black;" d="M2552,-409C2549,-409 2546,-408 2543,-408 2486,-399 2089,-374 1958,-366"/>
 <polygon style="fill:black;stroke:black;" points="1958.3,-362.512 1948,-365 1957.6,-369.478 1958.3,-362.512"/>
 </g>
@@ -1331,7 +1331,7 @@
 <polygon style="fill:black;stroke:black;" points="3374.55,-262.596 3365,-258 3369.6,-267.546 3374.55,-262.596"/>
 </g>
 <!-- TestRunner$3&#45;&gt;Test -->
-<g id="edge288" class="edge"><title>TestRunner$3&#45;&gt;Test</title>
+<g id="edge286" class="edge"><title>TestRunner$3&#45;&gt;Test</title>
 <path style="fill:none;stroke:black;" d="M2626,-409C2629,-409 2632,-408 2635,-408 2655,-406 4003,-409 4018,-398 4051,-372 4042,-349 4042,-309 4042,-309 4042,-309 4042,-249 4042,-215 4045,-198 4018,-178 3970,-141 3549,-160 3453,-149"/>
 <polygon style="fill:black;stroke:black;" points="3453.49,-145.529 3443,-147 3452.12,-152.393 3453.49,-145.529"/>
 </g>
@@ -1431,12 +1431,12 @@
 <text text-anchor="middle" x="2173" y="-306.8" style="font-family:Times New Roman;font-size:8.00;">TestSuitePanel$1</text>
 </g>
 <!-- TestSuitePanel$1&#45;&gt;Test -->
-<g id="edge376" class="edge"><title>TestSuitePanel$1&#45;&gt;Test</title>
+<g id="edge374" class="edge"><title>TestSuitePanel$1&#45;&gt;Test</title>
 <path style="fill:none;stroke:black;" d="M2214,-300C2231,-297 2249,-294 2266,-292 2311,-287 2629,-298 2671,-284 2709,-271 2712,-254 2744,-232 2779,-207 2782,-191 2821,-178 2876,-158 3291,-145 3401,-141"/>
 <polygon style="fill:black;stroke:black;" points="3401,-144.5 3411,-141 3401,-137.5 3401,-144.5"/>
 </g>
 <!-- TestSuitePanel$1&#45;&gt;TestSuitePanel -->
-<g id="edge374" class="edge"><title>TestSuitePanel$1&#45;&gt;TestSuitePanel</title>
+<g id="edge376" class="edge"><title>TestSuitePanel$1&#45;&gt;TestSuitePanel</title>
 <path style="fill:none;stroke:black;" d="M2202,-300C2211,-297 2222,-294 2231,-292 2278,-279 2332,-267 2370,-259"/>
 <polygon style="fill:black;stroke:black;" points="2370.88,-262.393 2380,-257 2369.51,-255.529 2370.88,-262.393"/>
 </g>
