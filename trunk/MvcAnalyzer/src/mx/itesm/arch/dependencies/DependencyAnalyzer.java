@@ -5,13 +5,13 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.List;
 import java.util.Set;
 import java.util.jar.JarEntry;
 import java.util.jar.JarInputStream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
-import java.util.zip.ZipInputStream;
 
 import org.objectweb.asm.ClassReader;
 
@@ -56,41 +56,48 @@ public class DependencyAnalyzer {
 	return returnValue;
     }
 
-    public static List<ClassDependencies> getWarDependencies(final String file) throws Exception {
+    /**
+     * Recover the dependencies from each Java class within the specified WAR
+     * file, along with the classes in JAR files that belong to the same
+     * project.
+     * 
+     * @param file
+     *            Path to the JAR file.
+     * @return Dependencies for each class within the JAR file.
+     * @throws IOException
+     *             If an I/O error has occurred.
+     */
+    public static List<ClassDependencies> getWarDependencies(final String file) throws IOException {
+	File warFile;
+	String warName;
 	ZipFile zipFile;
 	ZipEntry zipEntry;
-	ZipInputStream inputStream;
 	List<ClassDependencies> returnValue;
+	Enumeration<? extends ZipEntry> zipEntries;
 
 	// .class files in the WAR file
 	returnValue = DependencyAnalyzer.getJarDependencies(file);
 
 	// JAR files that belong to the same project
-	inputStream = new ZipInputStream(new FileInputStream(file));
-	zipEntry = inputStream.getNextEntry();
+	warFile = new File(file);
 	zipFile = new ZipFile(file);
-	while (zipEntry != null) {
+	zipEntries = zipFile.entries();
+	warName = DependenciesUtil.getWarNameFromPath(file);
+	while (zipEntries.hasMoreElements()) {
+	    zipEntry = zipEntries.nextElement();
+
 	    if ((!zipEntry.isDirectory()) && zipEntry.getName().endsWith(".jar")) {
 		// Consider only JAR files that start with the same name as the
 		// WAR file
-		if (zipEntry.getName().toLowerCase().startsWith(
-			file.substring(0, file.lastIndexOf('.')).toLowerCase())) {
-		    returnValue.addAll(DependencyAnalyzer.getJarDependencies(zipFile
-			    .getInputStream(zipEntry)));
+		if (zipEntry.getName().toLowerCase().contains(warName)) {
+		    returnValue.addAll(DependencyAnalyzer.getJarDependencies(warFile
+			    .getAbsolutePath()
+			    + "/" + zipEntry.getName(), zipFile.getInputStream(zipEntry)));
 		}
 	    }
 	}
 
 	return returnValue;
-    }
-
-    /**
-     * 
-     * @param file
-     * @return
-     */
-    public static List<ClassDependencies> getJarDependencies(final InputStream file) {
-	return null;
     }
 
     /**
@@ -104,10 +111,22 @@ public class DependencyAnalyzer {
      *             If an I/O error has occurred.
      */
     public static List<ClassDependencies> getJarDependencies(final String file) throws IOException {
+	return DependencyAnalyzer.getJarDependencies(file, new FileInputStream(file));
+    }
+
+    /**
+     * 
+     * @param file
+     * @param inputStream
+     * @return
+     * @throws IOException
+     */
+    public static List<ClassDependencies> getJarDependencies(final String file,
+	    final InputStream inputStream) throws IOException {
 	File jarFile;
 	String className;
 	JarEntry jarEntry;
-	JarInputStream inputStream;
+	JarInputStream jarInputStream;
 	List<String> internalClasses;
 	ClassDependencies dependencies;
 	List<ClassDependencies> returnValue;
@@ -117,30 +136,21 @@ public class DependencyAnalyzer {
 	jarFile = new File(file);
 
 	// Get internal classes
-	inputStream = new JarInputStream(new FileInputStream(file));
-	jarEntry = inputStream.getNextJarEntry();
+	jarInputStream = new JarInputStream(inputStream);
+	jarEntry = jarInputStream.getNextJarEntry();
 	while (jarEntry != null) {
 	    if ((!jarEntry.isDirectory()) && jarEntry.getName().endsWith(".class")) {
 		internalClasses.add(DependenciesUtil.getClassNameFromPath(jarFile.getParent() + "/"
 			+ jarEntry.getName(), jarFile.getParent()));
-	    }
 
-	    jarEntry = inputStream.getNextJarEntry();
-	}
-
-	// Get dependencies
-	inputStream = new JarInputStream(new FileInputStream(file));
-	jarEntry = inputStream.getNextJarEntry();
-	while (jarEntry != null) {
-	    if ((!jarEntry.isDirectory()) && jarEntry.getName().endsWith(".class")) {
 		className = DependenciesUtil.getClassNameFromPath(jarFile.getParent() + "/"
 			+ jarEntry.getName(), jarFile.getParent());
 		dependencies = DependencyAnalyzer.getClassSortedDependencies(className,
-			inputStream, internalClasses, jarFile.getParent());
+			jarInputStream, internalClasses, jarFile.getParent());
 		returnValue.add(dependencies);
 	    }
 
-	    jarEntry = inputStream.getNextJarEntry();
+	    jarEntry = jarInputStream.getNextJarEntry();
 	}
 
 	return returnValue;

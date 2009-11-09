@@ -297,6 +297,31 @@ public class DependenciesUtil {
     }
 
     /**
+     * Get the WAR name form the specified WAR File Path.
+     * 
+     * @param path
+     *            Path containing the WAR File Path.
+     * @return WAR File Name.
+     */
+    public static String getWarNameFromPath(final String path) {
+	int startingPoint;
+	String returnValue;
+
+	if (!path.endsWith(".war")) {
+	    throw new IllegalArgumentException("Invalid war path: " + path);
+	}
+
+	if (path.lastIndexOf('/') > 0) {
+	    startingPoint = path.lastIndexOf('/') + 1;
+	} else {
+	    startingPoint = 0;
+	}
+
+	returnValue = path.substring(startingPoint, path.lastIndexOf('.')).toLowerCase();
+	return returnValue;
+    }
+
+    /**
      * Determine if a dependency is valid for a given class. That is, it's not
      * part of the java.* packages, it's not the same class, and it's not an
      * inner class defined in the same class.
