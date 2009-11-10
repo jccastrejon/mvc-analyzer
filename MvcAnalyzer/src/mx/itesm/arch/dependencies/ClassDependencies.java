@@ -10,7 +10,7 @@ import mx.itesm.arch.mvc.Layer;
  * the dependencies with external projects, <em>external dependencies</em>. Once
  * the class is classified into one of the MVC layers, the mvcLayer attribute is
  * set. To uniquely identify a class, it's package and class name are also
- * stored here here.
+ * stored here.
  * 
  * @author jccastrejon
  * 
