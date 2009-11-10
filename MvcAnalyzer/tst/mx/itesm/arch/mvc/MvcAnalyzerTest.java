@@ -1,5 +1,6 @@
 package mx.itesm.arch.mvc;
 
+import java.io.File;
 import java.io.IOException;
 
 import junit.framework.TestCase;
@@ -15,7 +16,13 @@ public class MvcAnalyzerTest extends TestCase {
      * 
      */
     public void testClassifyClassesInDirectory() throws Exception {
-	MvcAnalyzer.classifyClassesInDirectory("bin");
+	File analyzedFile;
+	File outputFile;
+
+	analyzedFile = new File("bin");
+	outputFile = new File("img/MvcAnalyzerClassification.svg");
+	outputFile.delete();
+	MvcAnalyzer.classifyClassesInDirectory(analyzedFile, outputFile);
     }
 
     /**
@@ -23,7 +30,13 @@ public class MvcAnalyzerTest extends TestCase {
      * @throws Exception
      */
     public void testClassifyClassesInWar() throws Exception {
-	MvcAnalyzer
-		.classifyClassesinWar("/home/jccastrejon/java/spring-framework-2.5.6.SEC01/samples/petclinic/dist/petclinic.war");
+	File analyzedFile;
+	File outputFile;
+
+	analyzedFile = new File(
+		"/home/jccastrejon/java/spring-framework-2.5.6.SEC01/samples/petclinic/dist/petclinic.war");
+	outputFile = new File("img/petclinicClassification.svg");
+	outputFile.delete();
+	MvcAnalyzer.classifyClassesinWar(analyzedFile, outputFile);
     }
 }
