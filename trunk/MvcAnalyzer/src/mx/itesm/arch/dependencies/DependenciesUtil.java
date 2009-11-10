@@ -13,6 +13,8 @@ import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import mx.itesm.arch.mvc.Layer;
+
 /**
  * Dependencies Utility methods.
  * 
@@ -105,6 +107,7 @@ public class DependenciesUtil {
 	String className;
 	String dotCommand;
 	FileWriter fileWriter;
+	boolean layerDescription;
 	StringBuilder dotDescription;
 	String currentPackageName;
 	Set<String> currentPackage;
@@ -113,10 +116,11 @@ public class DependenciesUtil {
 
 	// Validate arguments
 	if ((imageFile == null) || (!imageFile.getAbsolutePath().endsWith(".svg"))) {
-	    throw new IllegalArgumentException("Not an svg file: " + imageFile.getAbsolutePath());
+	    throw new IllegalArgumentException("Not a svg file: " + imageFile.getAbsolutePath());
 	}
 
 	// Build dot file
+	layerDescription = false;
 	fileName = imageFile.getName().substring(0, imageFile.getName().indexOf('.'));
 	dotFile = new File(imageFile.getParent() + "/" + fileName + ".dot");
 
@@ -126,6 +130,12 @@ public class DependenciesUtil {
 		+ " {\n\tnode[shape=box, fontsize=8, height=.1, width=.1];\n");
 	for (ClassDependencies dependency : dependencies) {
 	    className = DependenciesUtil.getDotValidName(dependency.getClassName());
+
+	    if (dependency.getMvcLayer() != null) {
+		layerDescription = true;
+		dotDescription.append("\t" + className + " [color=\""
+			+ dependency.getMvcLayer().getRgbColor() + "\",style=\"filled\"];\n");
+	    }
 
 	    // Add internal dependencies
 	    for (String internalDependency : dependency.getInternalDependencies()) {
@@ -171,6 +181,19 @@ public class DependenciesUtil {
 	// Add clusters
 	DependenciesUtil.addClustersToDotDescription(internalPackages, dotDescription);
 	DependenciesUtil.addClustersToDotDescription(externalPackages, dotDescription);
+
+	if (layerDescription) {
+	    dotDescription.append("\nModelLayer [label=\"Model\",color=\""
+		    + Layer.Model.getRgbColor() + "\",style=\"filled\"];");
+	    dotDescription.append("\nViewLayer [label=\"View\",color=\"" + Layer.View.getRgbColor()
+		    + "\",style=\"filled\"];");
+	    dotDescription.append("\nControllerLayer [label=\"Controller\",color=\""
+		    + Layer.Controller.getRgbColor() + "\",style=\"filled\"];");
+	    dotDescription
+		    .append("\nsubgraph clusterMVCLayers {fontsize=\"8\"; label=\"MVC Layers\";");
+	    dotDescription.append("color=\"#CCFFFF\"; style=\"filled\";");
+	    dotDescription.append("\nModelLayer; ViewLayer; ControllerLayer}");
+	}
 
 	// End of dot description
 	dotDescription.append("}");
@@ -409,11 +432,9 @@ public class DependenciesUtil {
     private static String getDotValidName(final String className) {
 	String returnValue;
 
-	// TODO: Use this name when grouping by packages
 	int classNameIndex;
 	classNameIndex = className.lastIndexOf('.') + 1;
 	returnValue = "\"" + className.substring(classNameIndex, className.length()) + "\"";
-	// returnValue = "\"" + className + "\"";
 
 	return returnValue;
     }

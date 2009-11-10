@@ -2,6 +2,8 @@ package mx.itesm.arch.dependencies;
 
 import java.util.List;
 
+import mx.itesm.arch.mvc.Layer;
+
 /**
  * Holds a class' dependency and classification data. That is, the dependencies
  * with other classes in the same project, <em>internal dependencies</em>, and
@@ -18,7 +20,7 @@ public class ClassDependencies {
     /**
      * MVC Layer.
      */
-    private String mvcLayer;
+    private Layer mvcLayer;
 
     /**
      * Package Name.
@@ -130,7 +132,7 @@ public class ClassDependencies {
     /**
      * @return the mvcLayer
      */
-    public String getMvcLayer() {
+    public Layer getMvcLayer() {
 	return mvcLayer;
     }
 
@@ -138,7 +140,7 @@ public class ClassDependencies {
      * @param mvcLayer
      *            the mvcLayer to set
      */
-    public void setMvcLayer(String mvcLayer) {
+    public void setMvcLayer(Layer mvcLayer) {
 	this.mvcLayer = mvcLayer;
     }
 }
