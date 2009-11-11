@@ -136,51 +136,8 @@ public class MvcAnalyzer {
      * 
      * @param path
      *            Path to the directory containing the classes.
-     * @return Map containing the classification results for each class.
-     * @throws Exception
-     *             If an Exception occurs during classification.
-     */
-    public static Map<String, Layer> classifyClassesInDirectory(final String path) throws Exception {
-	return MvcAnalyzer.classifyClassesInDirectory(new File(path));
-    }
-
-    /**
-     * Classify each class within the specified path into one of the layers of
-     * the MVC pattern.
-     * 
-     * @param path
-     *            Path to the directory containing the classes.
-     * @param outputFile
-     *            File where to export the classification results.
-     * @return Map containing the classification results for each class.
-     * @throws Exception
-     *             If an Exception occurs during classification.
-     */
-    public static Map<String, Layer> classifyClassesInDirectory(final String path,
-	    final String outputFile) throws Exception {
-	return MvcAnalyzer.classifyClassesInDirectory(new File(path), new File(outputFile));
-    }
-
-    /**
-     * Classify each class within the specified path into one of the layers of
-     * the MVC pattern.
-     * 
-     * @param path
-     *            Path to the directory containing the classes.
-     * @return Map containing the classification results for each class.
-     * @throws Exception
-     *             If an Exception occurs during classification.
-     */
-    public static Map<String, Layer> classifyClassesInDirectory(final File path) throws Exception {
-	return MvcAnalyzer.classifyClassesInDirectory(path, null);
-    }
-
-    /**
-     * Classify each class within the specified path into one of the layers of
-     * the MVC pattern.
-     * 
-     * @param path
-     *            Path to the directory containing the classes.
+     * @param includeExternal
+     *            Should the external dependencies be exported.
      * @param outputFile
      *            File where to export the classification results.
      * @return Map containing the classification results for each class.
@@ -188,7 +145,7 @@ public class MvcAnalyzer {
      *             If an Exception occurs during classification.
      */
     public static Map<String, Layer> classifyClassesInDirectory(final File path,
-	    final File outputFile) throws Exception {
+	    final boolean includeExternal, final File outputFile) throws Exception {
 	List<ClassDependencies> dependencies;
 	Map<String, Layer> returnValue;
 
@@ -197,7 +154,7 @@ public class MvcAnalyzer {
 	returnValue = MvcAnalyzer.classifyClasses(dependencies);
 
 	if (outputFile != null) {
-	    DependenciesUtil.exportDependenciesToSVG(dependencies, outputFile,
+	    DependenciesUtil.exportDependenciesToSVG(dependencies, includeExternal, outputFile,
 		    new MvcExportCommand(returnValue));
 	}
 
@@ -210,14 +167,16 @@ public class MvcAnalyzer {
      * 
      * @param file
      *            Path to the WAR file.
+     * @param includeExternal
+     *            Should the external dependencies be exported.
      * @param outputFile
      *            File where to export the classification results.
      * @return Map containing the classification results for each class.
      * @throws Exception
      *             If an Exception occurs during classification.
      */
-    public static Map<String, Layer> classifyClassesinWar(final File file, final File outputFile)
-	    throws Exception {
+    public static Map<String, Layer> classifyClassesinWar(final File file,
+	    final boolean includeExternal, final File outputFile) throws Exception {
 	List<ClassDependencies> dependencies;
 	Map<String, Layer> returnValue;
 
@@ -226,7 +185,7 @@ public class MvcAnalyzer {
 	returnValue = MvcAnalyzer.classifyClasses(dependencies);
 
 	if (outputFile != null) {
-	    DependenciesUtil.exportDependenciesToSVG(dependencies, outputFile,
+	    DependenciesUtil.exportDependenciesToSVG(dependencies, includeExternal, outputFile,
 		    new MvcExportCommand(returnValue));
 	}
 
