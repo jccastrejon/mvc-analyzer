@@ -76,14 +76,16 @@ public class DependenciesUtil {
      * 
      * @param dependencies
      *            Class dependencies.
+     * @param includeExternal
+     *            Should the external dependencies be exported.
      * @param fileName
      *            Image File Name.
      * @throws IOException
      *             If an I/O error has occurred.
      */
     public static void exportDependenciesToSVG(final List<ClassDependencies> dependencies,
-	    final String fileName) throws IOException {
-	DependenciesUtil.exportDependenciesToSVG(dependencies, new File(fileName));
+	    final boolean includeExternal, final String fileName) throws IOException {
+	DependenciesUtil.exportDependenciesToSVG(dependencies, includeExternal, new File(fileName));
     }
 
     /**
@@ -91,6 +93,8 @@ public class DependenciesUtil {
      * 
      * @param dependencies
      *            Class dependencies.
+     * @param includeExternal
+     *            Should the external dependencies be exported.
      * @param imageFile
      *            Image File.
      * @param exportCommands
@@ -99,7 +103,8 @@ public class DependenciesUtil {
      *             If an I/O error has occurred.
      */
     public static void exportDependenciesToSVG(final List<ClassDependencies> dependencies,
-	    final File imageFile, final ExportCommand... exportCommands) throws IOException {
+	    final boolean includeExternal, final File imageFile,
+	    final ExportCommand... exportCommands) throws IOException {
 	File dotFile;
 	int processCode;
 	Process process;
@@ -125,8 +130,15 @@ public class DependenciesUtil {
 
 	// Simple Dependencies
 	externalPackages = new HashMap<String, Set<String>>();
-	dotDescription = new StringBuilder("digraph " + fileName
-		+ " {\n\tnode[shape=box, fontsize=8, height=.1, width=.1];\n");
+	dotDescription = new StringBuilder("digraph \"" + fileName
+		+ "\" {\n\tnode[shape=box, fontsize=8, height=.1, width=.1];\n");
+
+	// Add Export Commands description
+	for (ExportCommand command : exportCommands) {
+	    dotDescription.append(command.getDescription());
+	}
+
+	// Add internal and external dependencies
 	for (ClassDependencies dependency : dependencies) {
 	    className = DependenciesUtil.getDotValidName(dependency.getClassName());
 
@@ -149,18 +161,20 @@ public class DependenciesUtil {
 	    }
 
 	    // Add external dependencies, also group them by packages
-	    for (String externalDependency : dependency.getExternalDependencies()) {
-		dotDescription.append("\t" + className + " -> "
-			+ DependenciesUtil.getDotValidName(externalDependency) + ";\n");
-		currentPackageName = externalDependency.substring(0, externalDependency
-			.lastIndexOf('.'));
+	    if (includeExternal) {
+		for (String externalDependency : dependency.getExternalDependencies()) {
+		    dotDescription.append("\t" + className + " -> "
+			    + DependenciesUtil.getDotValidName(externalDependency) + ";\n");
+		    currentPackageName = externalDependency.substring(0, externalDependency
+			    .lastIndexOf('.'));
 
-		if (!externalPackages.containsKey(currentPackageName)) {
-		    externalPackages.put(currentPackageName, new HashSet<String>());
+		    if (!externalPackages.containsKey(currentPackageName)) {
+			externalPackages.put(currentPackageName, new HashSet<String>());
+		    }
+
+		    externalPackages.get(currentPackageName).add(
+			    DependenciesUtil.getDotValidName(externalDependency));
 		}
-
-		externalPackages.get(currentPackageName).add(
-			DependenciesUtil.getDotValidName(externalDependency));
 	    }
 	}
 
@@ -183,13 +197,12 @@ public class DependenciesUtil {
 	    }
 	}
 
-	// Add clusters
+	// Internal dependencies
 	DependenciesUtil.addClustersToDotDescription(internalPackages, dotDescription);
-	DependenciesUtil.addClustersToDotDescription(externalPackages, dotDescription);
 
-	// Add Export Commands description
-	for (ExportCommand command : exportCommands) {
-	    dotDescription.append(command.getDescription());
+	// External dependencies
+	if (includeExternal) {
+	    DependenciesUtil.addClustersToDotDescription(externalPackages, dotDescription);
 	}
 
 	// End of dot description
@@ -347,10 +360,13 @@ public class DependenciesUtil {
      * inner class defined in the same class.
      * 
      * @param className
+     *            Class to be analyzed.
      * @param dependency
-     * @return
+     *            Dependency to check.
+     * @return true if the specified dependency is indeed a dependency of the
+     *         specified class, false otherwise.
      */
-    public static boolean isValidDependency(String className, String dependency) {
+    public static boolean isValidDependency(final String className, final String dependency) {
 	boolean returnValue;
 	int innerClassIndex;
 	int classNameInnerClassIndex;

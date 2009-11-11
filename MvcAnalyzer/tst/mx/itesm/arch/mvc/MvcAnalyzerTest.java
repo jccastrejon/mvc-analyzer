@@ -20,9 +20,13 @@ public class MvcAnalyzerTest extends TestCase {
 	File outputFile;
 
 	analyzedFile = new File("bin");
-	outputFile = new File("img/MvcAnalyzerClassification.svg");
+	outputFile = new File("img/MvcAnalyzerClassification-internal.svg");
 	outputFile.delete();
-	MvcAnalyzer.classifyClassesInDirectory(analyzedFile, outputFile);
+	MvcAnalyzer.classifyClassesInDirectory(analyzedFile, false, outputFile);
+
+	outputFile = new File("img/MvcAnalyzerClassification-external.svg");
+	outputFile.delete();
+	MvcAnalyzer.classifyClassesInDirectory(analyzedFile, true, outputFile);
     }
 
     /**
@@ -35,8 +39,12 @@ public class MvcAnalyzerTest extends TestCase {
 
 	analyzedFile = new File(
 		"/home/jccastrejon/java/spring-framework-2.5.6.SEC01/samples/petclinic/dist/petclinic.war");
-	outputFile = new File("img/petclinicClassification.svg");
+	outputFile = new File("img/petclinicClassification-internal.svg");
 	outputFile.delete();
-	MvcAnalyzer.classifyClassesinWar(analyzedFile, outputFile);
+	MvcAnalyzer.classifyClassesinWar(analyzedFile, false, outputFile);
+
+	outputFile = new File("img/petclinicClassification-external.svg");
+	outputFile.delete();
+	MvcAnalyzer.classifyClassesinWar(analyzedFile, true, outputFile);
     }
 }
