@@ -136,12 +136,11 @@ public class MvcAnalyzer {
      * 
      * @param path
      *            Path to the directory containing the classes.
-     * @return List containing the classification results for each class.
+     * @return Map containing the classification results for each class.
      * @throws Exception
      *             If an Exception occurs during classification.
      */
-    public static List<ClassDependencies> classifyClassesInDirectory(final String path)
-	    throws Exception {
+    public static Map<String, Layer> classifyClassesInDirectory(final String path) throws Exception {
 	return MvcAnalyzer.classifyClassesInDirectory(new File(path));
     }
 
@@ -153,11 +152,11 @@ public class MvcAnalyzer {
      *            Path to the directory containing the classes.
      * @param outputFile
      *            File where to export the classification results.
-     * @return List containing the classification results for each class.
+     * @return Map containing the classification results for each class.
      * @throws Exception
      *             If an Exception occurs during classification.
      */
-    public static List<ClassDependencies> classifyClassesInDirectory(final String path,
+    public static Map<String, Layer> classifyClassesInDirectory(final String path,
 	    final String outputFile) throws Exception {
 	return MvcAnalyzer.classifyClassesInDirectory(new File(path), new File(outputFile));
     }
@@ -168,12 +167,11 @@ public class MvcAnalyzer {
      * 
      * @param path
      *            Path to the directory containing the classes.
-     * @return List containing the classification results for each class.
+     * @return Map containing the classification results for each class.
      * @throws Exception
      *             If an Exception occurs during classification.
      */
-    public static List<ClassDependencies> classifyClassesInDirectory(final File path)
-	    throws Exception {
+    public static Map<String, Layer> classifyClassesInDirectory(final File path) throws Exception {
 	return MvcAnalyzer.classifyClassesInDirectory(path, null);
     }
 
@@ -185,20 +183,22 @@ public class MvcAnalyzer {
      *            Path to the directory containing the classes.
      * @param outputFile
      *            File where to export the classification results.
-     * @return List containing the classification results for each class.
+     * @return Map containing the classification results for each class.
      * @throws Exception
      *             If an Exception occurs during classification.
      */
-    public static List<ClassDependencies> classifyClassesInDirectory(final File path,
+    public static Map<String, Layer> classifyClassesInDirectory(final File path,
 	    final File outputFile) throws Exception {
-	List<ClassDependencies> returnValue;
+	List<ClassDependencies> dependencies;
+	Map<String, Layer> returnValue;
 
 	// Classify each class in the specified path
-	returnValue = DependencyAnalyzer.getDirectoryDependencies(path.getAbsolutePath());
-	MvcAnalyzer.classifyClasses(returnValue);
+	dependencies = DependencyAnalyzer.getDirectoryDependencies(path.getAbsolutePath());
+	returnValue = MvcAnalyzer.classifyClasses(dependencies);
 
 	if (outputFile != null) {
-	    DependenciesUtil.exportDependenciesToSVG(returnValue, outputFile);
+	    DependenciesUtil.exportDependenciesToSVG(dependencies, outputFile,
+		    new MvcExportCommand(returnValue));
 	}
 
 	return returnValue;
@@ -212,20 +212,22 @@ public class MvcAnalyzer {
      *            Path to the WAR file.
      * @param outputFile
      *            File where to export the classification results.
-     * @return List containing the classification results for each class.
+     * @return Map containing the classification results for each class.
      * @throws Exception
      *             If an Exception occurs during classification.
      */
-    public static List<ClassDependencies> classifyClassesinWar(final File file,
-	    final File outputFile) throws Exception {
-	List<ClassDependencies> returnValue;
+    public static Map<String, Layer> classifyClassesinWar(final File file, final File outputFile)
+	    throws Exception {
+	List<ClassDependencies> dependencies;
+	Map<String, Layer> returnValue;
 
 	// Classify each class in the specified war
-	returnValue = DependencyAnalyzer.getWarDependencies(file.getAbsolutePath());
-	MvcAnalyzer.classifyClasses(returnValue);
+	dependencies = DependencyAnalyzer.getWarDependencies(file.getAbsolutePath());
+	returnValue = MvcAnalyzer.classifyClasses(dependencies);
 
 	if (outputFile != null) {
-	    DependenciesUtil.exportDependenciesToSVG(returnValue, outputFile);
+	    DependenciesUtil.exportDependenciesToSVG(dependencies, outputFile,
+		    new MvcExportCommand(returnValue));
 	}
 
 	return returnValue;
@@ -236,11 +238,12 @@ public class MvcAnalyzer {
      * MVC pattern.
      * 
      * @param dependencies
-     *            List containinge the dependencies for each class to classify.
+     *            List containing the dependencies for each class to classify.
+     * @return Map containing the classification layer for each class.
      * @throws Exception
      *             If an Exception occurs during classification.
      */
-    private static void classifyClasses(final List<ClassDependencies> dependencies)
+    private static Map<String, Layer> classifyClasses(final List<ClassDependencies> dependencies)
 	    throws Exception {
 	int instanceLayer;
 	Instance instance;
@@ -249,6 +252,7 @@ public class MvcAnalyzer {
 	String[] suffixValues;
 	FastVector attributes;
 	String[] externalApiValues;
+	Map<String, Layer> returnValue;
 	Map<String, String[]> externalApiPackages;
 
 	// Model variables
@@ -278,6 +282,7 @@ public class MvcAnalyzer {
 	    }
 	}
 
+	returnValue = new HashMap<String, Layer>(dependencies.size());
 	for (ClassDependencies classDependencies : dependencies) {
 	    // Variables + Layer
 	    instance = new Instance(Variable.values().length + 1);
@@ -330,9 +335,12 @@ public class MvcAnalyzer {
 	    instances.add(instance);
 	    instance.setDataset(instances);
 	    instanceLayer = (int) MvcAnalyzer.classifier.classifyInstance(instance);
-	    classDependencies.setMvcLayer(Layer.values()[instanceLayer]);
-	    logger.info(classDependencies.getClassName() + " : " + classDependencies.getMvcLayer());
+	    returnValue.put(classDependencies.getClassName(), Layer.values()[instanceLayer]);
+	    logger.info(classDependencies.getClassName() + " : "
+		    + returnValue.get(classDependencies.getClassName()));
 	}
+
+	return returnValue;
     }
 
     /**

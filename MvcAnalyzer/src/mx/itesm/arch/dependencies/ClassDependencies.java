@@ -2,25 +2,16 @@ package mx.itesm.arch.dependencies;
 
 import java.util.List;
 
-import mx.itesm.arch.mvc.Layer;
-
 /**
- * Holds a class' dependency and classification data. That is, the dependencies
- * with other classes in the same project, <em>internal dependencies</em>, and
- * the dependencies with external projects, <em>external dependencies</em>. Once
- * the class is classified into one of the MVC layers, the mvcLayer attribute is
- * set. To uniquely identify a class, it's package and class name are also
- * stored here.
+ * Holds a class' dependency data. That is, the dependencies with other classes
+ * in the same project, <em>internal dependencies</em>, and the dependencies
+ * with external projects, <em>external dependencies</em>. To uniquely identify
+ * a class, it's package and class name are also stored here.
  * 
  * @author jccastrejon
  * 
  */
 public class ClassDependencies {
-
-    /**
-     * MVC Layer.
-     */
-    private Layer mvcLayer;
 
     /**
      * Package Name.
@@ -127,20 +118,5 @@ public class ClassDependencies {
      */
     public void setPackageName(String packageName) {
 	this.packageName = packageName;
-    }
-
-    /**
-     * @return the mvcLayer
-     */
-    public Layer getMvcLayer() {
-	return mvcLayer;
-    }
-
-    /**
-     * @param mvcLayer
-     *            the mvcLayer to set
-     */
-    public void setMvcLayer(Layer mvcLayer) {
-	this.mvcLayer = mvcLayer;
     }
 }

@@ -13,8 +13,6 @@ import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import mx.itesm.arch.mvc.Layer;
-
 /**
  * Dependencies Utility methods.
  * 
@@ -93,24 +91,26 @@ public class DependenciesUtil {
      * 
      * @param dependencies
      *            Class dependencies.
-     * @param fileName
+     * @param imageFile
      *            Image File.
+     * @param exportCommands
+     *            Commands to be executed during export process.
      * @throws IOException
      *             If an I/O error has occurred.
      */
     public static void exportDependenciesToSVG(final List<ClassDependencies> dependencies,
-	    final File imageFile) throws IOException {
+	    final File imageFile, final ExportCommand... exportCommands) throws IOException {
 	File dotFile;
 	int processCode;
 	Process process;
 	String fileName;
 	String className;
 	String dotCommand;
+	String exportCommand;
 	FileWriter fileWriter;
-	boolean layerDescription;
-	StringBuilder dotDescription;
 	String currentPackageName;
 	Set<String> currentPackage;
+	StringBuilder dotDescription;
 	Map<String, Set<String>> internalPackages;
 	Map<String, Set<String>> externalPackages;
 
@@ -120,7 +120,6 @@ public class DependenciesUtil {
 	}
 
 	// Build dot file
-	layerDescription = false;
 	fileName = imageFile.getName().substring(0, imageFile.getName().indexOf('.'));
 	dotFile = new File(imageFile.getParent() + "/" + fileName + ".dot");
 
@@ -131,10 +130,16 @@ public class DependenciesUtil {
 	for (ClassDependencies dependency : dependencies) {
 	    className = DependenciesUtil.getDotValidName(dependency.getClassName());
 
-	    if (dependency.getMvcLayer() != null) {
-		layerDescription = true;
-		dotDescription.append("\t" + className + " [color=\""
-			+ dependency.getMvcLayer().getRgbColor() + "\",style=\"filled\"];\n");
+	    // Append each result of the registered export commands.
+	    if (exportCommands != null) {
+		for (ExportCommand command : exportCommands) {
+		    exportCommand = command.execute(dependency);
+
+		    // Append only if it's a valid result
+		    if (exportCommand != null) {
+			dotDescription.append(exportCommand);
+		    }
+		}
 	    }
 
 	    // Add internal dependencies
@@ -182,17 +187,9 @@ public class DependenciesUtil {
 	DependenciesUtil.addClustersToDotDescription(internalPackages, dotDescription);
 	DependenciesUtil.addClustersToDotDescription(externalPackages, dotDescription);
 
-	if (layerDescription) {
-	    dotDescription.append("\nModelLayer [label=\"Model\",color=\""
-		    + Layer.Model.getRgbColor() + "\",style=\"filled\"];");
-	    dotDescription.append("\nViewLayer [label=\"View\",color=\"" + Layer.View.getRgbColor()
-		    + "\",style=\"filled\"];");
-	    dotDescription.append("\nControllerLayer [label=\"Controller\",color=\""
-		    + Layer.Controller.getRgbColor() + "\",style=\"filled\"];");
-	    dotDescription
-		    .append("\nsubgraph clusterMVCLayers {fontsize=\"8\"; label=\"MVC Layers\";");
-	    dotDescription.append("color=\"#CCFFFF\"; style=\"filled\";");
-	    dotDescription.append("\nModelLayer; ViewLayer; ControllerLayer}");
+	// Add Export Commands description
+	for (ExportCommand command : exportCommands) {
+	    dotDescription.append(command.getDescription());
 	}
 
 	// End of dot description
@@ -429,7 +426,7 @@ public class DependenciesUtil {
      *            Class Name.
      * @return Valid Class Name.
      */
-    private static String getDotValidName(final String className) {
+    public static String getDotValidName(final String className) {
 	String returnValue;
 
 	int classNameIndex;
