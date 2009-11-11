@@ -4,6 +4,8 @@ import weka.core.Attribute;
 import weka.core.FastVector;
 
 /**
+ * MVC Layer.
+ * 
  * @author jccastrejon
  * 
  */
@@ -11,7 +13,7 @@ public enum Layer {
     Model("#FFFF5C"), View("#99CCFF"), Controller("#FF9999");
 
     /**
-     * 
+     * RGB color associated to the layer.
      */
     private String rgbColor;
 
