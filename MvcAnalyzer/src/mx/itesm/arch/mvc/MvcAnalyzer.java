@@ -90,12 +90,12 @@ public class MvcAnalyzer {
     /**
      * Path to the properties file containing the model's variables.
      */
-    private final static String PROPERTIES_FILE_PATH = "/cfg/mvc-variables.properties";
+    private final static String PROPERTIES_FILE_PATH = "/mvc-variables.properties";
 
     /**
      * Path to the file containing the model's classifier.
      */
-    private final static String CLASSIFIER_FILE_PATH = "/cfg/mvc-classifier.model";
+    private final static String CLASSIFIER_FILE_PATH = "/mvc-classifier.model";
 
     /**
      * Properties file containing the variables data.
