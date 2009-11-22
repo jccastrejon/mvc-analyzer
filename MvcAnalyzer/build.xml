@@ -75,20 +75,12 @@
 		<replace file="${dist.dir}/MANIFEST.MF" token="%%" value="${name}" />
 		<replace file="${dist.dir}/MANIFEST.MF" token="##" value="${version}" />
 		<jar destfile="${dist.dir}/${name}-${version}.jar" basedir="${build.dir}" manifest="${dist.dir}/MANIFEST.MF" />
+		<copy todir="${dist.dir}" preservelastmodified="true">
+			<fileset dir="${lib.dir}">
+				<include name="**/*.jar" />
+			</fileset>
+		</copy>
 		<delete file="${dist.dir}/MANIFEST.MF" />
-	</target>
-
-	<target name="dist" depends="jar">
-		<delete file="${dist.dir}/${name}-${version}.zip" />
-		<copy file="README.txt" todir="${dist.dir}" />
-		<replace file="${dist.dir}/README.txt" token="%%" value="${name}" />
-		<replace file="${dist.dir}/README.txt" token="##" value="${version}" />
-		<zip destfile="${dist.dir}/${name}-${version}.zip">
-			<fileset dir="${dist.dir}" />
-			<zipfileset dir="${src.dir}" prefix="src" />
-		</zip>
-		<delete file="${dist.dir}/${name}-${version}.jar" />
-		<delete file="${dist.dir}/README.txt" />
 	</target>
 
 </project>
