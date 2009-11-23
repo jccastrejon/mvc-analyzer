@@ -2,9 +2,9 @@ package mx.itesm.arch.dependencies;
 
 import java.io.File;
 import java.io.FileWriter;
-import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -25,51 +25,6 @@ public class DependenciesUtil {
      * Class logger.
      */
     private static Logger logger = Logger.getLogger(DependenciesUtil.class.getName());
-
-    /**
-     * Filter used to analyze only directories and .class files.
-     */
-    private final static FilenameFilter CLASS_FILTER = new FilenameFilter() {
-	@Override
-	public boolean accept(final File dir, final String name) {
-	    String extension;
-	    File file;
-	    boolean returnValue = false;
-
-	    file = new File(dir.getAbsolutePath() + "/" + name);
-	    if (file.isDirectory()) {
-		returnValue = true;
-	    } else {
-		extension = this.getExtensionName(file);
-		if (extension != null) {
-		    if (extension.equals("class")) {
-			return true;
-		    }
-		}
-	    }
-
-	    return returnValue;
-	}
-
-	/**
-	 * Get a file extension from a file.
-	 * 
-	 * @param file
-	 *            File.
-	 * @return File's extension.
-	 */
-	public String getExtensionName(final File file) {
-	    String returnValue = null;
-	    String name = file.getName();
-	    int i = name.lastIndexOf('.');
-
-	    if (i > 0 && i < name.length() - 1) {
-		returnValue = name.substring(i + 1).toLowerCase();
-	    }
-	    return returnValue;
-	}
-
-    };
 
     /**
      * Export a graphic representation of the Classes dependencies list.
@@ -268,23 +223,38 @@ public class DependenciesUtil {
      * subdirectories.
      * 
      * @param directory
-     *            Directory.
+     *            Current directory.
+     * @param rootDirectory
+     *            Root directory where the analysis started.
+     * @param dependencyCommands
+     *            DependencyCommands to be executed during the analysis.
      * @return List with the Classes names.
      */
-    public static List<String> getClassesInDirectory(final File directory, final File rootDirectory) {
+    public static List<String> getClassesInDirectory(final File directory,
+	    final File rootDirectory, final DependencyCommand... dependencyCommands) {
 	File currentFile;
 	File[] directoryFiles;
-	List<String> returnValue;
 	List<String> innerFiles;
+	List<String> returnValue;
+	List<String> extraFileTypes;
+
+	// Add the valid file types for the specified dependency commands.
+	extraFileTypes = new ArrayList<String>();
+	if (dependencyCommands != null) {
+	    for (DependencyCommand dependencyCommand : dependencyCommands) {
+		extraFileTypes.addAll(Arrays.asList(dependencyCommand.getValidFileTypes()));
+	    }
+	}
 
 	returnValue = new ArrayList<String>();
-	directoryFiles = directory.listFiles(DependenciesUtil.CLASS_FILTER);
+	directoryFiles = directory.listFiles(new DependencyFileFilter(extraFileTypes));
 	for (int i = 0; i < directoryFiles.length; i++) {
 	    currentFile = directoryFiles[i];
 
 	    if (currentFile.isDirectory()) {
 		// Recover subdirectory classes
-		innerFiles = DependenciesUtil.getClassesInDirectory(currentFile, rootDirectory);
+		innerFiles = DependenciesUtil.getClassesInDirectory(currentFile, rootDirectory,
+			dependencyCommands);
 		returnValue.addAll(innerFiles);
 	    } else {
 		returnValue.add(DependenciesUtil.getClassNameFromPath(
@@ -313,7 +283,9 @@ public class DependenciesUtil {
 
 	// {rootAbsolutePath}/{classPath}
 	returnValue = path.substring(path.indexOf(rootPath) + rootPath.length() + 1);
-	returnValue = returnValue.substring(0, returnValue.indexOf(".class")).replace('/', '.');
+	if (returnValue.indexOf(".class") > 0) {
+	    returnValue = returnValue.substring(0, returnValue.indexOf(".class")).replace('/', '.');
+	}
 
 	return returnValue;
     }

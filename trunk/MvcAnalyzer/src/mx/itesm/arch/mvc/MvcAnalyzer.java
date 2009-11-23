@@ -150,7 +150,8 @@ public class MvcAnalyzer {
 	Map<String, Layer> returnValue;
 
 	// Classify each class in the specified path
-	dependencies = DependencyAnalyzer.getDirectoryDependencies(path.getAbsolutePath());
+	dependencies = DependencyAnalyzer.getDirectoryDependencies(path.getAbsolutePath(),
+		new MvcDependencyCommand());
 	returnValue = MvcAnalyzer.classifyClasses(dependencies);
 
 	if (outputFile != null) {

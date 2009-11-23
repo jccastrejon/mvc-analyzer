@@ -18,4 +18,11 @@ public interface DependencyCommand {
      *         this command.
      */
     public String execute(final String fileName);
+
+    /**
+     * Get the valid file types for this command.
+     * 
+     * @return Array containing the command's valid file types.
+     */
+    public String[] getValidFileTypes();
 }
