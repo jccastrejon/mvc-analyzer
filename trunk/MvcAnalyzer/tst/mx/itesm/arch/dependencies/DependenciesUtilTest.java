@@ -21,8 +21,8 @@ public class DependenciesUtilTest extends TestCase {
      * 
      */
     public void testExportDependenciesToSVG() throws IOException {
-	List<ClassDependencies> dependencies;
 	File imageFile;
+	List<ClassDependencies> dependencies;
 
 	dependencies = DependencyAnalyzer.getJarDependencies("lib/junit.jar");
 	imageFile = new File("img/junit.internal.svg");
