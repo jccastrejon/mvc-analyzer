@@ -49,8 +49,14 @@ public class ClassDependencies {
 	this.internalDependencies = internalDependencies;
 	this.externalDependencies = externalDependencies;
 
-	if (className.indexOf('.') > 0) {
+	if (className.lastIndexOf('/') == 0) {
+	    this.packageName = "/";
+	} else if (className.lastIndexOf('/') > 0) {
+	    this.packageName = className.substring(0, className.lastIndexOf('/'));
+	} else if (className.lastIndexOf('.') > 0) {
 	    this.packageName = className.substring(0, className.lastIndexOf('.'));
+	} else {
+	    this.packageName = "/";
 	}
     }
 
