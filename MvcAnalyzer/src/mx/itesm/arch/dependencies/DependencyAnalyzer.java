@@ -30,13 +30,17 @@ public class DependencyAnalyzer {
      * 
      * @param path
      *            Directory path.
+     * @param dependencyCommands
+     *            DependencyCommands to be executed during the analysis.
      * @return Dependencies for each class within the directory.
      * @throws IOException
      *             If an I/O error has occurred.
      */
-    public static List<ClassDependencies> getDirectoryDependencies(final String path)
-	    throws IOException {
+    public static List<ClassDependencies> getDirectoryDependencies(final String path,
+	    final DependencyCommand... dependencyCommands) throws IOException {
 	File directory;
+	String[] validTypes;
+	boolean extraFileType;
 	List<String> internalClasses;
 	InputStream classInputStream;
 	List<ClassDependencies> returnValue;
@@ -44,14 +48,39 @@ public class DependencyAnalyzer {
 	// Get classes in directory
 	returnValue = new ArrayList<ClassDependencies>();
 	directory = DependenciesUtil.getDirectory(path);
-	internalClasses = DependenciesUtil.getClassesInDirectory(directory, directory);
+	internalClasses = DependenciesUtil.getClassesInDirectory(directory, directory,
+		dependencyCommands);
 
 	// Get classes dependencies
 	for (String className : internalClasses) {
-	    classInputStream = new FileInputStream(DependenciesUtil.getPathFromClassName(className,
-		    directory.getAbsolutePath()));
-	    returnValue.add(DependencyAnalyzer.getClassSortedDependencies(className,
-		    classInputStream, internalClasses, path));
+	    extraFileType = false;
+	    if (dependencyCommands != null) {
+		for (DependencyCommand dependencyCommand : dependencyCommands) {
+		    validTypes = dependencyCommand.getValidFileTypes();
+
+		    if (validTypes != null) {
+			for (String validType : validTypes) {
+			    if (className.endsWith("." + validType)) {
+				extraFileType = true;
+				break;
+			    }
+			}
+
+			if (extraFileType) {
+			    break;
+			}
+		    }
+		}
+	    }
+
+	    if (!extraFileType) {
+		classInputStream = new FileInputStream(DependenciesUtil.getPathFromClassName(
+			className, directory.getAbsolutePath()));
+		returnValue.add(DependencyAnalyzer.getClassSortedDependencies(className,
+			classInputStream, internalClasses, path));
+	    } else {
+		returnValue.add(new ClassDependencies(className, null, null));
+	    }
 	}
 
 	return returnValue;

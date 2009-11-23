@@ -35,4 +35,9 @@ public class MvcDependencyCommand implements DependencyCommand {
 
 	return returnValue;
     }
+
+    @Override
+    public String[] getValidFileTypes() {
+	return MvcDependencyCommand.VALID_TYPES;
+    }
 }
