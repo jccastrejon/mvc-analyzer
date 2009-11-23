@@ -19,12 +19,13 @@ public class MvcAnalyzerTest extends TestCase {
 	File analyzedFile;
 	File outputFile;
 
-	analyzedFile = new File("bin");
-	outputFile = new File("img/MvcAnalyzerClassification-internal.svg");
+	analyzedFile = new File(
+		"/home/jccastrejon/java/spring-framework-2.5.6.SEC01/samples/petclinic");
+	outputFile = new File("img/petclinicClassification-directory-internal.svg");
 	outputFile.delete();
 	MvcAnalyzer.classifyClassesInDirectory(analyzedFile, false, outputFile);
 
-	outputFile = new File("img/MvcAnalyzerClassification-external.svg");
+	outputFile = new File("img/petclinicClassification-directory-external.svg");
 	outputFile.delete();
 	MvcAnalyzer.classifyClassesInDirectory(analyzedFile, true, outputFile);
     }
