@@ -393,7 +393,10 @@ public class DependenciesUtil {
      */
     private static void addClustersToDotDescription(final Map<String, Set<String>> clusters,
 	    final StringBuilder dotDescription) {
+	boolean clusterDependencyAdded;
+	String previousClusterDependency;
 
+	previousClusterDependency = null;
 	if ((clusters != null) && (!clusters.isEmpty())) {
 	    for (String packageName : clusters.keySet()) {
 		dotDescription.append("\tsubgraph \"cluster_" + packageName + "\" {\n");
@@ -402,8 +405,21 @@ public class DependenciesUtil {
 
 		dotDescription.append("\t\t");
 
+		clusterDependencyAdded = false;
 		for (String packageDependency : clusters.get(packageName)) {
 		    dotDescription.append(packageDependency + ";");
+
+		    if (!clusterDependencyAdded) {
+			if (previousClusterDependency == null) {
+			    previousClusterDependency = packageDependency;
+			} else {
+			    dotDescription.append("\n\t" + previousClusterDependency + " -> "
+				    + packageDependency + "[lhead=\"cluster_" + packageName
+				    + "\", style=\"invis\"];");
+			    previousClusterDependency = packageDependency;
+			    clusterDependencyAdded = true;
+			}
+		    }
 		}
 
 		dotDescription.append("\n\t}\n");
