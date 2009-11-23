@@ -131,7 +131,7 @@ public class DependenciesUtil {
 	// Simple Dependencies
 	externalPackages = new HashMap<String, Set<String>>();
 	dotDescription = new StringBuilder("digraph \"" + fileName
-		+ "\" {\n\tnode[shape=box, fontsize=8, height=.1, width=.1];\n");
+		+ "\" {\n\trankdir=\"TB\";\n\tnode[shape=box, fontsize=8, height=.1, width=.1];\n");
 
 	// Add internal and external dependencies
 	for (ClassDependencies dependency : dependencies) {
@@ -150,13 +150,15 @@ public class DependenciesUtil {
 	    }
 
 	    // Add internal dependencies
-	    for (String internalDependency : dependency.getInternalDependencies()) {
-		dotDescription.append("\t" + className + " -> "
-			+ DependenciesUtil.getDotValidName(internalDependency) + ";\n");
+	    if (dependency.getInternalDependencies() != null) {
+		for (String internalDependency : dependency.getInternalDependencies()) {
+		    dotDescription.append("\t" + className + " -> "
+			    + DependenciesUtil.getDotValidName(internalDependency) + ";\n");
+		}
 	    }
 
 	    // Add external dependencies, also group them by packages
-	    if (includeExternal) {
+	    if ((includeExternal) && (dependency.getInternalDependencies() != null)) {
 		for (String externalDependency : dependency.getExternalDependencies()) {
 		    dotDescription.append("\t" + className + " -> "
 			    + DependenciesUtil.getDotValidName(externalDependency) + ";\n");
@@ -199,7 +201,7 @@ public class DependenciesUtil {
 	if (includeExternal) {
 	    DependenciesUtil.addClustersToDotDescription(externalPackages, dotDescription);
 	}
-	
+
 	// Add Export Commands description
 	for (ExportCommand command : exportCommands) {
 	    dotDescription.append(command.getDescription());
@@ -423,9 +425,11 @@ public class DependenciesUtil {
 	if ((clusters != null) && (!clusters.isEmpty())) {
 	    for (String packageName : clusters.keySet()) {
 		dotDescription.append("\tsubgraph \"cluster_" + packageName + "\" {\n");
-		dotDescription.append("\t\tfontsize=8;label = \"" + packageName + "\";\n");
+		dotDescription.append("\t\trankdir=\"TB\";fontsize=8;label = \"" + packageName
+			+ "\";\n");
 
 		dotDescription.append("\t\t");
+
 		for (String packageDependency : clusters.get(packageName)) {
 		    dotDescription.append(packageDependency + ";");
 		}
@@ -444,10 +448,15 @@ public class DependenciesUtil {
      */
     public static String getDotValidName(final String className) {
 	String returnValue;
-
 	int classNameIndex;
-	classNameIndex = className.lastIndexOf('.') + 1;
-	returnValue = "\"" + className.substring(classNameIndex, className.length()) + "\"";
+
+	classNameIndex = -1;
+	if (className.indexOf('/') > 0) {
+	    classNameIndex = className.lastIndexOf("/");
+	} else if (className.indexOf('.') > 0) {
+	    classNameIndex = className.lastIndexOf('.');
+	}
+	returnValue = "\"" + className.substring((classNameIndex + 1), className.length()) + "\"";
 
 	return returnValue;
     }
