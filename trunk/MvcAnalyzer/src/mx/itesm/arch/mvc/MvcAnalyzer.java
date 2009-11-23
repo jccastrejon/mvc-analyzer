@@ -32,7 +32,7 @@ public class MvcAnalyzer {
      * @author jccastrejon
      * 
      */
-    protected enum Variable {
+    public enum Variable {
 	Type("variable.type"), ExternalAPI("variable.externalApi"), Suffix("variable.suffix");
 
 	/**
@@ -181,7 +181,8 @@ public class MvcAnalyzer {
 	Map<String, Layer> returnValue;
 
 	// Classify each class in the specified war
-	dependencies = DependencyAnalyzer.getWarDependencies(file.getAbsolutePath());
+	dependencies = DependencyAnalyzer.getWarDependencies(file.getAbsolutePath(),
+		new MvcDependencyCommand());
 	returnValue = MvcAnalyzer.classifyClasses(dependencies);
 
 	if (outputFile != null) {
@@ -208,7 +209,9 @@ public class MvcAnalyzer {
 	Instance instance;
 	boolean valueFound;
 	Instances instances;
+	String instanceType;
 	String[] suffixValues;
+	String[] typeValues;
 	FastVector attributes;
 	String[] externalApiValues;
 	Map<String, Layer> returnValue;
@@ -230,6 +233,9 @@ public class MvcAnalyzer {
 	// Valid suffixes to look for in the class names
 	suffixValues = MvcAnalyzer.getPropertyValues(MvcAnalyzer.Variable.Suffix.getVariableName());
 
+	// Valid file types to look for in the component names
+	typeValues = MvcAnalyzer.getPropertyValues(MvcAnalyzer.Variable.Type.getVariableName());
+
 	// Valid external api packages to look for in the classes dependencies
 	externalApiValues = MvcAnalyzer.getPropertyValues(MvcAnalyzer.Variable.ExternalAPI
 		.getVariableName());
@@ -247,7 +253,14 @@ public class MvcAnalyzer {
 	    instance = new Instance(Variable.values().length + 1);
 
 	    // Type
-	    instance.setValue(Variable.Type.getAttribute(), "java");
+	    instanceType = "java";
+	    for (String validType : typeValues) {
+		if (classDependencies.getClassName().endsWith("." + validType)) {
+		    instanceType = validType;
+		    break;
+		}
+	    }
+	    instance.setValue(Variable.Type.getAttribute(), instanceType);
 
 	    // ExternalAPI
 	    valueFound = false;
@@ -258,12 +271,14 @@ public class MvcAnalyzer {
 
 		// Check if any of the class' external dependencies match with
 		// one of the key external dependencies
-		for (String externalDependency : classDependencies.getExternalDependencies()) {
-		    for (String externalPackage : externalApiPackages.get(externalApi)) {
-			if (externalDependency.toLowerCase().startsWith(externalPackage)) {
-			    valueFound = true;
-			    instance.setValue(Variable.ExternalAPI.getAttribute(), externalApi);
-			    break externalApi;
+		if (classDependencies.getExternalDependencies() != null) {
+		    for (String externalDependency : classDependencies.getExternalDependencies()) {
+			for (String externalPackage : externalApiPackages.get(externalApi)) {
+			    if (externalDependency.toLowerCase().startsWith(externalPackage)) {
+				valueFound = true;
+				instance.setValue(Variable.ExternalAPI.getAttribute(), externalApi);
+				break externalApi;
+			    }
 			}
 		    }
 		}
@@ -310,7 +325,7 @@ public class MvcAnalyzer {
      *            Property name.
      * @return Property's values.
      */
-    private static String[] getPropertyValues(final String propertyName) {
+    public static String[] getPropertyValues(final String propertyName) {
 	String[] returnValue;
 
 	if ((propertyName == null) || (!MvcAnalyzer.classifierVariables.containsKey(propertyName))) {
