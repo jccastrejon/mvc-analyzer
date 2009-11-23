@@ -64,11 +64,14 @@ public class DependencyAnalyzer {
      * 
      * @param file
      *            Path to the JAR file.
+     * @param dependencyCommands
+     *            DependencyCommands to be executed during the analysis.
      * @return Dependencies for each class within the JAR file.
      * @throws IOException
      *             If an I/O error has occurred.
      */
-    public static List<ClassDependencies> getWarDependencies(final String file) throws IOException {
+    public static List<ClassDependencies> getWarDependencies(final String file,
+	    final DependencyCommand... dependencyCommands) throws IOException {
 	File warFile;
 	String warName;
 	ZipFile zipFile;
@@ -77,7 +80,7 @@ public class DependencyAnalyzer {
 	Enumeration<? extends ZipEntry> zipEntries;
 
 	// .class files in the WAR file
-	returnValue = DependencyAnalyzer.getJarDependencies(file);
+	returnValue = DependencyAnalyzer.getJarDependencies(file, dependencyCommands);
 
 	// JAR files that belong to the same project
 	warFile = new File(file);
@@ -93,7 +96,8 @@ public class DependencyAnalyzer {
 		if (zipEntry.getName().toLowerCase().contains(warName)) {
 		    returnValue.addAll(DependencyAnalyzer.getJarDependencies(warFile
 			    .getAbsolutePath()
-			    + "/" + zipEntry.getName(), zipFile.getInputStream(zipEntry)));
+			    + "/" + zipEntry.getName(), zipFile.getInputStream(zipEntry),
+			    dependencyCommands));
 		}
 	    }
 	}
@@ -107,11 +111,14 @@ public class DependencyAnalyzer {
      * 
      * @param file
      *            Path to the JAR file.
+     * @param dependencyCommands
+     *            DependencyCommands to be executed during the analysis.
      * @return Dependencies for each class within the JAR file.
      * @throws IOException
      *             If an I/O error has occurred.
      */
-    public static List<ClassDependencies> getJarDependencies(final String file) throws IOException {
+    public static List<ClassDependencies> getJarDependencies(final String file,
+	    final DependencyCommand... dependencyCommands) throws IOException {
 	File fileRef;
 	JarFile jarFile;
 	JarEntry jarEntry;
@@ -129,7 +136,7 @@ public class DependencyAnalyzer {
 	while (jarEntries.hasMoreElements()) {
 	    jarEntry = jarEntries.nextElement();
 	    DependencyAnalyzer.analyzeJarEntry(jarEntry, internalClasses, fileRef, jarFile
-		    .getInputStream(jarEntry), returnValue);
+		    .getInputStream(jarEntry), returnValue, dependencyCommands);
 	}
 
 	return returnValue;
@@ -143,12 +150,15 @@ public class DependencyAnalyzer {
      *            Path to the JAR file.
      * @param inputStream
      *            Input Stream to the JAR file.
+     * @param dependencyCommands
+     *            DependencyCommands to be executed during the analysis.
      * @return Dependencies for each class within the JAR file.
      * @throws IOException
      *             If an I/O error has occurred.
      */
     public static List<ClassDependencies> getJarDependencies(final String file,
-	    final InputStream inputStream) throws IOException {
+	    final InputStream inputStream, final DependencyCommand... dependencyCommands)
+	    throws IOException {
 	File fileRef;
 	JarEntry jarEntry;
 	List<String> internalClasses;
@@ -164,7 +174,7 @@ public class DependencyAnalyzer {
 	jarEntry = jarInputStream.getNextJarEntry();
 	while (jarEntry != null) {
 	    DependencyAnalyzer.analyzeJarEntry(jarEntry, internalClasses, fileRef, jarInputStream,
-		    returnValue);
+		    returnValue, dependencyCommands);
 	    jarEntry = jarInputStream.getNextJarEntry();
 	}
 
@@ -186,26 +196,40 @@ public class DependencyAnalyzer {
      *            Input Stream to the JAR file.
      * @param classesDependencies
      *            List of the classes dependencies found so far in the JAR file.
+     * @param dependencyCommands
+     *            DependencyCommands to be executed during the analysis.
      * @throws IOException
      *             If an I/O error has occurred.
      */
     private static void analyzeJarEntry(final JarEntry jarEntry,
 	    final List<String> internalClasses, final File fileRef, final InputStream inputStream,
-	    final List<ClassDependencies> classesDependencies) throws IOException {
+	    final List<ClassDependencies> classesDependencies,
+	    final DependencyCommand... dependencyCommands) throws IOException {
 	String className;
 	ClassDependencies dependencies;
 
-	if ((!jarEntry.isDirectory()) && jarEntry.getName().endsWith(".class")) {
-	    // Get internal classes
-	    internalClasses.add(DependenciesUtil.getClassNameFromPath(fileRef.getParent() + "/"
-		    + jarEntry.getName(), fileRef.getParent()));
+	if (!jarEntry.isDirectory()) {
+	    // Classes
+	    if (jarEntry.getName().endsWith(".class")) {
+		// Get internal classes
+		internalClasses.add(DependenciesUtil.getClassNameFromPath(fileRef.getParent() + "/"
+			+ jarEntry.getName(), fileRef.getParent()));
 
-	    // Get dependencies
-	    className = DependenciesUtil.getClassNameFromPath(fileRef.getParent() + "/"
-		    + jarEntry.getName(), fileRef.getParent());
-	    dependencies = DependencyAnalyzer.getClassSortedDependencies(className, inputStream,
-		    internalClasses, fileRef.getParent());
-	    classesDependencies.add(dependencies);
+		// Get dependencies
+		className = DependenciesUtil.getClassNameFromPath(fileRef.getParent() + "/"
+			+ jarEntry.getName(), fileRef.getParent());
+		dependencies = DependencyAnalyzer.getClassSortedDependencies(className,
+			inputStream, internalClasses, fileRef.getParent());
+		classesDependencies.add(dependencies);
+	    }
+
+	    // Web pages, configuration files
+	    for (DependencyCommand dependencyCommand : dependencyCommands) {
+		className = dependencyCommand.execute(jarEntry.getName());
+		if (className != null) {
+		    classesDependencies.add(new ClassDependencies(className, null, null));
+		}
+	    }
 	}
     }
 
