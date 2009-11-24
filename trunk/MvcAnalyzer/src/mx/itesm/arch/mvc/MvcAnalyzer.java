@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -206,9 +207,12 @@ public class MvcAnalyzer {
      */
     private static Map<String, Layer> classifyClasses(final List<ClassDependencies> dependencies)
 	    throws Exception {
+	int viewCount;
+	int modelCount;
 	int instanceLayer;
 	Instance instance;
 	boolean valueFound;
+	int controllerCount;
 	Instances instances;
 	String instanceType;
 	String[] typeValues;
@@ -218,7 +222,10 @@ public class MvcAnalyzer {
 	FastVector attributes;
 	String[] externalApiValues;
 	Map<String, Layer> returnValue;
+	Set<String> currentPackageContent;
+	Map<String, Layer> packagesClassification;
 	Map<String, String[]> externalApiPackages;
+	Map<String, Set<String>> internalPackages;
 
 	// Model variables
 	attributes = new FastVector();
@@ -318,14 +325,44 @@ public class MvcAnalyzer {
 	}
 
 	// Check for any invalid relation
+	internalPackages = DependenciesUtil.getInternalPackages(dependencies);
+	packagesClassification = new HashMap<String, Layer>(internalPackages.size());
+	for (String currentPackage : internalPackages.keySet()) {
+	    modelCount = viewCount = controllerCount = 0;
+	    currentPackageContent = internalPackages.get(currentPackage);
+
+	    for (String component : currentPackageContent) {
+		componentLayer = returnValue.get(component);
+		if (componentLayer == Layer.Model) {
+		    modelCount++;
+		} else if (componentLayer == Layer.View) {
+		    viewCount++;
+		} else if (componentLayer == Layer.Controller) {
+		    controllerCount++;
+		}
+	    }
+
+	    if ((modelCount > viewCount) && (modelCount > controllerCount)) {
+		packagesClassification.put(currentPackage, Layer.Model);
+	    } else if ((viewCount > modelCount) && (viewCount > controllerCount)) {
+		packagesClassification.put(currentPackage, Layer.View);
+	    } else if ((controllerCount > viewCount) && (controllerCount > modelCount)) {
+		packagesClassification.put(currentPackage, Layer.Controller);
+	    } else {
+		packagesClassification.put(currentPackage, Layer.Model);
+	    }
+	}
+
 	for (ClassDependencies classDependencies : dependencies) {
 	    // Code relations
+	    valueFound = false;
 	    componentLayer = returnValue.get(classDependencies.getClassName());
 	    if (classDependencies.getInternalDependencies() != null) {
 		for (String internalDependency : classDependencies.getInternalDependencies()) {
 		    dependencyLayer = returnValue.get(internalDependency);
 
 		    if (!componentLayer.isValidRelation(dependencyLayer)) {
+			valueFound = true;
 			returnValue.put(classDependencies.getClassName(), Layer.valueOf("Invalid"
 				+ componentLayer));
 			logger.info("Invalid relation detected between: "
@@ -335,6 +372,14 @@ public class MvcAnalyzer {
 	    }
 
 	    // Package relations
+	    if (!valueFound) {
+		dependencyLayer = packagesClassification.get(classDependencies.getPackageName());
+
+		if (componentLayer != dependencyLayer) {
+		    returnValue.put(classDependencies.getClassName(), Layer.valueOf("Invalid"
+			    + componentLayer));
+		}
+	    }
 	}
 
 	return returnValue;

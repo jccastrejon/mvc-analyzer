@@ -448,4 +448,40 @@ public class DependenciesUtil {
 
 	return returnValue;
     }
+
+    /**
+     * 
+     * @param dependencies
+     * @return
+     */
+    public static Map<String, Set<String>> getInternalPackages(
+	    final List<ClassDependencies> dependencies) {
+	String otherPackageName;
+	String currentPackageName;
+	Set<String> currentPackage;
+	Map<String, Set<String>> returnValue;
+
+	returnValue = new HashMap<String, Set<String>>();
+	for (ClassDependencies dependency : dependencies) {
+	    currentPackageName = dependency.getPackageName();
+
+	    if (!returnValue.containsKey(currentPackageName)) {
+		returnValue.put(currentPackageName, new HashSet<String>());
+	    }
+
+	    currentPackage = returnValue.get(currentPackageName);
+
+	    for (ClassDependencies otherDependency : dependencies) {
+		if (otherDependency.getClassName().startsWith(currentPackageName)) {
+		    otherPackageName = otherDependency.getClassName().replace(currentPackageName,
+			    "");
+		    if (otherPackageName.lastIndexOf('/') <= 0) {
+			currentPackage.add(otherDependency.getClassName());
+		    }
+		}
+	    }
+	}
+
+	return returnValue;
+    }
 }
