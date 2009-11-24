@@ -79,6 +79,11 @@ public class DependenciesUtil {
 			+ fileName
 			+ "\" {\n\tcompound=\"true\";rankdir=\"TB\";\n\tnode[shape=box, fontsize=8, height=.1, width=.1];\n");
 
+	// Add Export Commands description
+	for (ExportCommand command : exportCommands) {
+	    dotDescription.append(command.getDescription());
+	}
+
 	// Add internal and external dependencies
 	for (ClassDependencies dependency : dependencies) {
 	    className = DependenciesUtil.getDotValidName(dependency.getClassName());
@@ -138,11 +143,6 @@ public class DependenciesUtil {
 	// External dependencies
 	if (includeExternal) {
 	    DependenciesUtil.addClustersToDotDescription(externalPackages, dotDescription);
-	}
-
-	// Add Export Commands description
-	for (ExportCommand command : exportCommands) {
-	    dotDescription.append(command.getDescription());
 	}
 
 	// End of dot description
