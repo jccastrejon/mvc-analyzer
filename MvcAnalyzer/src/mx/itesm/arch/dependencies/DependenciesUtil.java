@@ -33,25 +33,10 @@ public class DependenciesUtil {
      *            Class dependencies.
      * @param includeExternal
      *            Should the external dependencies be exported.
-     * @param fileName
-     *            Image File Name.
-     * @throws IOException
-     *             If an I/O error has occurred.
-     */
-    public static void exportDependenciesToSVG(final List<ClassDependencies> dependencies,
-	    final boolean includeExternal, final String fileName) throws IOException {
-	DependenciesUtil.exportDependenciesToSVG(dependencies, includeExternal, new File(fileName));
-    }
-
-    /**
-     * Export a graphic representation of the Classes dependencies list.
-     * 
-     * @param dependencies
-     *            Class dependencies.
-     * @param includeExternal
-     *            Should the external dependencies be exported.
      * @param imageFile
      *            Image File.
+     * @param internalPackages
+     *            Project's internal packages.
      * @param exportCommands
      *            Commands to be executed during export process.
      * @throws IOException
@@ -59,7 +44,8 @@ public class DependenciesUtil {
      */
     public static void exportDependenciesToSVG(final List<ClassDependencies> dependencies,
 	    final boolean includeExternal, final File imageFile,
-	    final ExportCommand... exportCommands) throws IOException {
+	    final Map<String, Set<String>> internalPackages, final ExportCommand... exportCommands)
+	    throws IOException {
 	File dotFile;
 	int processCode;
 	Process process;
@@ -69,10 +55,11 @@ public class DependenciesUtil {
 	String exportCommand;
 	FileWriter fileWriter;
 	String currentPackageName;
-	Set<String> currentPackage;
+	Set<String> dotComponents;
 	StringBuilder dotDescription;
-	Map<String, Set<String>> internalPackages;
+	Set<String> internalComponents;
 	Map<String, Set<String>> externalPackages;
+	Map<String, Set<String>> internalDotPackages;
 
 	// Validate arguments
 	if ((imageFile == null) || (!imageFile.getAbsolutePath().endsWith(".svg"))) {
@@ -131,26 +118,18 @@ public class DependenciesUtil {
 	}
 
 	// Group internal packages
-	internalPackages = new HashMap<String, Set<String>>();
-	for (ClassDependencies dependency : dependencies) {
-	    currentPackageName = dependency.getPackageName();
-
-	    if (!internalPackages.containsKey(currentPackageName)) {
-		internalPackages.put(currentPackageName, new HashSet<String>());
+	internalDotPackages = new HashMap<String, Set<String>>();
+	for (String internalPackage : internalPackages.keySet()) {
+	    internalComponents = internalPackages.get(internalPackage);
+	    dotComponents = new HashSet<String>(internalComponents.size());
+	    for (String component : internalComponents) {
+		dotComponents.add(DependenciesUtil.getDotValidName(component));
 	    }
-
-	    currentPackage = internalPackages.get(currentPackageName);
-
-	    for (ClassDependencies otherDependency : dependencies) {
-		if (otherDependency.getClassName().startsWith(currentPackageName)) {
-		    currentPackage.add(DependenciesUtil.getDotValidName(otherDependency
-			    .getClassName()));
-		}
-	    }
+	    internalDotPackages.put(internalPackage, dotComponents);
 	}
 
 	// Internal dependencies
-	DependenciesUtil.addClustersToDotDescription(internalPackages, dotDescription);
+	DependenciesUtil.addClustersToDotDescription(internalDotPackages, dotDescription);
 
 	// External dependencies
 	if (includeExternal) {
