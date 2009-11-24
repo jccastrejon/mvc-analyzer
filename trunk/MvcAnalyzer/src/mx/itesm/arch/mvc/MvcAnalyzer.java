@@ -147,17 +147,19 @@ public class MvcAnalyzer {
      */
     public static Map<String, Layer> classifyClassesInDirectory(final File path,
 	    final boolean includeExternal, final File outputFile) throws Exception {
-	List<ClassDependencies> dependencies;
 	Map<String, Layer> returnValue;
+	List<ClassDependencies> dependencies;
+	Map<String, Set<String>> internalPackages;
 
 	// Classify each class in the specified path
 	dependencies = DependencyAnalyzer.getDirectoryDependencies(path.getAbsolutePath(),
 		new MvcDependencyCommand());
-	returnValue = MvcAnalyzer.classifyClasses(dependencies);
+	internalPackages = DependenciesUtil.getInternalPackages(dependencies);
+	returnValue = MvcAnalyzer.classifyClasses(dependencies, internalPackages);
 
 	if (outputFile != null) {
 	    DependenciesUtil.exportDependenciesToSVG(dependencies, includeExternal, outputFile,
-		    new MvcExportCommand(returnValue));
+		    internalPackages, new MvcExportCommand(returnValue));
 	}
 
 	return returnValue;
@@ -179,17 +181,19 @@ public class MvcAnalyzer {
      */
     public static Map<String, Layer> classifyClassesinWar(final File file,
 	    final boolean includeExternal, final File outputFile) throws Exception {
-	List<ClassDependencies> dependencies;
 	Map<String, Layer> returnValue;
+	List<ClassDependencies> dependencies;
+	Map<String, Set<String>> internalPackages;
 
 	// Classify each class in the specified war
 	dependencies = DependencyAnalyzer.getWarDependencies(file.getAbsolutePath(),
 		new MvcDependencyCommand());
-	returnValue = MvcAnalyzer.classifyClasses(dependencies);
+	internalPackages = DependenciesUtil.getInternalPackages(dependencies);
+	returnValue = MvcAnalyzer.classifyClasses(dependencies, internalPackages);
 
 	if (outputFile != null) {
 	    DependenciesUtil.exportDependenciesToSVG(dependencies, includeExternal, outputFile,
-		    new MvcExportCommand(returnValue));
+		    internalPackages, new MvcExportCommand(returnValue));
 	}
 
 	return returnValue;
@@ -201,12 +205,14 @@ public class MvcAnalyzer {
      * 
      * @param dependencies
      *            List containing the dependencies for each class to classify.
+     * @param internalPackages
+     *            Project's internal packages.
      * @return Map containing the classification layer for each class.
      * @throws Exception
      *             If an Exception occurs during classification.
      */
-    private static Map<String, Layer> classifyClasses(final List<ClassDependencies> dependencies)
-	    throws Exception {
+    private static Map<String, Layer> classifyClasses(final List<ClassDependencies> dependencies,
+	    final Map<String, Set<String>> internalPackages) throws Exception {
 	int viewCount;
 	int modelCount;
 	int instanceLayer;
@@ -225,7 +231,6 @@ public class MvcAnalyzer {
 	Set<String> currentPackageContent;
 	Map<String, Layer> packagesClassification;
 	Map<String, String[]> externalApiPackages;
-	Map<String, Set<String>> internalPackages;
 
 	// Model variables
 	attributes = new FastVector();
@@ -325,7 +330,6 @@ public class MvcAnalyzer {
 	}
 
 	// Check for any invalid relation
-	internalPackages = DependenciesUtil.getInternalPackages(dependencies);
 	packagesClassification = new HashMap<String, Layer>(internalPackages.size());
 	for (String currentPackage : internalPackages.keySet()) {
 	    modelCount = viewCount = controllerCount = 0;

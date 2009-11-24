@@ -27,23 +27,27 @@ public class DependenciesUtilTest extends TestCase {
 	dependencies = DependencyAnalyzer.getJarDependencies("lib/junit.jar");
 	imageFile = new File("img/junit.internal.svg");
 	imageFile.delete();
-	DependenciesUtil.exportDependenciesToSVG(dependencies, false, imageFile);
+	DependenciesUtil.exportDependenciesToSVG(dependencies, false, imageFile, DependenciesUtil
+		.getInternalPackages(dependencies));
 	assertTrue(imageFile.exists());
 
 	imageFile = new File("img/junit-external.svg");
 	imageFile.delete();
-	DependenciesUtil.exportDependenciesToSVG(dependencies, true, imageFile);
+	DependenciesUtil.exportDependenciesToSVG(dependencies, true, imageFile, DependenciesUtil
+		.getInternalPackages(dependencies));
 	assertTrue(imageFile.exists());
 
 	dependencies = DependencyAnalyzer.getDirectoryDependencies("bin");
 	imageFile = new File("img/MvcAnalyzer-internal.svg");
 	imageFile.delete();
-	DependenciesUtil.exportDependenciesToSVG(dependencies, false, imageFile);
+	DependenciesUtil.exportDependenciesToSVG(dependencies, false, imageFile, DependenciesUtil
+		.getInternalPackages(dependencies));
 	assertTrue(imageFile.exists());
 
 	imageFile = new File("img/MvcAnalyzer-external.svg");
 	imageFile.delete();
-	DependenciesUtil.exportDependenciesToSVG(dependencies, true, imageFile);
+	DependenciesUtil.exportDependenciesToSVG(dependencies, true, imageFile, DependenciesUtil
+		.getInternalPackages(dependencies));
 	assertTrue(imageFile.exists());
     }
 }
