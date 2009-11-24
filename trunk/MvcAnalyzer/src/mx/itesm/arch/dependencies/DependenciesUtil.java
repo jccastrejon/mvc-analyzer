@@ -5,6 +5,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -72,8 +74,10 @@ public class DependenciesUtil {
 
 	// Simple Dependencies
 	externalPackages = new HashMap<String, Set<String>>();
-	dotDescription = new StringBuilder("digraph \"" + fileName
-		+ "\" {\n\trankdir=\"TB\";\n\tnode[shape=box, fontsize=8, height=.1, width=.1];\n");
+	dotDescription = new StringBuilder(
+		"digraph \""
+			+ fileName
+			+ "\" {\n\tcompound=\"true\";rankdir=\"TB\";\n\tnode[shape=box, fontsize=8, height=.1, width=.1];\n");
 
 	// Add internal and external dependencies
 	for (ClassDependencies dependency : dependencies) {
@@ -377,7 +381,7 @@ public class DependenciesUtil {
 
 	previousClusterDependency = null;
 	if ((clusters != null) && (!clusters.isEmpty())) {
-	    for (String packageName : clusters.keySet()) {
+	    for (String packageName : DependenciesUtil.sortClustersKeys(clusters)) {
 		dotDescription.append("\tsubgraph \"cluster_" + packageName + "\" {\n");
 		dotDescription.append("\t\trankdir=\"TB\";fontsize=8;label = \"" + packageName
 			+ "\";\n");
@@ -389,6 +393,7 @@ public class DependenciesUtil {
 		    dotDescription.append(packageDependency + ";");
 
 		    if (!clusterDependencyAdded) {
+			clusterDependencyAdded = true;
 			if (previousClusterDependency == null) {
 			    previousClusterDependency = packageDependency;
 			} else {
@@ -396,7 +401,6 @@ public class DependenciesUtil {
 				    + packageDependency + "[lhead=\"cluster_" + packageName
 				    + "\", style=\"invis\"];");
 			    previousClusterDependency = packageDependency;
-			    clusterDependencyAdded = true;
 			}
 		    }
 		}
@@ -460,6 +464,27 @@ public class DependenciesUtil {
 		}
 	    }
 	}
+
+	return returnValue;
+    }
+
+    /**
+     * Sort cluster keys by their packages size.
+     * 
+     * @param clusters
+     *            Package cluster.
+     * @return Sorted cluster keys.
+     */
+    private static List<String> sortClustersKeys(final Map<String, Set<String>> clusters) {
+	List<String> returnValue;
+
+	returnValue = new ArrayList<String>(clusters.keySet());
+	Collections.sort(returnValue, new Comparator<String>() {
+	    public int compare(final String first, final String second) {
+		return new Integer(clusters.get(first).size()).compareTo(clusters.get(second)
+			.size());
+	    }
+	});
 
 	return returnValue;
     }
