@@ -211,8 +211,10 @@ public class MvcAnalyzer {
 	boolean valueFound;
 	Instances instances;
 	String instanceType;
-	String[] suffixValues;
 	String[] typeValues;
+	Layer componentLayer;
+	String[] suffixValues;
+	Layer dependencyLayer;
 	FastVector attributes;
 	String[] externalApiValues;
 	Map<String, Layer> returnValue;
@@ -313,6 +315,26 @@ public class MvcAnalyzer {
 	    returnValue.put(classDependencies.getClassName(), Layer.values()[instanceLayer]);
 	    logger.info(classDependencies.getClassName() + " : "
 		    + returnValue.get(classDependencies.getClassName()));
+	}
+
+	// Check for any invalid relation
+	for (ClassDependencies classDependencies : dependencies) {
+	    // Code relations
+	    componentLayer = returnValue.get(classDependencies.getClassName());
+	    if (classDependencies.getInternalDependencies() != null) {
+		for (String internalDependency : classDependencies.getInternalDependencies()) {
+		    dependencyLayer = returnValue.get(internalDependency);
+
+		    if (!componentLayer.isValidRelation(dependencyLayer)) {
+			returnValue.put(classDependencies.getClassName(), Layer.valueOf("Invalid"
+				+ componentLayer));
+			logger.info("Invalid relation detected between: "
+				+ classDependencies.getClassName() + " and " + internalDependency);
+		    }
+		}
+	    }
+
+	    // Package relations
 	}
 
 	return returnValue;

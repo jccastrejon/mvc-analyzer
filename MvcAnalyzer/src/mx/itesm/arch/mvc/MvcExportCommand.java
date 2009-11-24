@@ -41,7 +41,8 @@ public class MvcExportCommand implements ExportCommand {
 	    if (classLayer != null) {
 		returnValue = "\n\t"
 			+ DependenciesUtil.getDotValidName(classDependencies.getClassName())
-			+ " [color=\"" + classLayer.getRgbColor() + "\",style=\"filled\"];\n";
+			+ " [color=\"" + classLayer.getRgbColor() + "\",style=\""
+			+ classLayer.getStyle() + "\"];\n";
 	    }
 	}
 
@@ -53,15 +54,37 @@ public class MvcExportCommand implements ExportCommand {
 	StringBuilder returnValue;
 
 	returnValue = new StringBuilder();
-	returnValue.append("\n\tModelLayer [label=\"Model\",color=\"" + Layer.Model.getRgbColor()
-		+ "\",style=\"filled\"];");
-	returnValue.append("\n\tViewLayer [label=\"View\",color=\"" + Layer.View.getRgbColor()
-		+ "\",style=\"filled\"];");
-	returnValue.append("\n\tControllerLayer [label=\"Controller\",color=\""
-		+ Layer.Controller.getRgbColor() + "\",style=\"filled\"];");
-	returnValue.append("\n\tsubgraph clusterMVCLayers {fontsize=\"8\"; label=\"MVC Layers\";");
-	returnValue.append("color=\"#CCFFFF\"; style=\"filled\";");
-	returnValue.append("\n\tModelLayer; ViewLayer; ControllerLayer}");
+	for (Layer layer : Layer.values()) {
+	    returnValue.append("\n\t" + layer + "Layer [label=\"" + layer + "\",color=\""
+		    + layer.getRgbColor() + "\",style=\"" + layer.getStyle() + "\"];");
+	}
+
+	returnValue
+		.append("\n\tsubgraph clusterMVCLayers {\n\trankdir=\"TB\";fontsize=\"8\"; label=\"MVC Layers\";");
+	returnValue.append("color=\"#CCFFFF\"; style=\"bold\";\n\t");
+	for (Layer layer : Layer.values()) {
+	    returnValue.append(layer + "Layer; ");
+	}
+
+	returnValue.append("\n");
+	for (Layer layer : Layer.values()) {
+	    if (layer.toString().contains("Invalid")) {
+		returnValue.append(layer + "Layer -> ");
+	    }
+	}
+	returnValue.replace(returnValue.lastIndexOf("->"), returnValue.lastIndexOf("->") + 3, "");
+	returnValue.append(" [style=\"invis\"];\n");
+
+	returnValue.append("\n");
+	for (Layer layer : Layer.values()) {
+	    if (!layer.toString().contains("Invalid")) {
+		returnValue.append(layer + "Layer -> ");
+	    }
+	}
+	returnValue.replace(returnValue.lastIndexOf("->"), returnValue.lastIndexOf("->") + 3, "");
+	returnValue.append(" [style=\"invis\"];\n");
+
+	returnValue.append("}");
 
 	return returnValue.toString();
     }
