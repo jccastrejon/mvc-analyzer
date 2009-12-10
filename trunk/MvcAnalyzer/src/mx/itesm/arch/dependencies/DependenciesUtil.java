@@ -433,19 +433,25 @@ public class DependenciesUtil {
     }
 
     /**
+     * Get the project internal packages by analyzing the dependencies.
      * 
      * @param dependencies
-     * @return
+     *            Class Dependencies.
+     * @param validTypes
+     *            Valid file types.
+     * @return Project packages with components that belong to that package.
      */
     public static Map<String, Set<String>> getInternalPackages(
-	    final List<ClassDependencies> dependencies) {
+	    final List<ClassDependencies> dependencies, final String[] validTypes) {
 	String otherPackageName;
+	boolean fileDependencies;
 	String currentPackageName;
 	Set<String> currentPackage;
 	Map<String, Set<String>> returnValue;
 
 	returnValue = new HashMap<String, Set<String>>();
 	for (ClassDependencies dependency : dependencies) {
+	    fileDependencies = false;
 	    currentPackageName = dependency.getPackageName();
 
 	    if (!returnValue.containsKey(currentPackageName)) {
@@ -459,7 +465,33 @@ public class DependenciesUtil {
 		    otherPackageName = otherDependency.getClassName().replace(currentPackageName,
 			    "");
 		    if (otherPackageName.lastIndexOf('/') <= 0) {
-			currentPackage.add(otherDependency.getClassName());
+			// Check if the dependencies in this package contain
+			// files with one of the valid file types
+			for (String currentDependency : currentPackage) {
+			    for (String validType : validTypes) {
+				if (currentDependency.endsWith(validType)) {
+				    fileDependencies = true;
+				    break;
+				}
+			    }
+
+			    if (fileDependencies) {
+				break;
+			    }
+			}
+
+			// If the dependencies contain valid file types, this
+			// new dependency should also be a valid file type
+			if (fileDependencies) {
+			    for (String validType : validTypes) {
+				if (otherDependency.getClassName().endsWith(validType)) {
+				    currentPackage.add(otherDependency.getClassName());
+				    break;
+				}
+			    }
+			} else {
+			    currentPackage.add(otherDependency.getClassName());
+			}
 		    }
 		}
 	    }

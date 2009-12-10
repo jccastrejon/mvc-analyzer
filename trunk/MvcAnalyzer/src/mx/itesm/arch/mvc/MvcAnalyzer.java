@@ -154,7 +154,8 @@ public class MvcAnalyzer {
 	// Classify each class in the specified path
 	dependencies = DependencyAnalyzer.getDirectoryDependencies(path.getAbsolutePath(),
 		new MvcDependencyCommand());
-	internalPackages = DependenciesUtil.getInternalPackages(dependencies);
+	internalPackages = DependenciesUtil.getInternalPackages(dependencies, MvcAnalyzer
+		.getPropertyValues(MvcAnalyzer.Variable.Type.getVariableName()));
 	returnValue = MvcAnalyzer.classifyClasses(dependencies, internalPackages);
 
 	if (outputFile != null) {
@@ -188,7 +189,15 @@ public class MvcAnalyzer {
 	// Classify each class in the specified war
 	dependencies = DependencyAnalyzer.getWarDependencies(file.getAbsolutePath(),
 		new MvcDependencyCommand());
-	internalPackages = DependenciesUtil.getInternalPackages(dependencies);
+
+	// Remove the WEB-INF.classes prefix
+	for (ClassDependencies dependency : dependencies) {
+	    dependency.setClassName(dependency.getClassName().replace("WEB-INF.classes.", ""));
+	    dependency.setPackageName(dependency.getPackageName().replace("WEB-INF.classes.", ""));
+	}
+
+	internalPackages = DependenciesUtil.getInternalPackages(dependencies, MvcAnalyzer
+		.getPropertyValues(MvcAnalyzer.Variable.Type.getVariableName()));
 	returnValue = MvcAnalyzer.classifyClasses(dependencies, internalPackages);
 
 	if (outputFile != null) {
@@ -353,7 +362,7 @@ public class MvcAnalyzer {
 	    } else if ((controllerCount > viewCount) && (controllerCount > modelCount)) {
 		packagesClassification.put(currentPackage, Layer.Controller);
 	    } else {
-		packagesClassification.put(currentPackage, Layer.Model);
+		packagesClassification.put(currentPackage, null);
 	    }
 	}
 
@@ -379,7 +388,7 @@ public class MvcAnalyzer {
 	    if (!valueFound) {
 		dependencyLayer = packagesClassification.get(classDependencies.getPackageName());
 
-		if (componentLayer != dependencyLayer) {
+		if ((dependencyLayer != null) && (componentLayer != dependencyLayer)) {
 		    returnValue.put(classDependencies.getClassName(), Layer.valueOf("Invalid"
 			    + componentLayer));
 		}
