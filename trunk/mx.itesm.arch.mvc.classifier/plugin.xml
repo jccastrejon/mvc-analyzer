@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="Pattern Views"
+            id="Mvc View">
+      </category>
+      <view
+            name="MvcView"
+            icon="icons/sample.gif"
+            category="Mvc View"
+            class="mx.itesm.arch.mvc.plugin.views.MvcView"
+            id="mx.itesm.arch.mvc.plugin.views.MvcView">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+               ratio="0.5"
+               relative="org.eclipse.ui.views.TaskList"
+               relationship="right"
+               id="mx.itesm.arch.mvc.plugin.views.MvcView">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="contexts.xml">
+      </contexts>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="MvcClassifierPlugin.projectContribution"
+            objectClass="org.eclipse.core.resources.IProject">
+         <menu
+               id="MvcClassifierPlugin.menu1"
+               label="Pattern Views"
+               path="additions">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               class="mx.itesm.arch.mvc.plugin.actions.MvcAction"
+               enablesFor="1"
+               id="MvcClassifierPlugin.newAction"
+               label="Generate MVC View for Project files"
+               menubarPath="MvcClassifierPlugin.menu1/group1">
+         </action>
+      </objectContribution>
+	  <objectContribution
+            id="MvcClassifierPlugin.warContribution"
+            objectClass="org.eclipse.core.resources.IFile"
+	    	nameFilter="*.war">
+         <menu
+               id="MvcClassifierPlugin.menu1"
+               label="Pattern Views"
+               path="additions">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               class="mx.itesm.arch.mvc.plugin.actions.MvcAction"
+               enablesFor="1"
+               id="MvcClassifierPlugin.newAction"
+               label="Generate MVC View for WAR file"
+               menubarPath="MvcClassifierPlugin.menu1/group1">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>

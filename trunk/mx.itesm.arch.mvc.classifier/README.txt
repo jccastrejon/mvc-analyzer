@@ -1,0 +1,1 @@
+This is the main Eclipse plugin for the MVC Analyzer.
