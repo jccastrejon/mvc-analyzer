@@ -1,0 +1,1 @@
+This plugin makes the SvgSalamander project available to other Eclipse plugins
