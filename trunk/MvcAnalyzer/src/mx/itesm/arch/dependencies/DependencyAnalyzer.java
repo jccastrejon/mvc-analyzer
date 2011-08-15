@@ -77,6 +77,7 @@ public class DependencyAnalyzer {
                         directory.getAbsolutePath()));
                 returnValue.add(DependencyAnalyzer.getClassSortedDependencies(className, classInputStream,
                         internalClasses, path));
+                classInputStream.close();
             } else {
                 returnValue.add(new ClassDependencies(className, null, null));
             }
